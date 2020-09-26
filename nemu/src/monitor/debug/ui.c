@@ -120,7 +120,7 @@ static int cmd_info(char* args) {
 		return 1;
 	}
 	if(!strcmp(arg, "r")) {
-		printf("Now print the regs info: ");
+		printf("Now print the regs info: \n");
 		printf("eax: %ld\n", (long int)cpu.eax);
 		printf("ecx: %ld\n", (long int)cpu.ecx);
 		printf("edx: %ld\n", (long int)cpu.edx);
