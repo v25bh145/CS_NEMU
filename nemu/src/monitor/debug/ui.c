@@ -36,6 +36,17 @@ static int cmd_q(char *args) {
 	return -1;
 }
 
+static int cmd_si(char *args) {
+	char* arg = strtok(NULL,  "");
+	if(strlen(arg) > 1) {
+		Log("Wrong params!");
+		return 1;
+	} else {
+		cpu_exec(arg[0]);
+		return 0;
+	}
+}
+
 static int cmd_help(char *args);
 
 static struct {
@@ -48,6 +59,7 @@ static struct {
 	{ "q", "Exit NEMU", cmd_q },
 
 	/* TODO: Add more commands */
+	{ "si", "Continue the execution for one step of the program", cmd_si}
 
 };
 
