@@ -36,23 +36,7 @@ static int cmd_q(char *args) {
 	return -1;
 }
 
-static int cmd_si(char *args) {
-	char* arg = strtok(args,  " ");
-	char* argOverflow = strtok(NULL, " ");
-	if(argOverflow != NULL) {
-		Log("Wrong params!");
-		Log("help: si [N>0]");
-		return 1;
-	}
-	int step = atoi(arg);
-	if(step == 0 ){
-		Log("Wrong params!");
-		Log("help: si [N>0]");
-		return 1;
-	}
-	cpu_exec(atoi(arg));
-	return 0;
-}
+static int cmd_si(char *args) ;
 
 static int cmd_help(char *args);
 
@@ -92,6 +76,24 @@ static int cmd_help(char *args) {
 		}
 		printf("Unknown command '%s'\n", arg);
 	}
+	return 0;
+}
+
+static int cmd_si(char *args) {
+	char* arg = strtok(args,  " ");
+	char* argOverflow = strtok(NULL, " ");
+	if(argOverflow != NULL) {
+		Log("Wrong params!");
+		Log("help: si [N>0]");
+		return 1;
+	}
+	int step = atoi(arg);
+	if(step == 0 ){
+		Log("Wrong params!");
+		Log("help: si [N>0]");
+		return 1;
+	}
+	cpu_exec(atoi(arg));
 	return 0;
 }
 
