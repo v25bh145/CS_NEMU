@@ -38,17 +38,13 @@ static int cmd_q(char *args) {
 
 static int cmd_si(char *args) {
 	char* arg = strtok(args,  " ");
-	while(arg != NULL) {
-		arg = strtok(NULL, " ");
-		Log("%s", arg);
+	char* argOverflow = strtok(NULL, " ");
+	if(argOverflow != NULL) {
+		Log("Wrong params!");
+		return 1;
 	}
-	// if(strlen(arg) > 1) {
-	// 	Log("Wrong params!");
-	// 	return 1;
-	// } else {
-		cpu_exec(arg[0]);
-		return 0;
-	// }
+	cpu_exec(atoi(arg));
+	return 0;
 }
 
 static int cmd_help(char *args);
