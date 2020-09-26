@@ -50,6 +50,8 @@ static int cmd_info(char* args);
 
 // static int cmd_bt(char* args);
 
+void WPtest();
+
 static int cmd_help(char *args);
 
 static struct {
@@ -133,6 +135,7 @@ static int cmd_info(char* args) {
 		return 0;
 	} else if(!strcmp(arg, "w")) {
 		Log("TODO");
+		WPtest();
 		return 0;
 	} else {
 		Log("Wrong params!");
