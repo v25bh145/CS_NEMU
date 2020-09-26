@@ -41,9 +41,15 @@ static int cmd_si(char *args) {
 	char* argOverflow = strtok(NULL, " ");
 	if(argOverflow != NULL) {
 		Log("Wrong params!");
+		Log("help: si [N>0]");
 		return 1;
 	}
-	Log("%d", atoi(arg));
+	int step = atoi(arg);
+	if(step == 0 ){
+		Log("Wrong params!");
+		Log("help: si [N>0]");
+		return 1;
+	}
 	cpu_exec(atoi(arg));
 	return 0;
 }
