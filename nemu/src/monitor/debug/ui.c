@@ -43,6 +43,7 @@ static int cmd_si(char *args) {
 		Log("Wrong params!");
 		return 1;
 	}
+	Log("%d", atoi(arg));
 	cpu_exec(atoi(arg));
 	return 0;
 }
