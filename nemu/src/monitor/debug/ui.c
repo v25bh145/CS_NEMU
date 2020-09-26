@@ -37,15 +37,18 @@ static int cmd_q(char *args) {
 }
 
 static int cmd_si(char *args) {
-	char* arg = strtok(args,  "-");
-	Log("%zu", strlen(arg));
-	if(strlen(arg) > 1) {
-		Log("Wrong params!");
-		return 1;
-	} else {
+	char* arg = strtok(args,  " ");
+	while(arg != NULL) {
+		arg = strtok(NULL, " ");
+		Log("%s", arg);
+	}
+	// if(strlen(arg) > 1) {
+	// 	Log("Wrong params!");
+	// 	return 1;
+	// } else {
 		cpu_exec(arg[0]);
 		return 0;
-	}
+	// }
 }
 
 static int cmd_help(char *args);
