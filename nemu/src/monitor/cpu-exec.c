@@ -20,6 +20,7 @@ char asm_buf[128];
 jmp_buf jbuf;
 
 void print_bin_instr(swaddr_t eip, int len) {
+	Log("awa");
 	int i;
 	int l = sprintf(asm_buf, "%8x:   ", eip);
 	for(i = 0; i < len; i ++) {
