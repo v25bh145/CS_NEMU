@@ -87,6 +87,7 @@ static int cmd_si(char *args) {
 		Log("help: si [N>0]");
 		return 1;
 	}
+	
 	int step = atoi(arg);
 	if(step == 0 ){
 		Log("Wrong params!");
