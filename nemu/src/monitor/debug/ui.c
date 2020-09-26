@@ -129,7 +129,7 @@ static int cmd_info(char* args) {
 		printf("ebp: %ld\n", (long int)cpu.ebp);
 		printf("esi: %ld\n", (long int)cpu.esi);
 		printf("edi: %ld\n", (long int)cpu.edi);
-		printf("eip: %ld\n", (long int)cpu.eip);
+		printf("eip: %8x\n", cpu.eip);
 		return 0;
 	} else if(!strcmp(arg, "w")) {
 		Log("TODO");
