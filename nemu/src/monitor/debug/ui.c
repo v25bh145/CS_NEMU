@@ -38,6 +38,18 @@ static int cmd_q(char *args) {
 
 static int cmd_si(char *args) ;
 
+static int cmd_info(char* args);
+
+// static int cmd_p(char *args) ;
+
+// static int cmd_x(char* args);
+
+// static int cmd_w(char* args);
+
+// static int cmd_d(char* args);
+
+// static int cmd_bt(char* args);
+
 static int cmd_help(char *args);
 
 static struct {
@@ -50,7 +62,8 @@ static struct {
 	{ "q", "Exit NEMU", cmd_q },
 
 	/* TODO: Add more commands */
-	{ "si", "Continue the execution for one step of the program", cmd_si}
+	{ "si", "Continue the execution for one step of the program", cmd_si},
+	{"info", "Print info from regs and wds", cmd_info}
 
 };
 
@@ -87,7 +100,7 @@ static int cmd_si(char *args) {
 		Log("help: si [N>0]");
 		return 1;
 	}
-	
+
 	int step = atoi(arg);
 	if(step == 0 ){
 		Log("Wrong params!");
@@ -96,6 +109,36 @@ static int cmd_si(char *args) {
 	}
 	cpu_exec(atoi(arg));
 	return 0;
+}
+
+static int cmd_info(char* args) {
+	char* arg = strtok(args,  " ");
+	char* argOverflow = strtok(NULL, " ");
+	if(argOverflow != NULL) {
+		Log("Wrong params!");
+		Log("help: info [SUBCMD {r, w}]");
+		return 1;
+	}
+	if(strcmp(arg, "r")) {
+		Log("Now print the regs info: ");
+		Log("eax: %ld", (long int)cpu.eax);
+		Log("ecx: %ld", (long int)cpu.ecx);
+		Log("edx: %ld", (long int)cpu.edx);
+		Log("ebx: %ld", (long int)cpu.ebx);
+		Log("esp: %ld", (long int)cpu.esp);
+		Log("ebp: %ld", (long int)cpu.ebp);
+		Log("esi: %ld", (long int)cpu.esi);
+		Log("edi: %ld", (long int)cpu.edi);
+		Log("eip: %ld", (long int)cpu.eip);
+		return 0;
+	} else if(strcmp(arg, "w")) {
+		Log("TODO");
+		return 0;
+	} else {
+		Log("Wrong params!");
+		Log("help: info [SUBCMD {r, w}]");
+		return 1;
+	}
 }
 
 void ui_mainloop() {
