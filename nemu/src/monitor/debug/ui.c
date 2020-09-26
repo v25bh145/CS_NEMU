@@ -119,19 +119,19 @@ static int cmd_info(char* args) {
 		Log("help: info [SUBCMD {r, w}]");
 		return 1;
 	}
-	if(strcmp(arg, "r")) {
-		Log("Now print the regs info: ");
-		Log("eax: %ld", (long int)cpu.eax);
-		Log("ecx: %ld", (long int)cpu.ecx);
-		Log("edx: %ld", (long int)cpu.edx);
-		Log("ebx: %ld", (long int)cpu.ebx);
-		Log("esp: %ld", (long int)cpu.esp);
-		Log("ebp: %ld", (long int)cpu.ebp);
-		Log("esi: %ld", (long int)cpu.esi);
-		Log("edi: %ld", (long int)cpu.edi);
-		Log("eip: %ld", (long int)cpu.eip);
+	if(!strcmp(arg, "r")) {
+		printf("Now print the regs info: ");
+		printf("eax: %ld\n", (long int)cpu.eax);
+		printf("ecx: %ld\n", (long int)cpu.ecx);
+		printf("edx: %ld\n", (long int)cpu.edx);
+		printf("ebx: %ld\n", (long int)cpu.ebx);
+		printf("esp: %ld\n", (long int)cpu.esp);
+		printf("ebp: %ld\n", (long int)cpu.ebp);
+		printf("esi: %ld\n", (long int)cpu.esi);
+		printf("edi: %ld\n", (long int)cpu.edi);
+		printf("eip: %ld\n", (long int)cpu.eip);
 		return 0;
-	} else if(strcmp(arg, "w")) {
+	} else if(!strcmp(arg, "w")) {
 		Log("TODO");
 		return 0;
 	} else {
