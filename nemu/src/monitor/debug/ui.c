@@ -50,7 +50,7 @@ static int cmd_info(char* args);
 
 // static int cmd_bt(char* args);
 
-void WPtest();
+WP* get_wp_head();
 
 static int cmd_help(char *args);
 
@@ -134,8 +134,13 @@ static int cmd_info(char* args) {
 		printf("eip: %8x\n", cpu.eip);
 		return 0;
 	} else if(!strcmp(arg, "w")) {
-		Log("TODO");
-		WPtest();
+		printf("Now print the watchpoint info: \n");
+		int count = 0;
+		WP* head = get_wp_head();
+		while(head != NULL) {
+			printf("wp %d: at pos %8x", count++, head->pos);
+			head = head->next;
+		}
 		return 0;
 	} else {
 		Log("Wrong params!");
