@@ -162,7 +162,7 @@ static int cmd_w (char* args) {
 		return 1;
 	}
 	if(arg[0] == '*') {
-		char* substr = malloc(strlen(arg));
+		char* substr = malloc(strlen(arg) - 1);
 		int i;
 		for(i = 1; i < strlen(arg); i++) {
 			substr[i] = arg[i];
