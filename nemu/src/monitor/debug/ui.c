@@ -163,13 +163,25 @@ static int cmd_w (char* args) {
 	}
 	if(arg[0] == '*') {
 		char* substr = (char *)malloc(strlen(arg) * sizeof(char));
+		char* substrFor0x = (char *)malloc(strlen(arg) * sizeof(char));
 		int i;
-		// char* ptr;
 		for(i = 1; i <= strlen(arg); i++) {
 			substr[i - 1] = arg[i];
+			if(i > 2) substrFor0x[i - 3] = arg[i];
+		}
+		uint32_t addr;
+		char* ptr;
+		if(substr[2] == 'x' || substr[2] == 'X') {
+			addr = strtol(substr, &ptr, 16);
+		} else {
+			addr = strtol(substr, &ptr, 10);
+		}
+		if(ptr != NULL) {
+			Log("Wrong params!");
+			Log("help: w addr");
+			return 1;
 		}
 		Log("%s", substr);
-		uint32_t addr = atoi(substr);
 		setBreakpoint(addr);
 	} else {
 		char* regStr[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
