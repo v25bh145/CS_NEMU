@@ -44,7 +44,7 @@ static int cmd_info(char* args);
 
 // static int cmd_x(char* args);
 
-// static int cmd_w(char* args);
+static int cmd_w(char* args);
 
 // static int cmd_d(char* args);
 
@@ -65,7 +65,8 @@ static struct {
 
 	/* TODO: Add more commands */
 	{ "si", "Continue the execution for one step of the program", cmd_si},
-	{"info", "Print info from regs and wds", cmd_info}
+	{"info", "Print info from regs and wds", cmd_info},
+	{"w", "Set a watchpoint", cmd_w}
 
 };
 
@@ -148,6 +149,18 @@ static int cmd_info(char* args) {
 		return 1;
 	}
 }
+
+static int cmd_w (char* args) {
+	char* arg = strtok(args,  " ");
+	char* argOverflow = strtok(NULL, " ");
+	if(argOverflow != NULL) {
+		Log("Wrong params!");
+		Log("help: w pos");
+		return 1;
+	}
+	Log("%s", arg);
+	return 0;
+} 
 
 void ui_mainloop() {
 	while(1) {
