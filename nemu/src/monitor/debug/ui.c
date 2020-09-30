@@ -162,14 +162,11 @@ static int cmd_w (char* args) {
 		return 1;
 	}
 	if(arg[0] == '*') {
-		char* substr = (char *)malloc(5 * sizeof(char));
+		char* substr = (char *)malloc(strlen(arg) * sizeof(char));
 		int i;
 		for(i = 1; i <= strlen(arg); i++) {
 			substr[i - 1] = arg[i];
 		}
-		Log("%d", (int)strlen(arg));
-		Log("%d", (int)strlen(substr));
-		Log("%s", substr);
 		uint32_t addr = atoi(substr);
 		Log("%8x", addr);
 	} else {
