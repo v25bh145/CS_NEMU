@@ -23,7 +23,8 @@ void init_wp_pool() {
 WP* get_wp_head () {
 	return head;
 }
-WP* setBreakpoint(swaddr_t step) {
+int setBreakpoint(swaddr_t step) {
+	Log("%8x", step);
 	current++;
 	wp_pool[current - 1].addr = step;
 	if(head == NULL) {
@@ -41,6 +42,7 @@ WP* setBreakpoint(swaddr_t step) {
 						//insert into the pre of h2
 						h->next = &wp_pool[current - 1];
 						wp_pool[current - 1].next = nex;
+						break;
 					} else {
 						continue;
 					}

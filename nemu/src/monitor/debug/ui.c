@@ -53,7 +53,7 @@ static int cmd_w(char* args);
 // static int cmd_bt(char* args);
 
 WP* get_wp_head();
-WP* setBreakpoint(swaddr_t step);
+int setBreakpoint(swaddr_t step);
 
 static int cmd_help(char *args);
 
@@ -169,7 +169,6 @@ static int cmd_w (char* args) {
 			substr[i - 1] = arg[i];
 		}
 		uint32_t addr = strtol(substr, &ptr, 8);
-		// Log("%s", ptr);
 		setBreakpoint(addr);
 	} else {
 		char* regStr[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
