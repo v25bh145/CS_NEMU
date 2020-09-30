@@ -11,7 +11,7 @@ void init_wp_pool() {
 	int i;
 	for(i = 0; i < NR_WP; i ++) {
 		wp_pool[i].next = &wp_pool[i + 1];
-		wp_pool[i].pos = 0;
+		wp_pool[i].addr = 0;
 	}
 	wp_pool[NR_WP - 1].next = NULL;
 
@@ -25,7 +25,7 @@ WP* get_wp_head () {
 }
 WP* setBreakpoint(swaddr_t step) {
 	current++;
-	wp_pool[current - 1].pos = step;
+	wp_pool[current - 1].addr = step;
 	if(head == NULL) {
 		head = &wp_pool[current - 1];
 	} else {
@@ -37,7 +37,7 @@ WP* setBreakpoint(swaddr_t step) {
 				//insert into the last one
 				h->next = &wp_pool[current - 1]; 
 			} else {
-					if(nex->pos > wp_pool[current - 1].pos) {
+					if(nex->addr > wp_pool[current - 1].addr) {
 						//insert into the pre of h2
 						h->next = &wp_pool[current - 1];
 						wp_pool[current - 1].next = nex;

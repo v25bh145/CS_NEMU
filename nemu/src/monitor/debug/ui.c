@@ -3,6 +3,8 @@
 #include "monitor/watchpoint.h"
 #include "nemu.h"
 
+#include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <readline/readline.h>
 #include <readline/history.h>
@@ -51,6 +53,7 @@ static int cmd_w(char* args);
 // static int cmd_bt(char* args);
 
 WP* get_wp_head();
+WP* setBreakpoint(swaddr_t step);
 
 static int cmd_help(char *args);
 
@@ -139,7 +142,7 @@ static int cmd_info(char* args) {
 		int count = 0;
 		WP* head = get_wp_head();
 		while(head != NULL) {
-			printf("wp %d: at pos %8x", count++, head->pos);
+			printf("wp %d: at addr %8x", count++, head->addr);
 			head = head->next;
 		}
 		return 0;
@@ -155,14 +158,26 @@ static int cmd_w (char* args) {
 	char* argOverflow = strtok(NULL, " ");
 	if(argOverflow != NULL || arg == NULL) {
 		Log("Wrong params!");
-		Log("help: w pos");
+		Log("help: w addr");
 		return 1;
 	}
-	char* regs[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
-	int i;
-	for(i = 0; i < 9; i++) {
-		if(!strcmp(arg, regs[i])) {
-			Log("hit");
+	if(arg[0] == '*') {
+		char* substr = malloc(strlen(arg) + 5);
+		int i;
+		for(i = 1; i < strlen(arg); i++) {
+			substr[i] = arg[i];
+		}
+		uint32_t addr = atoi(substr);
+		Log("%8x", addr);
+	} else {
+		char* regStr[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
+		uint32_t regs[] = {cpu.eax, cpu.ebx, cpu.ecx, cpu.edx, cpu.esp, cpu.ebp, cpu.esi, cpu.edi, cpu.eip};
+		int i;
+		for(i = 0; i < 9; i++) {
+			if(!strcmp(arg, regStr[i])) {
+				setBreakpoint(regs[i]);
+				break;
+			}
 		}
 	}
 	// Log("%s", regs[0]);
