@@ -153,14 +153,19 @@ static int cmd_info(char* args) {
 static int cmd_w (char* args) {
 	char* arg = strtok(args,  " ");
 	char* argOverflow = strtok(NULL, " ");
-	if(argOverflow != NULL) {
+	if(argOverflow != NULL || arg == NULL) {
 		Log("Wrong params!");
 		Log("help: w pos");
 		return 1;
 	}
 	char* regs[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
-	Log("%s", regs[0]);
-	Log("%s", arg);
+	int i;
+	for(i = 0; i < 9; i++) {
+		if(!strcmp(arg, regs[i])) {
+			Log("hit");
+		}
+	}
+	// Log("%s", regs[0]);
 	return 0;
 } 
 
