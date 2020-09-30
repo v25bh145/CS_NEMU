@@ -162,7 +162,7 @@ static int cmd_w (char* args) {
 		return 1;
 	}
 	if(arg[0] == '*') {
-		size_t awa = 15;
+		size_t awa = 1555;
 		char* substr = malloc(awa);
 		// int i;
 		// for(i = 1; i < strlen(arg); i++) {
