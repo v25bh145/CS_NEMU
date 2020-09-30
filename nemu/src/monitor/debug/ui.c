@@ -165,7 +165,7 @@ static int cmd_w (char* args) {
 		char* substr = (char *)malloc(5 * sizeof(char));
 		int i;
 		for(i = 1; i < strlen(arg); i++) {
-			substr[i] = arg[i];
+			substr[i - 1] = arg[i];
 		}
 		Log("%d", (int)strlen(arg));
 		Log("%d", (int)strlen(substr));
