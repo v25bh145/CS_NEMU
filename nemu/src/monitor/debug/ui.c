@@ -158,6 +158,8 @@ static int cmd_w (char* args) {
 		Log("help: w pos");
 		return 1;
 	}
+	char* regs[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
+	Log("%s", regs[0]);
 	Log("%s", arg);
 	return 0;
 } 
