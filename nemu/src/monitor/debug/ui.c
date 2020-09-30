@@ -168,7 +168,7 @@ static int cmd_w (char* args) {
 		for(i = 1; i <= strlen(arg); i++) {
 			substr[i - 1] = arg[i];
 		}
-		uint32_t addr = strtol(substr, &ptr, 16);
+		uint32_t addr = strtol(substr, &ptr, 10);
 		setBreakpoint(addr);
 	} else {
 		char* regStr[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
