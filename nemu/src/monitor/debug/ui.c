@@ -169,7 +169,7 @@ static int cmd_w (char* args) {
 			substr[i - 1] = arg[i];
 		}
 		uint32_t addr = strtol(substr, &ptr, 8);
-		Log("%s", ptr);
+		// Log("%s", ptr);
 		setBreakpoint(addr);
 	} else {
 		char* regStr[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
