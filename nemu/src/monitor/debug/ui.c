@@ -167,6 +167,7 @@ static int cmd_w (char* args) {
 		for(i = 1; i < strlen(arg); i++) {
 			substr[i] = arg[i];
 		}
+		Log("%d", (int)strlen(substr));
 		Log("%s", substr);
 		uint32_t addr = atoi(substr);
 		Log("%8x", addr);
