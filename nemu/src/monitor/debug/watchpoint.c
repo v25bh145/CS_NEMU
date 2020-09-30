@@ -24,6 +24,7 @@ WP* get_wp_head () {
 	return head;
 }
 int setBreakpoint(swaddr_t step) {
+	Log("%8x", step);
 	current++;
 	wp_pool[current - 1].addr = step;
 	if(head == NULL) {
