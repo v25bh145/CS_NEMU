@@ -168,6 +168,7 @@ static int cmd_w (char* args) {
 		for(i = 1; i <= strlen(arg); i++) {
 			substr[i - 1] = arg[i];
 		}
+		Log("%s", substr);
 		uint32_t addr = atoi(substr);
 		setBreakpoint(addr);
 	} else {
