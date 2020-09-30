@@ -163,7 +163,7 @@ static int cmd_w (char* args) {
 	}
 	if(arg[0] == '*') {
 		size_t awa = 3;
-		char* substr = malloc(awa);
+		char* substr = (char *)malloc(awa * sizeof(char));
 		// int i;
 		// for(i = 1; i < strlen(arg); i++) {
 		// 	substr[i] = arg[i];
