@@ -37,28 +37,26 @@ int setBreakpoint(uint32_t step) {
 	if(head == NULL) {
 		Log("0");
 		head = &wp_pool[current - 1];
+	} else if (head->addr > step) {
+		wp_pool[current - 1].next = head;
+		head = &wp_pool[current - 1];
 	} else {
 		//sort
 		WP* h;
 		for(h = head; h != NULL; h = h->next) {
 			if(h == NULL) break;
-			if(h == NULL) Log("error");
 			WP* nex = h->next;
 			if(nex == NULL) {
 				//insert into the last one
 				h->next = &wp_pool[current - 1]; 
 				break;
-				Log("1a");
 			} else {
 					if(nex->addr > wp_pool[current - 1].addr) {
-						Log("2");
 						//insert into the pre of h2
 						h->next = &wp_pool[current - 1];
 						wp_pool[current - 1].next = nex;
 						break;
 					} else {
-						// if(h->next == h) Log("4");
-						// Log("%d", nex->addr);
 						continue;
 					}
 			}
