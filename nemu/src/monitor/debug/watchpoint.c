@@ -45,7 +45,7 @@ int setBreakpoint(uint32_t step) {
 			if(nex == NULL) {
 				//insert into the last one
 				h->next = &wp_pool[current - 1]; 
-				Log("1");
+				Log("1a");
 			} else {
 					if(nex->addr > wp_pool[current - 1].addr) {
 						Log("2");
