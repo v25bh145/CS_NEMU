@@ -35,6 +35,7 @@ int setBreakpoint(uint32_t step) {
 	current++;
 	wp_pool[current - 1].addr = step;
 	if(head == NULL) {
+		Log("0");
 		head = &wp_pool[current - 1];
 	} else {
 		//sort
@@ -44,13 +45,16 @@ int setBreakpoint(uint32_t step) {
 			if(nex == NULL) {
 				//insert into the last one
 				h->next = &wp_pool[current - 1]; 
+				Log("1");
 			} else {
 					if(nex->addr > wp_pool[current - 1].addr) {
+						Log("2");
 						//insert into the pre of h2
 						h->next = &wp_pool[current - 1];
 						wp_pool[current - 1].next = nex;
 						break;
 					} else {
+						Log("3");
 						continue;
 					}
 			}
