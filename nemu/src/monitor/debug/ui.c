@@ -170,6 +170,7 @@ static int cmd_w (char* args) {
 			if(i > 2) substrFor0x[i - 3] = arg[i];
 		}
 		Log("3 %s", substrFor0x);
+		Log("3 %c", substr[2]);
 		uint32_t addr;
 		char* ptr;
 		if(substr[2] == 'x' || substr[2] == 'X') {
@@ -181,8 +182,8 @@ static int cmd_w (char* args) {
 		}
 		if(ptr != NULL) {
 			Log("help: w addr %8x", addr);
-			Log("Wrong params!");
-			Log("help: w addr");
+			// Log("Wrong params!");
+			// Log("help: w addr");
 			return 1;
 		}
 		Log("%s", substr);
