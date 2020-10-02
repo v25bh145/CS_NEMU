@@ -174,7 +174,6 @@ static int cmd_w (char* args) {
 		}
 		if(addr != 0) {
 			flag = true;
-			Log("help: w addr %d\n", addr);
 			setBreakpoint(addr);
 		}
 	} else {
