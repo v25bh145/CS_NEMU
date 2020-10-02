@@ -187,7 +187,7 @@ static int cmd_w (char* args) {
 			// Log("help: w addr");
 			// return 1;
 		// }
-		Log("help: w addr %8x\n", len);
+		Log("help: w addr %d\n", len);
 		Log("%s", substr);
 		setBreakpoint(addr);
 	} else {
