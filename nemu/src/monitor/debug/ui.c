@@ -182,7 +182,7 @@ static int cmd_w (char* args) {
 			Log("2");
 		}
 		if(ptr != NULL) {
-			Log("help: w addr %x", addr);
+			Log("help: w addr %d", addr);
 			// Log("Wrong params!");
 			// Log("help: w addr");
 			return 1;
