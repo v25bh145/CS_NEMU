@@ -56,6 +56,6 @@ int setBreakpoint(uint32_t step) {
 			}
 		}
 	}
-
+printAllPool();
 	return 0;
 }
