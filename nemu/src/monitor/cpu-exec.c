@@ -14,6 +14,7 @@
 int nemu_state = STOP;
 
 int exec(swaddr_t);
+bool wpSearch(uint32_t eip, int len);
 
 char assembly[80];
 char asm_buf[128];
@@ -76,7 +77,11 @@ void cpu_exec(volatile uint32_t n) {
 
 		/* TODO: check watchpoints here. */
 		//WARNING time complexity for N
-		Log("%x + %x", cpu.eip, instr_len);
+		//Can get to O(1) (share method)
+		//by set isGone(bool for every node) and lastGone(WP* for static)
+		if(wpSearch(cpu.eip, instr_len)) {
+			Log("!!!");
+		}
 		
 
 #ifdef HAS_DEVICE

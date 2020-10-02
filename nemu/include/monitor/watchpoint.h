@@ -8,7 +8,7 @@ typedef struct watchpoint {
 
 	/* TODO: Add more members if necessary */
 	swaddr_t addr;
-	bool isGone;
+	// bool isGone;
 
 } WP;
 
