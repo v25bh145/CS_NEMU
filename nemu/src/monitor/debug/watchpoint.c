@@ -31,6 +31,7 @@ void printAllPool () {
 		Log("count%d: in addr 0x%x ", count, h->addr);
 	}
 }
+
 int setBreakpoint(uint32_t step) {
 	current++;
 	wp_pool[current - 1].addr = step;
