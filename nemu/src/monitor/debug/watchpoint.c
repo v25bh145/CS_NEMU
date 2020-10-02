@@ -73,6 +73,7 @@ int delWatchpoint(int count) {
 	} else if(count == 1) {
 		//delete head(soft delete for it is a static Array)
 		head->addr = 0;
+		current--;
 
 		WP* tmpWp = head;
 		head = head->next;
@@ -85,12 +86,17 @@ int delWatchpoint(int count) {
 			if(tmpCount + 1 == count) {
 				//delete h->next(soft delete for it is a static Array)
 				h->next->addr = 0;
+				current--;
 
 				WP* tmpWp = h->next;
 				h->next = h->next->next;
 				tmpWp->next = NULL;
+				return 0;
 			}
 		}
+		Log("error: no such wp to del.");
+		Log("help: d N");
+		return 1;
 	}
 	return 0;
 }
