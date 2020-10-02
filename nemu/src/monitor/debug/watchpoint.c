@@ -102,6 +102,7 @@ int delWatchpoint(int count) {
 }
 
 int wpSearch(uint32_t eip, int len) {
+	Log("??");
 		WP* h;
 		int count;
 		for(h = head; h != NULL; h = h->next) {
