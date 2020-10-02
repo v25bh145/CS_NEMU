@@ -173,8 +173,10 @@ static int cmd_w (char* args) {
 		char* ptr;
 		if(substr[2] == 'x' || substr[2] == 'X') {
 			addr = strtol(substr, &ptr, 16);
+			Log("1");
 		} else {
 			addr = strtol(substr, &ptr, 10);
+			Log("2");
 		}
 		if(ptr != NULL) {
 			Log("help: w addr %8x", addr);
