@@ -65,7 +65,7 @@ int setWatchpoint(uint32_t step) {
 	return 0;
 }
 int delWatchpoint(int count) {
-	if(current < count) {
+	if(current < count || count <= 0) {
 		Log("error: no such wp to del.");
 		Log("help: d N");
 		return 1;

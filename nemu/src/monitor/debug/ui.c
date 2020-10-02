@@ -48,13 +48,14 @@ static int cmd_info(char* args);
 
 static int cmd_w(char* args);
 
-// static int cmd_d(char* args);
+static int cmd_d(char* args);
 
 // static int cmd_bt(char* args);
 
 WP* get_wp_head();
 int setWatchpoint(swaddr_t step);
 void printAllPool();
+int delWatchpoint(int count);
 
 static int cmd_help(char *args);
 
@@ -70,7 +71,8 @@ static struct {
 	/* TODO: Add more commands */
 	{ "si", "Continue the execution for one step of the program", cmd_si},
 	{"info", "Print info from regs and wds", cmd_info},
-	{"w", "Set a watchpoint", cmd_w}
+	{"w", "Set a watchpoint", cmd_w},
+	{"d", "Del a watchpoint", cmd_d}
 
 };
 
@@ -145,7 +147,7 @@ static int cmd_info(char* args) {
 	} else {
 		Log("Wrong params!");
 		Log("help: info [SUBCMD {r, w}]");
-		return 1;
+		return 0;
 	}
 }
 
@@ -196,6 +198,20 @@ static int cmd_w (char* args) {
 		return 0;
 	}
 } 
+
+static int cmd_d(char* args) {
+	char* arg = strtok(args,  " ");
+	int count;
+	char* argOverflow = strtok(NULL, " ");
+	if(argOverflow != NULL || arg == NULL) {
+		Log("Wrong params!");
+		Log("help: w addr");
+		return 1;
+	}
+	sscanf(arg, "%d", &count);
+	delWatchpoint(count);
+	return 0;
+}
 
 void ui_mainloop() {
 	while(1) {
