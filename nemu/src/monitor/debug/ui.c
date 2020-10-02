@@ -181,12 +181,13 @@ static int cmd_w (char* args) {
 			addr = strtol(substr, &ptr, 10);
 			Log("2");
 		}
-		if(ptr != NULL) {
-			Log("help: w addr %I64u\n", addr);
+		// if(ptr != NULL) {
+			// Log("help: w addr %I64u\n", addr);
 			// Log("Wrong params!");
 			// Log("help: w addr");
-			return 1;
-		}
+			// return 1;
+		// }
+		Log("help: w addr %I64u\n", addr);
 		Log("%s", substr);
 		setBreakpoint(addr);
 	} else {
