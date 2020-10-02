@@ -169,6 +169,7 @@ static int cmd_w (char* args) {
 			substr[i - 1] = arg[i];
 			if(i > 2) substrFor0x[i - 3] = arg[i];
 		}
+		Log("3 %s", substrFor0x);
 		uint32_t addr;
 		char* ptr;
 		if(substr[2] == 'x' || substr[2] == 'X') {
