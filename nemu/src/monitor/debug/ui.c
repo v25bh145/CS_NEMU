@@ -173,7 +173,7 @@ static int cmd_w (char* args) {
 		Log("3 %c", substr[2]);
 		uint32_t addr;
 		char* ptr;
-		if(substr[2] == 'x' || substr[2] == 'X') {
+		if((substr[1] == 'x' && substr[0] == '0' )|| (substr[1] == 'X' && substr[0] == '0')) {
 			addr = strtol(substr, &ptr, 16);
 			Log("1");
 		} else {
