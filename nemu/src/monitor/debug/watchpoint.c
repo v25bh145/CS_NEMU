@@ -106,7 +106,7 @@ int wpSearch(uint32_t eip, int len) {
 		int count;
 		for(h = head; h != NULL; h = h->next) {
 			count++;
-			if(h->addr <= eip && h->addr > eip - len) {
+			if(h->addr < eip && h->addr >= eip - len) {
 				return count;
 			}
 			if(h->addr > eip) {
