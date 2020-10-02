@@ -53,7 +53,7 @@ static int cmd_w(char* args);
 // static int cmd_bt(char* args);
 
 WP* get_wp_head();
-int setBreakpoint(swaddr_t step);
+int setWatchpoint(swaddr_t step);
 void printAllPool();
 
 static int cmd_help(char *args);
@@ -174,7 +174,7 @@ static int cmd_w (char* args) {
 		}
 		if(addr != 0) {
 			flag = true;
-			setBreakpoint(addr);
+			setWatchpoint(addr);
 		}
 	} else {
 		char* regStr[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
@@ -182,7 +182,7 @@ static int cmd_w (char* args) {
 		int i;
 		for(i = 0; i < 9; i++) {
 			if(!strcmp(arg, regStr[i])) {
-				setBreakpoint(regs[i]);
+				setWatchpoint(regs[i]);
 				flag = true;
 				break;
 			}

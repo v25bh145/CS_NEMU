@@ -32,7 +32,7 @@ void printAllPool () {
 	}
 }
 
-int setBreakpoint(uint32_t step) {
+int setWatchpoint(uint32_t step) {
 	current++;
 	wp_pool[current - 1].addr = step;
 	if(head == NULL) {
@@ -59,6 +59,35 @@ int setBreakpoint(uint32_t step) {
 					} else {
 						continue;
 					}
+			}
+		}
+	}
+	return 0;
+}
+int delWatchpoint(int count) {
+	if(current < count) {
+		Log("error: no such wp to del.");
+		Log("help: d N");
+		return 1;
+	} else if(count == 1) {
+		//delete head(soft delete for it is a static Array)
+		head->addr = 0;
+
+		WP* tmpWp = head;
+		head = head->next;
+		tmpWp->next = NULL;
+	} else {
+		int tmpCount = 0;
+		WP* h;
+		for(h = head; h != NULL; h = h->next) {
+			tmpCount++;
+			if(tmpCount + 1 == count) {
+				//delete h->next(soft delete for it is a static Array)
+				h->next->addr = 0;
+
+				WP* tmpWp = h->next;
+				h->next = h->next->next;
+				tmpWp->next = NULL;
 			}
 		}
 	}
