@@ -14,7 +14,7 @@
 int nemu_state = STOP;
 
 int exec(swaddr_t);
-bool wpSearch(uint32_t eip, int len);
+int wpSearch(uint32_t eip, int len);
 
 char assembly[80];
 char asm_buf[128];
@@ -79,8 +79,10 @@ void cpu_exec(volatile uint32_t n) {
 		//WARNING time complexity for N
 		//Can get to O(1) (share method)
 		//by set isGone(bool for every node) and lastGone(WP* for static)
-		if(wpSearch(cpu.eip, instr_len)) {
-			Log("!!!");
+		int count = wpSearch(cpu.eip, instr_len);
+		if(count) {
+			Log("Get the WP %d:", count);
+			break;
 		}
 		
 

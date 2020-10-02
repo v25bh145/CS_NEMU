@@ -101,11 +101,9 @@ int delWatchpoint(int count) {
 	return 0;
 }
 
-bool wpSearch(uint32_t eip, int len) {
-	Log("%x %d", eip, len);
+int wpSearch(uint32_t eip, int len) {
 		WP* h;
 		for(h = head; h != NULL; h = h->next) {
-			Log("%x %x", eip, h->addr);
 			if(h->addr <= eip && h->addr > eip - len) {
 				return true;
 			}
