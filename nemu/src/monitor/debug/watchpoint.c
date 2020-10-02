@@ -65,7 +65,6 @@ int setWatchpoint(uint32_t step) {
 	return 0;
 }
 int delWatchpoint(int count) {
-	Log("%d + %d", current, count);
 	if(current < count || count <= 0) {
 		Log("error: no such wp to del.");
 		Log("help: d N");
@@ -102,12 +101,10 @@ int delWatchpoint(int count) {
 }
 
 int wpSearch(uint32_t eip, int len) {
-	Log("??");
 		WP* h;
 		int count = 0;
 		for(h = head; h != NULL; h = h->next) {
 			count++;
-			Log("%d %d %d %d", count, h->addr, eip, len);
 			if(h->addr < eip && h->addr >= eip - len) {
 				return count;
 			}
