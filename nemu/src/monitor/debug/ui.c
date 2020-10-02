@@ -173,9 +173,9 @@ static int cmd_w (char* args) {
 		// Log("3 %c", substr[2]);
 		uint32_t addr;
 		char* ptr;
-		int len;
+		// int addr;
 		if((substr[1] == 'x' && substr[0] == '0' )|| (substr[1] == 'X' && substr[0] == '0')) {
-			addr = sscanf(substrFor0x, "%x", &len);
+			sscanf(substrFor0x, "%x", &addr);
 			Log("1");
 		} else {
 			addr = strtol(substr, &ptr, 10);
@@ -187,7 +187,7 @@ static int cmd_w (char* args) {
 			// Log("help: w addr");
 			// return 1;
 		// }
-		Log("help: w addr %d\n", len);
+		Log("help: w addr %d\n", addr);
 		Log("%s", substr);
 		setBreakpoint(addr);
 	} else {
