@@ -23,8 +23,8 @@ void init_wp_pool() {
 WP* get_wp_head () {
 	return head;
 }
-int setBreakpoint(swaddr_t step) {
-	Log("%8x", step);
+int setBreakpoint(uint32_t step) {
+	Log("%d", step);
 	current++;
 	// wp_pool[current - 1].addr = step;
 	// if(head == NULL) {
