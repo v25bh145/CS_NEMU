@@ -54,6 +54,7 @@ int setBreakpoint(uint32_t step) {
 						wp_pool[current - 1].next = nex;
 						break;
 					} else {
+						if(h->next == NULL) Log("4");
 						Log("%d", nex->addr);
 						continue;
 					}
