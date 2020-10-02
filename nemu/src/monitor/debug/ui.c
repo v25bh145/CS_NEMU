@@ -154,6 +154,7 @@ static int cmd_info(char* args) {
 }
 
 static int cmd_w (char* args) {
+	bool flag = false;
 	char* arg = strtok(args,  " ");
 	char* argOverflow = strtok(NULL, " ");
 	if(argOverflow != NULL || arg == NULL) {
@@ -170,20 +171,14 @@ static int cmd_w (char* args) {
 			if(i > 2) substrFor0x[i - 3] = arg[i];
 		}
 		uint32_t addr;
-		// int addr;
 		if((substr[1] == 'x' && substr[0] == '0' )|| (substr[1] == 'X' && substr[0] == '0')) {
 			sscanf(substrFor0x, "%x", &addr);
-			Log("1");
 		} else {
 			sscanf(substr, "%d", &addr);
-			Log("2");
 		}
-		// if(ptr != NULL) {
-			// Log("help: w addr %I64u\n", addr);
-			// Log("Wrong params!");
-			// Log("help: w addr");
-			// return 1;
-		// }
+		if(addr == 0) {
+			flag = false;
+		}
 		Log("help: w addr %d\n", addr);
 		setBreakpoint(addr);
 	} else {
@@ -193,6 +188,7 @@ static int cmd_w (char* args) {
 		for(i = 0; i < 9; i++) {
 			if(!strcmp(arg, regStr[i])) {
 				setBreakpoint(regs[i]);
+				flag = true;
 				break;
 			}
 		}
