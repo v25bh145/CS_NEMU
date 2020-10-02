@@ -176,11 +176,11 @@ static int cmd_w (char* args) {
 		} else {
 			sscanf(substr, "%d", &addr);
 		}
-		if(addr == 0) {
-			flag = false;
+		if(addr != 0) {
+			flag = true;
+			Log("help: w addr %d\n", addr);
+			setBreakpoint(addr);
 		}
-		Log("help: w addr %d\n", addr);
-		setBreakpoint(addr);
 	} else {
 		char* regStr[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
 		uint32_t regs[] = {cpu.eax, cpu.ebx, cpu.ecx, cpu.edx, cpu.esp, cpu.ebp, cpu.esi, cpu.edi, cpu.eip};
@@ -193,8 +193,13 @@ static int cmd_w (char* args) {
 			}
 		}
 	}
-	// Log("%s", regs[0]);
-	return 0;
+	if(flag == false) {
+		Log("Wrong params!");
+		Log("help: w addr");
+		return 1;
+	}else {
+		return 0;
+	}
 } 
 
 void ui_mainloop() {

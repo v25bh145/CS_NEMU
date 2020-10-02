@@ -26,28 +26,28 @@ WP* get_wp_head () {
 int setBreakpoint(swaddr_t step) {
 	Log("%8x", step);
 	current++;
-	wp_pool[current - 1].addr = step;
-	if(head == NULL) {
-		head = &wp_pool[current - 1];
-	} else {
-		//sort
-		WP* h;
-		for(h = head; h != NULL; h = h->next) {
-			WP* nex = h->next;
-			if(nex == NULL) {
-				//insert into the last one
-				h->next = &wp_pool[current - 1]; 
-			} else {
-					if(nex->addr > wp_pool[current - 1].addr) {
-						//insert into the pre of h2
-						h->next = &wp_pool[current - 1];
-						wp_pool[current - 1].next = nex;
-						break;
-					} else {
-						continue;
-					}
-			}
-		}
-	}
+	// wp_pool[current - 1].addr = step;
+	// if(head == NULL) {
+	// 	head = &wp_pool[current - 1];
+	// } else {
+	// 	//sort
+	// 	WP* h;
+	// 	for(h = head; h != NULL; h = h->next) {
+	// 		WP* nex = h->next;
+	// 		if(nex == NULL) {
+	// 			//insert into the last one
+	// 			h->next = &wp_pool[current - 1]; 
+	// 		} else {
+	// 				if(nex->addr > wp_pool[current - 1].addr) {
+	// 					//insert into the pre of h2
+	// 					h->next = &wp_pool[current - 1];
+	// 					wp_pool[current - 1].next = nex;
+	// 					break;
+	// 				} else {
+	// 					continue;
+	// 				}
+	// 		}
+	// 	}
+	// }
 	return 0;
 }
