@@ -169,16 +169,13 @@ static int cmd_w (char* args) {
 			substr[i - 1] = arg[i];
 			if(i > 2) substrFor0x[i - 3] = arg[i];
 		}
-		// Log("3 %s", substrFor0x);
-		// Log("3 %c", substr[2]);
 		uint32_t addr;
-		char* ptr;
 		// int addr;
 		if((substr[1] == 'x' && substr[0] == '0' )|| (substr[1] == 'X' && substr[0] == '0')) {
 			sscanf(substrFor0x, "%x", &addr);
 			Log("1");
 		} else {
-			addr = strtol(substr, &ptr, 10);
+			sscanf(substr, "%d", &addr);
 			Log("2");
 		}
 		// if(ptr != NULL) {
@@ -188,7 +185,6 @@ static int cmd_w (char* args) {
 			// return 1;
 		// }
 		Log("help: w addr %d\n", addr);
-		Log("%s", substr);
 		setBreakpoint(addr);
 	} else {
 		char* regStr[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
