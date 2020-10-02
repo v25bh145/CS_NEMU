@@ -41,6 +41,7 @@ int setBreakpoint(uint32_t step) {
 		//sort
 		WP* h;
 		for(h = head; h != NULL; h = h->next) {
+			if(h == NULL) break;
 			WP* nex = h->next;
 			if(nex == NULL) {
 				//insert into the last one
