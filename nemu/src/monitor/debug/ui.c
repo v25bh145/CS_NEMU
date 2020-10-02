@@ -54,6 +54,7 @@ static int cmd_w(char* args);
 
 WP* get_wp_head();
 int setBreakpoint(swaddr_t step);
+void printAllPool();
 
 static int cmd_help(char *args);
 
@@ -139,12 +140,7 @@ static int cmd_info(char* args) {
 		return 0;
 	} else if(!strcmp(arg, "w")) {
 		printf("Now print the watchpoint info: \n");
-		int count = 0;
-		WP* head = get_wp_head();
-		while(head != NULL) {
-			printf("wp %d: at addr %8x", count++, head->addr);
-			head = head->next;
-		}
+		printAllPool();
 		return 0;
 	} else {
 		Log("Wrong params!");

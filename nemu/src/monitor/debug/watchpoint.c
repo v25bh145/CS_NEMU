@@ -24,18 +24,16 @@ WP* get_wp_head () {
 	return head;
 }
 void printAllPool () {
+	int count = 0;
 	WP* h;
 	for(h = head; h != NULL; h = h->next) {
-		Log("%d ", h->addr);
+		Log("count%d: in addr %d ", count++, h->addr);
 	}
-	Log("over");
 }
 int setBreakpoint(uint32_t step) {
-	// Log("%d", step);
 	current++;
 	wp_pool[current - 1].addr = step;
 	if(head == NULL) {
-		Log("0");
 		head = &wp_pool[current - 1];
 	} else if (head->addr > step) {
 		wp_pool[current - 1].next = head;
@@ -62,6 +60,5 @@ int setBreakpoint(uint32_t step) {
 			}
 		}
 	}
-printAllPool();
 	return 0;
 }
