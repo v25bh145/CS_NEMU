@@ -169,12 +169,13 @@ static int cmd_w (char* args) {
 			substr[i - 1] = arg[i];
 			if(i > 2) substrFor0x[i - 3] = arg[i];
 		}
-		Log("3 %s", substrFor0x);
-		Log("3 %c", substr[2]);
+		// Log("3 %s", substrFor0x);
+		// Log("3 %c", substr[2]);
 		uint32_t addr;
 		char* ptr;
+		int len;
 		if((substr[1] == 'x' && substr[0] == '0' )|| (substr[1] == 'X' && substr[0] == '0')) {
-			addr = strtol(substr, &ptr, 16);
+			addr = sscanf(substrFor0x, "%x", &len);
 			Log("1");
 		} else {
 			addr = strtol(substr, &ptr, 10);
