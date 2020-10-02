@@ -27,7 +27,7 @@ void printAllPool () {
 	int count = 0;
 	WP* h;
 	for(h = head; h != NULL; h = h->next) {
-		Log("count%d: in addr %d ", count++, h->addr);
+		Log("count%d: in addr %x ", count++, h->addr);
 	}
 }
 int setBreakpoint(uint32_t step) {
