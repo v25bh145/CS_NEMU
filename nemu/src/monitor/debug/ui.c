@@ -177,7 +177,7 @@ static int cmd_w (char* args) {
 			addr = strtol(substr, &ptr, 10);
 		}
 		if(ptr != NULL) {
-			Log("help: w addr %c", ptr[0]);
+			Log("help: w addr %8x", addr);
 			Log("Wrong params!");
 			Log("help: w addr");
 			return 1;
