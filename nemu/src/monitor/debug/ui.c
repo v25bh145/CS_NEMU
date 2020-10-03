@@ -343,10 +343,12 @@ static int cmd_x(char *args)
 		expr[i - strlen(strN) - 1] = args[i];
 	n = atoi(strN);
 	long long int val = expr_cmd(expr, &status);
-	if(!status) {
+	if(!status || val < 0) {
 		Log("error: please input right expr!");
 		return 2;
 	}
-	Log("%lld", val);
+	for(i = 0; i < n; i++) {
+		printf("%d: %d\n", i, swaddr_read(val + i * 4, 1));
+	}
 	return 0;
 }
