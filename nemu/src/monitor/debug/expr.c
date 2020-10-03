@@ -207,9 +207,9 @@ int find_domintant(int p, int q, bool *success)
 	int i, cnt = 0;
 	struct
 	{
-		int min, pos;
+		int max, pos;
 	} node;
-	node.min = 0x7f;
+	node.max = 0;
 	node.pos = 0;
 	for (i = p; i <= q; i++)
 	{
@@ -222,9 +222,9 @@ int find_domintant(int p, int q, bool *success)
 			tokens[i].type != DRF &&
 			tokens[i].type != '!' &&
 			tokens[i].type != NEG &&
-			node.min > weight[tokens[i].type])
+			node.max < weight[tokens[i].type])
 		{
-			node.min = weight[tokens[i].type];
+			node.max = weight[tokens[i].type];
 			node.pos = i;
 		}
 	}
@@ -268,7 +268,7 @@ long long int eval(int p, int q, bool *success)
 			return !eval(p + 1, q, success);
 		else
 		{
-			return swaddr_read(eval(p + 1, q, success), sizeof(int));
+			return swaddr_read(eval(p + 1, q, success), 1);
 		}
 	}
 	else
