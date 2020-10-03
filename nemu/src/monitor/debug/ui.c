@@ -250,7 +250,6 @@ void ui_mainloop() {
 }
 
 static int cmd_p(char *args) {
-	// Log("%s", args);
 	bool status;
 	long long int res;
 	res = expr_cmd(args, &status);
