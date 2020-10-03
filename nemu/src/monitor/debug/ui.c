@@ -272,9 +272,12 @@ static int cmd_x(char *args) {
 		return 1;
 	} 
 	int i;
-	char* strN = (char *)malloc(strlen(args) * sizeof(char));
+	char* strN = (char *)malloc(strlen(args + 1) * sizeof(char));
+	char* expr = (char *)malloc(strlen(args + 1) * sizeof(char));
 	uint32_t n;
 	for(i = 0; args[i] != ' '; i++) strN[i] = args[i];
+	strN[i] = '\0';
+	for(; i <= strlen(args); i++) expr[i] = args[i];
 	n = atoi(strN);
 	Log("%d", n);
 	return 0;
