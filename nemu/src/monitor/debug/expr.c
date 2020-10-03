@@ -16,8 +16,8 @@ enum
 	NUM,
 	AND,
 	OR,
-	NEG,//negative
-	DRF//dereference
+	NEG, //negative
+	DRF	 //dereference
 };
 int theLastRule = DRF;
 
@@ -54,7 +54,7 @@ static regex_t re[NR_REGEX];
 
 uint32_t swaddr_read(swaddr_t, size_t);
 
-int* weight;
+int *weight;
 
 /* Rules are used for many times.
  * Therefore we compile them only once before any usage.
@@ -65,8 +65,9 @@ void init_regex()
 	char error_msg[128];
 	int ret;
 
-	weight = (int* )malloc(theLastRule * sizeof(int) + 1);
-	for(i = 0; i <= theLastRule; i++) weight[i] = 0x7f;
+	weight = (int *)malloc(theLastRule * sizeof(int) + 1);
+	for (i = 0; i <= theLastRule; i++)
+		weight[i] = 0x7f;
 	//! NEG DRF NUM
 	weight['+'] = 5;
 	weight['-'] = 5;
@@ -106,6 +107,9 @@ static bool make_token(char *e)
 
 	nr_token = 0;
 
+	for (i = 0; i < 32; i++)
+		tokens[i].type = 0;
+
 	while (e[position] != '\0')
 	{
 		/* Try all rules one by one. */
@@ -143,18 +147,18 @@ static bool make_token(char *e)
 						 rules[i].token_type == '*')
 				{
 					if (nr_token == 0 ||
-						tokens[nr_token].type == '(' ||
-						tokens[nr_token].type == '+' ||
-						tokens[nr_token].type == '-' ||
-						tokens[nr_token].type == '*' ||
-						tokens[nr_token].type == '/' ||
-						tokens[nr_token].type == UEQ ||
-						tokens[nr_token].type == EQ ||
-						tokens[nr_token].type == OR ||
-						tokens[nr_token].type == AND ||
-						tokens[nr_token].type == '&' ||
-						tokens[nr_token].type == '|' ||
-						tokens[nr_token].type == '!')
+						tokens[nr_token - 1].type == '(' ||
+						tokens[nr_token - 1].type == '+' ||
+						tokens[nr_token - 1].type == '-' ||
+						tokens[nr_token - 1].type == '*' ||
+						tokens[nr_token - 1].type == '/' ||
+						tokens[nr_token - 1].type == UEQ ||
+						tokens[nr_token - 1].type == EQ ||
+						tokens[nr_token - 1].type == OR ||
+						tokens[nr_token - 1].type == AND ||
+						tokens[nr_token - 1].type == '&' ||
+						tokens[nr_token - 1].type == '|' ||
+						tokens[nr_token - 1].type == '!')
 					//for dereference and negative
 					{
 						tokens[nr_token].type = rules[i].token_type == '-' ? NEG : DRF;
@@ -198,23 +202,29 @@ static bool make_token(char *e)
 /**
  * find the minimum sign out of the pair of embraces
  * */
-int find_domintant(int p, int q, bool* success) {
+int find_domintant(int p, int q, bool *success)
+{
 	int i, cnt = 0;
-	struct {
+	struct
+	{
 		int min, pos;
-	}node;
+	} node;
 	node.min = 0x7f;
 	node.pos = 0;
-	for(i = p; i <= q; i++) {
-		if(tokens[i].type == '(') cnt++;
-		else if(tokens[i].type == ')') cnt--;
-		if(cnt == 0 && 
-		tokens[i].type != NUM && 
-		tokens[i].type != DRF && 
-		tokens[i].type != '!' &&
-		tokens[i].type != NEG &&
-		node.min > weight[tokens[i].type]) {
-			node.min =  weight[tokens[i].type];
+	for (i = p; i <= q; i++)
+	{
+		if (tokens[i].type == '(')
+			cnt++;
+		else if (tokens[i].type == ')')
+			cnt--;
+		if (cnt == 0 &&
+			tokens[i].type != NUM &&
+			tokens[i].type != DRF &&
+			tokens[i].type != '!' &&
+			tokens[i].type != NEG &&
+			node.min > weight[tokens[i].type])
+		{
+			node.min = weight[tokens[i].type];
 			node.pos = i;
 		}
 	}
