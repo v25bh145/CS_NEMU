@@ -52,6 +52,8 @@ static struct rule
 
 static regex_t re[NR_REGEX];
 
+uint32_t swaddr_read(swaddr_t, size_t);
+
 int* weight;
 
 /* Rules are used for many times.
@@ -251,10 +253,7 @@ long long int eval(int p, int q, bool *success)
 			return !eval(p + 1, q, success);
 		else
 		{
-			// long long int *p;
-			// p = (long long int *)eval(p + 1, q, success);
-			// return *p;
-			return 0;
+			return swaddr_read(eval(p + 1, q, success), sizeof(int));
 		}
 	}
 	else
