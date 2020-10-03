@@ -226,6 +226,7 @@ long long int eval(int p, int q, bool *success)
 		return 0;
 	if (p > q)
 	{
+		Log("??? %d %d", p, q);
 		*success = false;
 		return 0;
 	}
@@ -233,7 +234,7 @@ long long int eval(int p, int q, bool *success)
 	{
 		if (tokens[p].type != NUM)
 		{
-			Log("??");
+			Log("??? %d %d", p, q);
 			*success = false;
 			return 0;
 		}
