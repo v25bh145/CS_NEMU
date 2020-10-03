@@ -252,6 +252,13 @@ void ui_mainloop() {
 static int cmd_p(char *args) {
 	// Log("%s", args);
 	bool status;
-	expr(args, &status);
-	return 0;
+	long long int res;
+	res = expr(args, &status);
+	if(!status) {
+		Log("error: please input right expr!");
+		return 2;
+	} else {
+		Log("%lld", res);
+		return 0;
+	}
 }
