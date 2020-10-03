@@ -222,12 +222,13 @@ int find_domintant(int p, int q, bool* success) {
 }
 long long int eval(int p, int q, bool *success)
 {
+	Log("%d %d %d", (int)*success, p, q);
 	if (*success == false)
 		return 0;
 	if (p > q)
 	{
 		Log("??? %d %d", p, q);
-		// *success = false;
+		*success = false;
 		return 0;
 	}
 	else if (p == q)
