@@ -279,6 +279,6 @@ static int cmd_x(char *args) {
 	strN[i] = '\0';
 	for(; i <= strlen(args); i++) expr[i] = args[i];
 	n = atoi(strN);
-	Log("%d", n);
+	Log("%d %s", n, expr);
 	return 0;
 }
