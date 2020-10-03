@@ -42,7 +42,7 @@ static int cmd_si(char *args) ;
 
 static int cmd_info(char* args);
 
-// static int cmd_p(char *args) ;
+static int cmd_p(char *args) ;
 
 // static int cmd_x(char* args);
 
@@ -72,7 +72,8 @@ static struct {
 	{ "si", "Continue the execution for one step of the program", cmd_si},
 	{"info", "Print info from regs and wds", cmd_info},
 	{"w", "Set a watchpoint", cmd_w},
-	{"d", "Del a watchpoint", cmd_d}
+	{"d", "Del a watchpoint", cmd_d},
+	{"p", "Calculate an expr", cmd_p}
 
 };
 
@@ -244,4 +245,9 @@ void ui_mainloop() {
 
 		if(i == NR_CMD) { printf("Unknown command '%s'\n", cmd); }
 	}
+}
+
+static int cmd_p(char *args) {
+	Log("%s", args);
+	return 0;
 }
