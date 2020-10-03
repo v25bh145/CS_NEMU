@@ -78,7 +78,7 @@ static bool make_token(char *e) {
 				 * to record the token in the array `tokens'. For certain types
 				 * of tokens, some extra actions should be performed.
 				 */
-
+				Log("%d", rules[i].token_type);
 				switch(rules[i].token_type) {
 					default: panic("please implement me");
 				}
