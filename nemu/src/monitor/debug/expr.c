@@ -335,7 +335,7 @@ long long int eval(int p, int q, bool *success)
 			return !eval(p + 1, q, success);
 		else
 		{
-			return swaddr_read(eval(p + 1, q, success), 1);
+			return swaddr_read(eval(p + 1, q, success), 8);
 		}
 	}
 	else
