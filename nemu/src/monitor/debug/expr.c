@@ -208,7 +208,7 @@ inline bool check_parentheses(int p, int q, bool *success)
 	int i, cnt = 0;
 	if (tokens[p].type != '(' || tokens[q].type != ')')
 		return false;
-	for (i = p + 1; i < q; i++)
+	for (i = p ; i <= q; i++)
 	{
 		//cnt == 0 && encountered an operator
 		if (tokens[i].type == '(')
