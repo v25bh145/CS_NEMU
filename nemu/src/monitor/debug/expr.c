@@ -23,10 +23,15 @@ static struct rule {
 	 */
 
 	{" +",	NOTYPE},				// spaces
+	{"\\!", '!'},
+	{"\\|", '|'},
+	{"\\&", '&'},
 	{"\\+", '+'},					// plus
 	{"==", EQ},						// equal
-	{"[0-9]+", NUM}
-	// {"-"}
+	{"\\-", '-'},
+	 {"\\*", '*'},
+	 {"/", '/'},
+	{"[0-9]+", NUM},
 };
 
 #define NR_REGEX (sizeof(rules) / sizeof(rules[0]) )
