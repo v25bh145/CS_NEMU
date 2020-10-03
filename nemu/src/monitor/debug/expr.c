@@ -47,8 +47,9 @@ static struct rule
 	{"\\*", '*'},
 	{"/", '/'},
 	{"(\\$[A-Z]+)|(\\$[a-z]+)", NUM},
-	{"[0-9]+", NUM},
-	{"0x[0-9]+", NUM}};
+	{"0x[0-9]+", NUM},
+	{"[0-9]+", NUM}
+};
 
 #define NR_REGEX (sizeof(rules) / sizeof(rules[0]))
 
