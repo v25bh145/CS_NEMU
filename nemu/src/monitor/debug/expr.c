@@ -66,7 +66,7 @@ void init_regex()
 	int ret;
 
 	weight = (int* )malloc(theLastRule * sizeof(int) + 1);
-	for(i = 0; i <= theLastRule; i++) weight[i] = 0;
+	for(i = 0; i <= theLastRule; i++) weight[i] = 0x7f;
 	//! NEG DRF NUM
 	weight['+'] = 5;
 	weight['-'] = 5;
