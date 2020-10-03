@@ -280,6 +280,6 @@ static int cmd_x(char *args) {
 	for(; i < strlen(args); i++) expr[i] = args[i];
 	expr[i] = '\0';
 	n = atoi(strN);
-	Log("%d %s", n, expr);
+	Log("%d  ||| %s", n, expr);
 	return 0;
 }
