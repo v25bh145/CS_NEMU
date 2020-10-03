@@ -75,7 +75,8 @@ static struct {
 	{"info", "Print info from regs and wds", cmd_info},
 	{"w", "Set a watchpoint", cmd_w},
 	{"d", "Del a watchpoint", cmd_d},
-	{"p", "Calculate an expr", cmd_p}
+	{"p", "Calculate an expr", cmd_p},
+	// {"x", ""}
 
 };
 
@@ -185,6 +186,8 @@ static int cmd_w (char* args) {
 		char* regStr[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
 		uint32_t regs[] = {cpu.eax, cpu.ebx, cpu.ecx, cpu.edx, cpu.esp, cpu.ebp, cpu.esi, cpu.edi, cpu.eip};
 		int i;
+		for(i = 0; i < strlen(arg); i++) 
+			arg[i] = tolower(arg[i]);
 		for(i = 0; i < 9; i++) {
 			if(!strcmp(arg, regStr[i])) {
 				setWatchpoint(regs[i]);

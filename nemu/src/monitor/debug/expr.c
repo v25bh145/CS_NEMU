@@ -6,6 +6,7 @@
 #include <sys/types.h>
 #include <regex.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 enum
 {
@@ -45,8 +46,9 @@ static struct rule
 	{"-", '-'},
 	{"\\*", '*'},
 	{"/", '/'},
+	{"\\$\\w+", NUM},
 	{"[0-9]+", NUM},
-};
+	{"0x[0-9]+", NUM}};
 
 #define NR_REGEX (sizeof(rules) / sizeof(rules[0]))
 
@@ -176,11 +178,44 @@ static bool make_token(char *e)
 					//NUMBER
 					if (substr_len > 31)
 					{
-						panic("excessive num range!");
+						Log("excessive num range!");
 						return false;
 					}
 					tokens[nr_token].type = rules[i].token_type;
-					tokens[nr_token].num = atoi(substr_start);
+					if (substr_start[0] == '$')
+					{
+						char* regStr[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
+						uint32_t regs[] = {cpu.eax, cpu.ebx, cpu.ecx, cpu.edx, cpu.esp, cpu.ebp, cpu.esi, cpu.edi, cpu.eip};
+						char* subReg =  (char *)malloc(strlen(substr_start) * sizeof(char));
+						int i;
+						bool flag = false;
+						for(i = 1; i <= strlen(substr_start); i++) {
+							subReg[i] = tolower(substr_start[i]);
+						}
+						for(i = 0; i < 9; i++) {
+							if(!strcmp(regStr[i], subReg)){
+								tokens[nr_token].num = regs[i];
+								flag = true;
+								break;
+							}
+						}
+						if(!flag) {
+							Log("wrong regs!");
+							return false;
+						}
+					}
+					else if (substr_start[1] == 'x')
+					{
+						char* sub0x =  (char *)malloc(strlen(substr_start) * sizeof(char));
+						int i;
+						uint32_t tmp;
+						for(i = 2; i <= strlen(substr_start); i++) 
+							sub0x[i] = substr_start[i];
+						sscanf(sub0x, "%x", &tmp);
+						tokens[nr_token].num = (long long int)tmp;
+					}
+					else
+						tokens[nr_token].num = atoi(substr_start);
 					nr_token++;
 				}
 				else if (rules[i].token_type != NOTYPE)
@@ -208,7 +243,7 @@ inline bool check_parentheses(int p, int q, bool *success)
 	int i, cnt = 0;
 	if (tokens[p].type != '(' || tokens[q].type != ')')
 		return false;
-	for (i = p ; i <= q; i++)
+	for (i = p; i <= q; i++)
 	{
 		//cnt == 0 && encountered an operator
 		if (tokens[i].type == '(')
