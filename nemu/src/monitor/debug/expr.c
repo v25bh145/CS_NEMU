@@ -67,7 +67,7 @@ void init_regex()
 
 	weight = (int *)malloc(theLastRule * sizeof(int) + 1);
 	for (i = 0; i <= theLastRule; i++)
-		weight[i] = 0x7f;
+		weight[i] = 0;
 	//! NEG DRF NUM
 	weight['+'] = 5;
 	weight['-'] = 5;
@@ -224,6 +224,7 @@ int find_domintant(int p, int q, bool *success)
 			tokens[i].type != NEG &&
 			node.max < weight[tokens[i].type])
 		{
+			Log("ERROR %d", weight[41]);
 			Log("node: %d %d %d", i, tokens[i].type, weight[tokens[i].type]);
 			node.max = weight[tokens[i].type];
 			node.pos = i;
