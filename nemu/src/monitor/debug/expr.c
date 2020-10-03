@@ -10,11 +10,11 @@ enum
 {
 	NOTYPE = 256,
 	EQ,
-	UEQ,
-	NUM
-
 	/* TODO: Add more token types */
-
+	UEQ,
+	NUM,
+	AND,
+	OR
 };
 
 static struct rule
@@ -32,7 +32,9 @@ static struct rule
 	{"\\)", ')'},
 	{"!=", UEQ},
 	{"!", '!'},
+	{"\\|\\|", OR},
 	{"\\|", '|'},
+	{"&&", AND},
 	{"&", '&'},
 	{"\\+", '+'}, // plus
 	{"==", EQ},	  // equal
@@ -108,6 +110,8 @@ static bool make_token(char *e)
 					rules[i].token_type == '/' ||
 					rules[i].token_type == UEQ ||
 					rules[i].token_type == EQ ||
+					rules[i].token_type == OR ||
+					rules[i].token_type == AND ||
 					rules[i].token_type == '&' ||
 					rules[i].token_type == '|' ||
 					rules[i].token_type == '!')
