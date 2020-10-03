@@ -52,10 +52,12 @@ static int cmd_d(char* args);
 
 // static int cmd_bt(char* args);
 
+//external
 WP* get_wp_head();
 int setWatchpoint(swaddr_t step);
 void printAllPool();
 int delWatchpoint(int count);
+uint32_t expr(char *e, bool *success);
 
 static int cmd_help(char *args);
 
@@ -248,6 +250,8 @@ void ui_mainloop() {
 }
 
 static int cmd_p(char *args) {
-	Log("%s", args);
+	// Log("%s", args);
+	bool status;
+	expr(args, &status);
 	return 0;
 }
