@@ -102,17 +102,17 @@ static bool make_token(char *e) {
 	// {"[0-9]+", NUM},
 				switch(rules[i].token_type) {
 					case NOTYPE: {
-						Log("NOTYPE");
+						// Log("NOTYPE");
 						break;
 					}
-					case '(': {
-						Log("(");
+					case '(' | ')': {
+						Log("( | )");
 						break;
 					}
-					case ')': {
-						Log(")");
-						break;
-					}
+					// case ')': {
+					// 	Log(")");
+					// 	break;
+					// }
 					case UEQ: {
 						Log("UEQ");
 						break;
