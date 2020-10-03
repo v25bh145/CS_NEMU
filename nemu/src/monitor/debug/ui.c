@@ -266,5 +266,16 @@ static int cmd_p(char *args) {
 }
 
 static int cmd_x(char *args) {
+	if(strlen(args) < 3) {
+		Log("Wrong params!");
+		Log("help: x N expr");
+		return 1;
+	} 
+	int i;
+	char* strN = (char *)malloc(strlen(args) * sizeof(char));
+	uint32_t n;
+	for(i = 0; args[i] != ' '; i++) strN[i] = args[i];
+	n = atoi(strN);
+	Log("%d", n);
 	return 0;
 }

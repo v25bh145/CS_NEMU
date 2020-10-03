@@ -203,7 +203,7 @@ static bool make_token(char *e)
 							}
 						}
 						if(!flag) {
-							Log("wrong regs! %s qwq", subReg);
+							Log("wrong regs! %s", subReg);
 							return false;
 						}
 					}
@@ -296,7 +296,6 @@ inline int find_domintant(int p, int q, bool *success)
 			tokens[i].type != NEG &&
 			node.max < weight[tokens[i].type])
 		{
-			// Log("ERROR %d", weight[41]);
 			node.max = weight[tokens[i].type];
 			node.pos = i;
 		}
