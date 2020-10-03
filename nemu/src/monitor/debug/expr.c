@@ -203,11 +203,30 @@ static bool make_token(char *e)
  * find a pair of embraces in the father pair of embraces
  * (1+2)*(5-8*2/2)
  * */
-inline bool check_parentheses(int p, int q, bool *success) {
-	int i;
-	if(tokens[p].type != '(' || tokens[q].type != ')') return false;
-	for (i = p + 1; i < q; i++) 
-		if(tokens[i].type == '(' || tokens[i].type == ')') return false;
+inline bool check_parentheses(int p, int q, bool *success)
+{
+	int i, cnt = 0;
+	if (tokens[p].type != '(' || tokens[q].type != ')')
+		return false;
+	for (i = p + 1; i < q; i++)
+	{
+		//cnt == 0 && encountered an operator
+		if (tokens[i].type == '(')
+			cnt++;
+		else if (tokens[i].type == ')')
+			cnt--;
+		else if (cnt == 0 && (tokens[i].type == '+' ||
+							  tokens[i].type == '-' ||
+							  tokens[i].type == '*' ||
+							  tokens[i].type == '/' ||
+							  tokens[i].type == '&' ||
+							  tokens[i].type == '|' ||
+							  tokens[i].type == AND ||
+							  tokens[i].type == OR ||
+							  tokens[i].type == EQ ||
+							  tokens[i].type == UEQ))
+			return false;
+	}
 	return true;
 }
 
@@ -290,7 +309,7 @@ long long int eval(int p, int q, bool *success)
 		Log("OP: %d", op);
 		long long int val1 = eval(p, op - 1, success);
 		long long int val2 = eval(op + 1, q, success);
-		Log("p: %d q: %d val1: %lld, val2: %lld", p, q,  val1, val2);
+		Log("p: %d q: %d val1: %lld, val2: %lld", p, q, val1, val2);
 		if (!success)
 			return 0;
 		switch (tokens[op].type)
