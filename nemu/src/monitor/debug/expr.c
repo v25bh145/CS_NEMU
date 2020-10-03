@@ -115,7 +115,7 @@ static bool make_token(char *e)
 					Log("%d", rules[i].token_type);
 				} else if(rules[i].token_type == NUM) {
 					Log("NUM: %d", rules[i].token_type);
-				}else {
+				}else if(rules[i].token_type != NOTYPE) {
 					panic("please implement me");
 				}
 				break;
