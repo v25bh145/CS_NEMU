@@ -275,7 +275,7 @@ long long int eval(int p, int q, bool *success)
 	else if (tokens[p].type == DRF || tokens[p].type == '!' || tokens[p].type == NEG)
 	{
 		Log("D & ! & N");
-		if (tokens[p].type == DRF)
+		if (tokens[p].type == NEG)
 			return -eval(p + 1, q, success);
 		else if (tokens[p].type == '!')
 			return !eval(p + 1, q, success);
