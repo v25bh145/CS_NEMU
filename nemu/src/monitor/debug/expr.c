@@ -338,19 +338,6 @@ long long int expr_cmd(char *e, bool *success)
 		*success = false;
 		return 0;
 	}
-	int i;
-	for (i = 0; i < nr_token; i++)
-	{
-
-		if (tokens[i].type == NUM)
-		{
-			printf("num %lld\n", tokens[i].num);
-		}
-		else
-		{
-			printf("%d\n", tokens[i].type);
-		}
-	}
 	/* TODO: Insert codes to evaluate the expression. */
 	*success = true;
 	return eval(0, nr_token - 1, success);
