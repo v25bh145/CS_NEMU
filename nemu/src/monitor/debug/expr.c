@@ -286,7 +286,6 @@ long long int eval(int p, int q, bool *success)
 		case '+':
 			return val1 + val2;
 		case '-':
-			Log("-: spj %lld", val1 - val2);
 			return val1 - val2;
 		case '*':
 			return val1 * val2;
@@ -308,7 +307,7 @@ long long int eval(int p, int q, bool *success)
 	}
 	return 0;
 }
-uint32_t expr(char *e, bool *success)
+long long int expr_cmd(char *e, bool *success)
 {
 	if (!make_token(e))
 	{

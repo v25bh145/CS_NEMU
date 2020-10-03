@@ -57,7 +57,7 @@ WP* get_wp_head();
 int setWatchpoint(swaddr_t step);
 void printAllPool();
 int delWatchpoint(int count);
-uint32_t expr(char *e, bool *success);
+long long int expr_cmd(char *e, bool *success);
 
 static int cmd_help(char *args);
 
@@ -253,7 +253,7 @@ static int cmd_p(char *args) {
 	// Log("%s", args);
 	bool status;
 	long long int res;
-	res = expr(args, &status);
+	res = expr_cmd(args, &status);
 	if(!status) {
 		Log("error: please input right expr!");
 		return 2;
