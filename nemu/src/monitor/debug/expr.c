@@ -278,7 +278,7 @@ long long int eval(int p, int q, bool *success)
 		Log("OP: %d", op);
 		long long int val1 = eval(p, op - 1, success);
 		long long int val2 = eval(op + 1, q, success);
-		Log("val1: %lld, val2: %lld", val1, val2);
+		Log("p: %d q: %d val1: %lld, val2: %lld", p, q,  val1, val2);
 		if (!success)
 			return 0;
 		switch (tokens[op].type)
