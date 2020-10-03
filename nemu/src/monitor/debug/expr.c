@@ -7,7 +7,7 @@
 #include <regex.h>
 
 enum {
-	NOTYPE = 256, EQ,NUM
+	NOTYPE = 256, EQ, UEQ,NUM
 
 	/* TODO: Add more token types */
 
@@ -23,12 +23,15 @@ static struct rule {
 	 */
 
 	{" +",	NOTYPE},				// spaces
-	{"\\!", '!'},
+	{"\\(", '('},
+	{"\\)", ')'},
+	{"!=", UEQ},
+	{"!", '!'},
 	{"\\|", '|'},
-	{"\\&", '&'},
+	{"&", '&'},
 	{"\\+", '+'},					// plus
 	{"==", EQ},						// equal
-	{"\\-", '-'},
+	{"-", '-'},
 	 {"\\*", '*'},
 	 {"/", '/'},
 	{"[0-9]+", NUM},
@@ -84,8 +87,72 @@ static bool make_token(char *e) {
 				 * to record the token in the array `tokens'. For certain types
 				 * of tokens, some extra actions should be performed.
 				 */
-				Log("%d", rules[i].token_type);
+	// {" +",	NOTYPE},				// spaces
+	// {"\\(", '('},
+	// {"\\)", ')'},
+	// {"!=", UEQ},
+	// {"!", '!'},
+	// {"\\|", '|'},
+	// {"&", '&'},
+	// {"\\+", '+'},					// plus
+	// {"==", EQ},						// equal
+	// {"-", '-'},
+	//  {"\\*", '*'},
+	//  {"/", '/'},
+	// {"[0-9]+", NUM},
 				switch(rules[i].token_type) {
+					case NOTYPE: {
+						Log("NOTYPE");
+						break;
+					}
+					case '(': {
+						Log("(");
+						break;
+					}
+					case ')': {
+						Log(")");
+						break;
+					}
+					case UEQ: {
+						Log("UEQ");
+						break;
+					}
+					case '!': {
+						Log("!");
+						break;
+					}
+					case '|': {
+						Log("|");
+						break;
+					}
+					case '&': {
+						Log("&");
+						break;
+					}
+					case '+': {
+						Log("+");
+						break;
+					}
+					case EQ: {
+						Log("EQ");
+						break;
+					}
+					case '-': {
+						Log("-");
+						break;
+					}
+					case '*': {
+						Log("*");
+						break;
+					}
+					case '/': {
+						Log("/");
+						break;
+					}
+					case NUM: {
+						Log("NUM");
+						break;
+					}
 					default: panic("please implement me");
 				}
 
