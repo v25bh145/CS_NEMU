@@ -152,7 +152,7 @@ uint32_t expr(char *e, bool *success)
 	for(i = 0; i < nr_token; i++) {
 
 		if(tokens[i].type == NUM) {
-			printf("num %d %s\n", NUM, tokens[i].str);
+			printf("num %s\n", tokens[i].str);
 		} else {
 			printf("%d\n", tokens[i].type);
 		}
