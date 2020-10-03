@@ -116,7 +116,7 @@ static bool make_token(char *e)
 				char *substr_start = e + position;
 				int substr_len = pmatch.rm_eo;
 
-				Log("match rules[%d] = \"%s\" at position %d with len %d: %.*s", i, rules[i].regex, position, substr_len, substr_len, substr_start);
+				// Log("match rules[%d] = \"%s\" at position %d with len %d: %.*s", i, rules[i].regex, position, substr_len, substr_len, substr_start);
 				position += substr_len;
 
 				/* TODO: Now a new token is recognized with rules[i]. Add codes
@@ -246,10 +246,12 @@ long long int eval(int p, int q, bool *success)
 	}
 	else if (tokens[p].type == '(' && tokens[q].type == ')')
 	{
+		Log("(+)");
 		return eval(p + 1, q - 1, success);
 	}
 	else if (tokens[p].type == DRF || tokens[p].type == '!' || tokens[p].type == NEG)
 	{
+		Log("D!N");
 		if (tokens[p].type == DRF)
 			return -eval(p + 1, q, success);
 		else if (tokens[p].type == '!')
@@ -261,6 +263,7 @@ long long int eval(int p, int q, bool *success)
 	}
 	else
 	{
+		Log("op");
 		int op = find_domintant(p, q, success);
 		long long int val1 = eval(p, op - 1, success);
 		long long int val2 = eval(op + 1, q, success);
