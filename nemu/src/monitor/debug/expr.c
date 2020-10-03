@@ -184,14 +184,16 @@ static bool make_token(char *e)
 					tokens[nr_token].type = rules[i].token_type;
 					if (substr_start[0] == '$')
 					{
+						//regs
 						char* regStr[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
 						uint32_t regs[] = {cpu.eax, cpu.ebx, cpu.ecx, cpu.edx, cpu.esp, cpu.ebp, cpu.esi, cpu.edi, cpu.eip};
-						char* subReg =  (char *)malloc(strlen(substr_start) * sizeof(char));
+						char* subReg =  (char *)malloc(substr_len * sizeof(char));
 						int i;
 						bool flag = false;
-						for(i = 1; i <= strlen(substr_start); i++) {
+						for(i = 1; i < substr_len; i++) {
 							subReg[i - 1] = tolower(substr_start[i]);
 						}
+						subReg[substr_len] = '\0';
 						for(i = 0; i < 9; i++) {
 							if(!strcmp(regStr[i], subReg)){
 								tokens[nr_token].num = regs[i];
@@ -206,11 +208,14 @@ static bool make_token(char *e)
 					}
 					else if (substr_start[1] == 'x')
 					{
-						char* sub0x =  (char *)malloc(strlen(substr_start) * sizeof(char));
+						//0x
+						char* sub0x =  (char *)malloc(substr_len * sizeof(char));
 						int i;
 						uint32_t tmp;
-						for(i = 2; i <= strlen(substr_start); i++) 
-							sub0x[i] = substr_start[i];
+						for(i = 2; i < substr_len; i++) {
+							sub0x[i - 2] = tolower(substr_start[i]);
+						}
+						sub0x[substr_len] = '\0';
 						sscanf(sub0x, "%x", &tmp);
 						tokens[nr_token].num = (long long int)tmp;
 					}
