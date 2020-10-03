@@ -224,7 +224,7 @@ int find_domintant(int p, int q, bool *success)
 			tokens[i].type != NEG &&
 			node.max < weight[tokens[i].type])
 		{
-			Log("ERROR %d", weight[41]);
+			// Log("ERROR %d", weight[41]);
 			Log("node: %d %d %d", i, tokens[i].type, weight[tokens[i].type]);
 			node.max = weight[tokens[i].type];
 			node.pos = i;
