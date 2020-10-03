@@ -190,7 +190,7 @@ static bool make_token(char *e)
 						int i;
 						bool flag = false;
 						for(i = 1; i <= strlen(substr_start); i++) {
-							subReg[i] = substr_start[i];
+							subReg[i - 1] = tolower(substr_start[i]);
 						}
 						for(i = 0; i < 9; i++) {
 							if(!strcmp(regStr[i], subReg)){
