@@ -153,7 +153,8 @@ static bool make_token(char *e) {
 						Log("NUM");
 						break;
 					}
-					default: panic("please implement me");
+					// default: panic("please implement me");
+					default: panic("match failed");
 				}
 
 				break;
