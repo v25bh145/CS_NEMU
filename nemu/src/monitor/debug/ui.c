@@ -44,7 +44,7 @@ static int cmd_info(char* args);
 
 static int cmd_p(char *args) ;
 
-// static int cmd_x(char* args);
+static int cmd_x(char* args);
 
 static int cmd_w(char* args);
 
@@ -76,7 +76,7 @@ static struct {
 	{"w", "Set a watchpoint", cmd_w},
 	{"d", "Del a watchpoint", cmd_d},
 	{"p", "Calculate an expr", cmd_p},
-	// {"x", ""}
+	{"x", "Scan the memory", cmd_x}
 
 };
 
@@ -263,4 +263,8 @@ static int cmd_p(char *args) {
 		Log("%lld", res);
 		return 0;
 	}
+}
+
+static int cmd_x(char *args) {
+	return 0;
 }
