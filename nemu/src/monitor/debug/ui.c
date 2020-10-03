@@ -277,7 +277,7 @@ static int cmd_x(char *args) {
 	uint32_t n;
 	for(i = 0; args[i] != ' '; i++) strN[i] = args[i];
 	strN[i++] = '\0';
-	for(; i < strlen(args); i++) expr[i] = args[i];
+	for(; i < strlen(args); i++){ expr[i] = args[i];Log("%d %c", i, args[i]);}
 	expr[i] = '\0';
 	n = atoi(strN);
 	Log("%d  ||| %s", n, expr);
