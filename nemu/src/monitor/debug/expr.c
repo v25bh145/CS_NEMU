@@ -233,6 +233,7 @@ long long int eval(int p, int q, bool *success)
 	{
 		if (tokens[p].type != NUM)
 		{
+			Log("??");
 			*success = false;
 			return 0;
 		}
