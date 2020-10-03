@@ -276,8 +276,8 @@ static int cmd_x(char *args) {
 	char* expr = (char *)malloc(strlen(args + 1) * sizeof(char));
 	uint32_t n;
 	for(i = 0; args[i] != ' '; i++) strN[i] = args[i];
-	strN[i] = '\0';
-	for(i++; i < strlen(args); i++) expr[i] = args[i];
+	strN[i++] = '\0';
+	for(; i < strlen(args); i++) expr[i] = args[i];
 	expr[i] = '\0';
 	n = atoi(strN);
 	Log("%d  ||| %s", n, expr);
