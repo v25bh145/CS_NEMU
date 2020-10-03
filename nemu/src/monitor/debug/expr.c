@@ -112,16 +112,25 @@ static bool make_token(char *e)
 					rules[i].token_type == '|' ||
 					rules[i].token_type == '!')
 				{
-					Log("%d", rules[i].token_type);
+					tokens[nr_token].type = rules[i].token_type;
+					nr_token++;
 				} else if(rules[i].token_type == NUM) {
-					Log("NUM: %d", rules[i].token_type);
+					if(substr_len > 31) {
+						panic("excessive num range!");
+						return false;
+					}
+					tokens[nr_token].type = rules[i].token_type;
+					int i;
+					for(i = 0; i < substr_len; i++) {
+						tokens[nr_token].str[i] = substr_start[i];
+					}
+					nr_token++;
 				}else if(rules[i].token_type != NOTYPE) {
 					panic("please implement me");
 				}
 				break;
 			}
 		}
-
 		if (i == NR_REGEX)
 		{
 			printf("no match at position %d\n%s\n%*.s^\n", position, e, position, "");
@@ -139,7 +148,15 @@ uint32_t expr(char *e, bool *success)
 		*success = false;
 		return 0;
 	}
+	int i;
+	for(i = 0; i < nr_token; i++) {
 
+		if(tokens[i].type == NUM) {
+			printf("num %d %s", NUM, tokens[i].str);
+		} else {
+			printf("%d", tokens[i].type);
+		}
+	}
 	/* TODO: Insert codes to evaluate the expression. */
 	// panic("please implement me");
 	*success = true;
