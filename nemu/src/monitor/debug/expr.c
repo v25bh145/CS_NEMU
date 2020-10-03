@@ -153,8 +153,7 @@ static bool make_token(char *e) {
 						Log("NUM");
 						break;
 					}
-					// default: panic("please implement me");
-					default: panic("match failed");
+					default: panic("please implement me");
 				}
 
 				break;
@@ -177,7 +176,7 @@ uint32_t expr(char *e, bool *success) {
 	}
 
 	/* TODO: Insert codes to evaluate the expression. */
-	panic("please implement me");
+	// panic("please implement me");
 	return 0;
 }
 
