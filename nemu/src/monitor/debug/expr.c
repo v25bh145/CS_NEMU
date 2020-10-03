@@ -200,9 +200,20 @@ static bool make_token(char *e)
 	return true;
 }
 /**
+ * find a pair of embraces in the father pair of embraces
+ * */
+inline bool check_parentheses(int p, int q, bool *success) {
+	int i;
+	if(tokens[p].type != '(' || tokens[p].type != ')') return false;
+	for (i = p + 1; i < q; i++) 
+		if(tokens[i].type == '(' || tokens[i].type == ')') return false;
+	return true;
+}
+
+/**
  * find the minimum sign out of the pair of embraces
  * */
-int find_domintant(int p, int q, bool *success)
+inline int find_domintant(int p, int q, bool *success)
 {
 	int i, cnt = 0;
 	struct
@@ -255,7 +266,7 @@ long long int eval(int p, int q, bool *success)
 			return tokens[p].num;
 		}
 	}
-	else if (tokens[p].type == '(' && tokens[q].type == ')')
+	else if (check_parentheses(p, q, success))
 	{
 		Log("( ... )");
 		return eval(p + 1, q - 1, success);
