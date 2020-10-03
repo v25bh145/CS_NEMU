@@ -227,7 +227,7 @@ long long int eval(int p, int q, bool *success)
 	if (p > q)
 	{
 		Log("??? %d %d", p, q);
-		*success = false;
+		// *success = false;
 		return 0;
 	}
 	else if (p == q)
