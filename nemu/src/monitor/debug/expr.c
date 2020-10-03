@@ -264,12 +264,10 @@ inline int find_domintant(int p, int q, bool *success)
 }
 long long int eval(int p, int q, bool *success)
 {
-	Log("%d %d %d", (int)*success, p, q);
 	if (*success == false)
 		return 0;
 	if (p > q)
 	{
-		Log("exit %d %d", p, q);
 		*success = false;
 		return 0;
 	}
@@ -277,7 +275,6 @@ long long int eval(int p, int q, bool *success)
 	{
 		if (tokens[p].type != NUM)
 		{
-			Log("getValue %d %d", p, q);
 			*success = false;
 			return 0;
 		}
@@ -288,12 +285,10 @@ long long int eval(int p, int q, bool *success)
 	}
 	else if (check_parentheses(p, q, success))
 	{
-		Log("( ... )");
 		return eval(p + 1, q - 1, success);
 	}
 	else if (tokens[p].type == DRF || tokens[p].type == '!' || tokens[p].type == NEG)
 	{
-		Log("D & ! & N");
 		if (tokens[p].type == NEG)
 			return -eval(p + 1, q, success);
 		else if (tokens[p].type == '!')
@@ -306,10 +301,8 @@ long long int eval(int p, int q, bool *success)
 	else
 	{
 		int op = find_domintant(p, q, success);
-		Log("OP: %d", op);
 		long long int val1 = eval(p, op - 1, success);
 		long long int val2 = eval(op + 1, q, success);
-		Log("p: %d q: %d val1: %lld, val2: %lld", p, q, val1, val2);
 		if (!success)
 			return 0;
 		switch (tokens[op].type)
