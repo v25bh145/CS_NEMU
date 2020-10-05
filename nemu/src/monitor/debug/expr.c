@@ -380,10 +380,6 @@ long long int expr_cmd(char *e, bool *success)
 		*success = false;
 		return 0;
 	}
-	int i = 0;
-	for(i = 0; i < 31; i++) {
-		printf("i: %d %d", i, tokens[i].type);
-	}
 	/* TODO: Insert codes to evaluate the expression. */
 	*success = true;
 	return eval(0, nr_token - 1, success);
