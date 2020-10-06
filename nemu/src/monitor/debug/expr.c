@@ -190,10 +190,10 @@ static bool make_token(char *e)
 						//regs
 						char* regStr[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
 						uint32_t regs[] = {cpu.eax, cpu.ebx, cpu.ecx, cpu.edx, cpu.esp, cpu.ebp, cpu.esi, cpu.edi, cpu.eip};
-						char* subReg =  (char *)malloc(substr_len * sizeof(char));
+						char* subReg =  (char *)malloc(substr_len * sizeof(char) - 1);
 						int i;
 						bool flag = false;
-						for(i = 1; i < substr_len - 1; i++) {
+						for(i = 1; i < substr_len; i++) {
 							subReg[i - 1] = tolower(substr_start[i]);
 						}
 						Log("length: %d", (int)strlen(subReg));
