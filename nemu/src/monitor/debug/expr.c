@@ -200,6 +200,7 @@ static bool make_token(char *e)
 						for(i = 0; i < 9; i++) {
 							Log("%s",regStr[i]);
 							if(!strcmp(regStr[i], subReg)){
+								Log("what happened?");
 								tokens[nr_token].num = regs[i];
 								flag = true;
 								break;
