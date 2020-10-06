@@ -201,6 +201,7 @@ static bool make_token(char *e)
 							// Log("%s",regStr[i]);
 							if(i == 8) {
 								Log("%d", strcmp(regStr[i], subReg));
+								Log("length: %d %d", (int)strlen(regStr[i]), (int)strlen(subReg));
 							}
 							if(!strcmp(regStr[i], subReg)){
 								Log("what happened?");
