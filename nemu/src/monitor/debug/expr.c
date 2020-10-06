@@ -47,7 +47,7 @@ static struct rule
 	{"\\*", '*'},
 	{"/", '/'},
 	{"(\\$[A-Z]+)|(\\$[a-z]+)", NUM},
-	{"0x[0-9]+", NUM},
+	{"0x[0-z]+", NUM},
 	{"[0-9]+", NUM}
 };
 
@@ -219,7 +219,6 @@ static bool make_token(char *e)
 							sub0x[i - 2] = tolower(substr_start[i]);
 						}
 						sub0x[i - 2] = '\0';
-						Log("%s %d", sub0x, (int)strlen(sub0x));
 						sscanf(sub0x, "%x", &tmp);
 						tokens[nr_token].num = (long long int)tmp;
 					}
