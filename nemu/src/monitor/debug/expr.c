@@ -196,6 +196,7 @@ static bool make_token(char *e)
 						for(i = 1; i <= substr_len; i++) {
 							subReg[i - 1] = tolower(substr_start[i]);
 						}
+						Log("length: %d", (int)strlen(subReg));
 						for(i = 0; i < 9; i++) {
 							if(!strcmp(regStr[i], subReg)){
 								tokens[nr_token].num = regs[i];
