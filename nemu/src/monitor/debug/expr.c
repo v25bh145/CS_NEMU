@@ -196,7 +196,7 @@ static bool make_token(char *e)
 						for(i = 1; i < substr_len; i++) {
 							subReg[i - 1] = tolower(substr_start[i]);
 						}
-						subReg[i] = '\0';
+						subReg[i - 1] = '\0';
 						Log("length: %d", (int)strlen(subReg));
 						for(i = 0; i < strlen(subReg); i++) {
 							Log("%c", subReg[i]);
