@@ -205,6 +205,7 @@ static bool make_token(char *e)
 								break;
 							}
 						}
+						Log("%s",subReg);
 						if(!flag) {
 							Log("wrong regs! %s", subReg);
 							return false;
