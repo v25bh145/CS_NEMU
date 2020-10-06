@@ -198,7 +198,7 @@ static bool make_token(char *e)
 						}
 						subReg[substr_len] = '\0';
 						for(i = 0; i < 9; i++) {
-							Log("%s",regStr[i]);
+							// Log("%s",regStr[i]);
 							if(i == 8) {
 								Log("%d", strcmp(regStr[i], subReg));
 							}
@@ -209,7 +209,7 @@ static bool make_token(char *e)
 								break;
 							}
 						}
-						Log("%s",subReg);
+						// Log("%s",subReg);
 						if(!flag) {
 							Log("wrong regs! %s", subReg);
 							return false;
