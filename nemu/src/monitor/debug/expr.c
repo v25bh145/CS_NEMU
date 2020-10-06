@@ -198,6 +198,7 @@ static bool make_token(char *e)
 						}
 						subReg[substr_len] = '\0';
 						for(i = 0; i < 9; i++) {
+							Log("%s",regStr[i]);
 							if(!strcmp(regStr[i], subReg)){
 								tokens[nr_token].num = regs[i];
 								flag = true;
@@ -380,7 +381,7 @@ long long int expr_cmd(char *e, bool *success)
 		*success = false;
 		return 0;
 	}
-	
+
 	/* TODO: Insert codes to evaluate the expression. */
 	*success = true;
 	return eval(0, nr_token - 1, success);
