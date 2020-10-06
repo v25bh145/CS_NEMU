@@ -197,10 +197,6 @@ static bool make_token(char *e)
 							subReg[i - 1] = tolower(substr_start[i]);
 						}
 						subReg[i - 1] = '\0';
-						Log("length: %d", (int)strlen(subReg));
-						for(i = 0; i < strlen(subReg); i++) {
-							Log("%c", subReg[i]);
-						}
 						for(i = 0; i < 9; i++) {
 							if(!strcmp(regStr[i], subReg)){
 								tokens[nr_token].num = regs[i];
@@ -219,9 +215,11 @@ static bool make_token(char *e)
 						char* sub0x =  (char *)malloc(substr_len * sizeof(char));
 						int i;
 						uint32_t tmp;
-						for(i = 2; i <= substr_len; i++) {
+						for(i = 2; i < substr_len; i++) {
 							sub0x[i - 2] = tolower(substr_start[i]);
 						}
+						sub0x[i - 2] = '\0';
+						Log("%s %d", sub0x, (int)strlen(sub0x));
 						sscanf(sub0x, "%x", &tmp);
 						tokens[nr_token].num = (long long int)tmp;
 					}
