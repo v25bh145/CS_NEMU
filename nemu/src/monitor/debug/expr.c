@@ -193,7 +193,7 @@ static bool make_token(char *e)
 						char* subReg =  (char *)malloc(substr_len * sizeof(char));
 						int i;
 						bool flag = false;
-						for(i = 1; i <= substr_len; i++) {
+						for(i = 1; i < substr_len; i++) {
 							subReg[i - 1] = tolower(substr_start[i]);
 						}
 						Log("length: %d", (int)strlen(subReg));
