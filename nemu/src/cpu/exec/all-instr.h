@@ -20,6 +20,8 @@
 #include "logic/shr.h"
 #include "logic/shrd.h"
 
+#include "instr-jmp/call.h"
+
 #include "string/rep.h"
 
 #include "misc/misc.h"
