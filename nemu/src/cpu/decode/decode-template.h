@@ -178,10 +178,10 @@ make_helper(concat(decode_rm_imm_, SUFFIX)) {
 	len += decode_i_b(eip + len);
 	return len;
 }
-//TODO: trial
+//for myself
 make_helper(concat(decode_r_jcc_, SUFFIX)) {
+	panic("now eip: %d", eip);
 	int len = concat(decode_r_, SUFFIX)(eip);
-	panic("success!");
 	return len;
 }
 
