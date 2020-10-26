@@ -178,11 +178,17 @@ make_helper(concat(decode_rm_imm_, SUFFIX)) {
 	len += decode_i_b(eip + len);
 	return len;
 }
+
 //for myself
 make_helper(concat(decode_r_jcc_, SUFFIX)) {
-	Log("now eip: %x", MEM_R(eip - 1));
-	int len = concat(decode_r_, SUFFIX)(eip);
-	return len;
+	//TODO for16/32
+    if(!strcmp(str(SUFFIX), "b")) {
+		op_src->abstract_instr_enum = MEM_R(eip - 1) - 0x70;
+		int len = concat(decode_r_, SUFFIX)(eip);
+		return len;
+    } else {
+		panic("please implement me!");
+	}
 }
 
 void concat(write_operand_, SUFFIX) (Operand *op, DATA_TYPE src) {

@@ -6,11 +6,7 @@
 make_helper(decode_r_b);
 make_helper(decode_r_w);
 make_helper(decode_r_l);
-//myself
-make_helper(decode_r_jcc_b);
-make_helper(decode_r_jcc_w);
-make_helper(decode_r_jcc_l);
-//myself
+
 make_helper(decode_rm_b);
 make_helper(decode_rm_w);
 make_helper(decode_rm_l);
@@ -54,6 +50,11 @@ make_helper(decode_rm_cl_l);
 make_helper(decode_rm_imm_b);
 make_helper(decode_rm_imm_w);
 make_helper(decode_rm_imm_l);
+
+//myself
+make_helper(decode_r_jcc_b);
+make_helper(decode_r_jcc_w);
+make_helper(decode_r_jcc_l);
 
 void write_operand_b(Operand *, uint8_t);
 void write_operand_w(Operand *, uint16_t);

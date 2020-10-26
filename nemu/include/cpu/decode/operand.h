@@ -16,6 +16,8 @@ typedef struct {
 	};
 	uint32_t val;
 	char str[OP_STR_SIZE];
+	//use in some instr, such as jcc
+	char abstract_instr_enum;
 } Operand;
 
 typedef struct {
