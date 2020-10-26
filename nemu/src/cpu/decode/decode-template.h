@@ -178,6 +178,11 @@ make_helper(concat(decode_rm_imm_, SUFFIX)) {
 	len += decode_i_b(eip + len);
 	return len;
 }
+//TODO: trial
+make_helper(concat(decode_r_jcc_, SUFFIX)) {
+	int len = concat(decode_r_, SUFFIX)(eip);
+	return len;
+}
 
 void concat(write_operand_, SUFFIX) (Operand *op, DATA_TYPE src) {
 	if(op->type == OP_TYPE_REG) { REG(op->reg) = src; }
