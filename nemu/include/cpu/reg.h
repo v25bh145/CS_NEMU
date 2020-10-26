@@ -30,24 +30,26 @@ typedef struct {
 	swaddr_t eip;
 
 	struct {
-		uint32_t CF: 1;		//0
-		uint32_t: 1;
-		uint32_t PF: 1;
-		uint32_t: 1;
-		uint32_t AF: 1;
-		uint32_t: 1;	//5
-		uint32_t ZF: 1;
-		uint32_t SF: 1;
-		uint32_t TF: 1;
-		uint32_t IF: 1;
-		uint32_t DF: 1;		//10
-		uint32_t OF: 1;
-		uint32_t: 1;
-		uint32_t: 1;
-		uint32_t: 1;
-		uint32_t: 1;	//15
+		uint32_t CF;		//0
+		uint32_t : 1;
+		uint32_t PF;
+		uint32_t : 1;
+		uint32_t AF;
+		uint32_t : 1;	//5
+		uint32_t ZF;
+		uint32_t SF;
+		uint32_t TF;
+		uint32_t IF;
+		uint32_t DF;		//10
+		uint32_t OF;
+		uint32_t : 1;
+		uint32_t : 1;
+		uint32_t : 1;
+		uint32_t : 1;	//15
 	} psw[16];
-
+	// CPU_STATE () {
+	// 	this->psw.CF = 1;
+	// }
 } CPU_state;
 
 extern CPU_state cpu;
