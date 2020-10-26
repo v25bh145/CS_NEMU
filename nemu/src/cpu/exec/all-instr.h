@@ -23,6 +23,7 @@
 
 #include "instr-jmp/call.h"
 #include "instr-jmp/push.h"
+#include "instr-jmp/jcc.h"
 
 #include "string/rep.h"
 
