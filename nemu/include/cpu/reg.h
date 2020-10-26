@@ -47,9 +47,7 @@ typedef struct {
 		uint32_t : 1;
 		uint32_t : 1;	//15
 	} psw[16];
-	// CPU_STATE () {
-	// 	this->psw.CF = 1;
-	// }
+
 } CPU_state;
 
 extern CPU_state cpu;
