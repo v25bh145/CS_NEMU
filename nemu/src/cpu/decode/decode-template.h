@@ -180,7 +180,7 @@ make_helper(concat(decode_rm_imm_, SUFFIX)) {
 }
 //for myself
 make_helper(concat(decode_r_jcc_, SUFFIX)) {
-	panic("now eip: %x", MEM_R(eip));
+	panic("now eip: %x", MEM_R(eip + 2));
 	int len = concat(decode_r_, SUFFIX)(eip);
 	return len;
 }
