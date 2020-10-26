@@ -21,6 +21,7 @@
 #include "logic/shrd.h"
 
 #include "instr-jmp/call.h"
+#include "instr-jmp/push.h"
 
 #include "string/rep.h"
 
