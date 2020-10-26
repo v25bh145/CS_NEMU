@@ -181,6 +181,7 @@ make_helper(concat(decode_rm_imm_, SUFFIX)) {
 //TODO: trial
 make_helper(concat(decode_r_jcc_, SUFFIX)) {
 	int len = concat(decode_r_, SUFFIX)(eip);
+	panic("success!");
 	return len;
 }
 
