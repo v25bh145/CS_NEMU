@@ -6,6 +6,11 @@
 make_helper(decode_r_b);
 make_helper(decode_r_w);
 make_helper(decode_r_l);
+//myself
+make_helper(decode_r_jcc_b);
+make_helper(decode_r_jcc_w);
+make_helper(decode_r_jcc_l);
+//myself
 make_helper(decode_rm_b);
 make_helper(decode_rm_w);
 make_helper(decode_rm_l);
