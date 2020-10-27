@@ -52,9 +52,9 @@ make_helper(decode_rm_imm_w);
 make_helper(decode_rm_imm_l);
 
 //myself
-make_helper(decode_r_jcc_b);
-make_helper(decode_r_jcc_w);
-make_helper(decode_r_jcc_l);
+make_helper(decode_i_jcc_b);
+make_helper(decode_i_jcc_w);
+make_helper(decode_i_jcc_l);
 
 void write_operand_b(Operand *, uint8_t);
 void write_operand_w(Operand *, uint16_t);

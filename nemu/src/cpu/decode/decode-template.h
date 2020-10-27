@@ -180,11 +180,11 @@ make_helper(concat(decode_rm_imm_, SUFFIX)) {
 }
 
 //for myself
-make_helper(concat(decode_r_jcc_, SUFFIX)) {
+make_helper(concat(decode_i_jcc_, SUFFIX)) {
 	//TODO for16/32
     if(!strcmp(str(SUFFIX), "b")) {
 		op_src->abstract_instr_enum = MEM_R(eip - 1) - 0x70;
-		int len = concat(decode_r_, SUFFIX)(eip);
+		int len = concat(decode_i_, SUFFIX)(eip);
 		return len;
     } else {
 		panic("please implement 16/32 reg for jcc!");
