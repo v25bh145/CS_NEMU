@@ -187,7 +187,7 @@ make_helper(concat(decode_r_jcc_, SUFFIX)) {
 		int len = concat(decode_r_, SUFFIX)(eip);
 		return len;
     } else {
-		panic("please implement me!");
+		panic("please implement 16/32 reg for jcc!");
 	}
 }
 
