@@ -55,9 +55,9 @@ make_helper(decode_rm_imm_l);
 make_helper(decode_i_jcc_b);
 make_helper(decode_i_jcc_w);
 make_helper(decode_i_jcc_l);
-make_helper(decode_modrm_i2rm_b);
-make_helper(decode_modrm_i2rm_w);
-make_helper(decode_modrm_i2rm_l);
+make_helper(decode_modrm_i_b);
+make_helper(decode_modrm_i_w);
+make_helper(decode_modrm_i_l);
 
 void write_operand_b(Operand *, uint8_t);
 void write_operand_w(Operand *, uint16_t);
