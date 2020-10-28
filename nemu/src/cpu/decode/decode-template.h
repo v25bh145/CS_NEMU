@@ -198,7 +198,7 @@ make_helper(concat(decode_modrm_i_, SUFFIX)) {
 	return len;
 }
 make_helper(concat(decode_r_pop_, SUFFIX)) { 
-	panic("%x", eip);
+	panic("%x", instr_fetch(eip - 1, 1));
 	op_dest->type = OP_TYPE_REG;
 	// op_dest->val = 
 	int len = concat(decode_r_, SUFFIX)(eip);
