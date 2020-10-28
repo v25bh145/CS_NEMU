@@ -196,6 +196,7 @@ make_helper(concat(decode_modrm_i_, SUFFIX)) {
 	op_src->abstract_instr_enum = eip;
 	eip++;
 	int len = concat(decode_i_, SUFFIX)(eip);
+	panic("%d %d %d", (int)op_src->size, (int)op_dest->size, (int)op_src2->size);
 	read_ModR_M(op_src->abstract_instr_enum, op_src, op_dest);
 	return len;
 }
