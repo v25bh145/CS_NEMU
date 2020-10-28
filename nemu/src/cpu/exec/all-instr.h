@@ -26,6 +26,7 @@
 #include "instr-jmp/push.h"
 #include "instr-jmp/jcc.h"
 #include "instr-jmp/pop.h"
+#include "instr-jmp/ret.h"
 
 #include "string/rep.h"
 

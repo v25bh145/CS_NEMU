@@ -203,6 +203,10 @@ make_helper(concat(decode_r_pop_, SUFFIX)) {
 	int len = concat(decode_r_, SUFFIX)(eip);
 	return len;
 }
+make_helper(concat(decode_c3_, SUFFIX)) {
+	panic("awa");
+	return 1;
+}
 
 void concat(write_operand_, SUFFIX) (Operand *op, DATA_TYPE src) {
 	if(op->type == OP_TYPE_REG) { REG(op->reg) = src; }
