@@ -191,11 +191,17 @@ make_helper(concat(decode_i_jcc_, SUFFIX)) {
 	}
 }
 make_helper(concat(decode_modrm_i_, SUFFIX)) {
-	// Log("%x", instr_fetch(eip, 1));
 	// ModR_M modrm;
 	read_ModR_M(eip, op_dest, op_src2);
 	eip++;
 	int len = concat(decode_i_, SUFFIX)(eip) + 1;
+	return len;
+}
+make_helper(concat(decode_r_pop_, SUFFIX)) { 
+	panic("%x", eip);
+	op_dest->type = OP_TYPE_REG;
+	// op_dest->val = 
+	int len = concat(decode_r_, SUFFIX)(eip);
 	return len;
 }
 

@@ -58,6 +58,8 @@ make_helper(decode_i_jcc_l);
 make_helper(decode_modrm_i_b);
 make_helper(decode_modrm_i_w);
 make_helper(decode_modrm_i_l);
+make_helper(decode_r_pop_w);
+make_helper(decode_r_pop_l);
 
 void write_operand_b(Operand *, uint8_t);
 void write_operand_w(Operand *, uint16_t);
