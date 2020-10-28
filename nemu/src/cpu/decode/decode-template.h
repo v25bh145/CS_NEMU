@@ -195,7 +195,6 @@ make_helper(concat(decode_modrm_i_, SUFFIX)) {
 	// ModR_M modrm;
 	read_ModR_M(eip, op_dest, op_src2);
 	eip++;
-	Log("data: %d", DATA_BYTE);
 	int len = concat(decode_i_, SUFFIX)(eip);
 	return len;
 }
