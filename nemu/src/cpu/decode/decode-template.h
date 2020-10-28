@@ -193,9 +193,10 @@ make_helper(concat(decode_i_jcc_, SUFFIX)) {
 make_helper(concat(decode_modrm_i_, SUFFIX)) {
 	// Log("%x", instr_fetch(eip, 1));
 	// ModR_M modrm;
-	op_src->abstract_instr_enum = instr_fetch(eip, 1);
+	op_src->abstract_instr_enum = eip;
 	eip++;
 	int len = concat(decode_i_, SUFFIX)(eip);
+	read_ModR_M(op_src->abstract_instr_enum, op_src, op_dest);
 	return len;
 }
 
