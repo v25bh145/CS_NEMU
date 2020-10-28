@@ -194,7 +194,7 @@ make_helper(concat(decode_modrm_i_, SUFFIX)) {
 	// Log("%x", instr_fetch(eip, 1));
 	// ModR_M modrm;
 	read_ModR_M(eip, op_dest, op_src2);
-	// eip++;
+	eip++;
 	int len = concat(decode_i_, SUFFIX)(eip);
 	return len;
 }
