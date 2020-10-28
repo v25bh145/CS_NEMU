@@ -190,6 +190,12 @@ make_helper(concat(decode_i_jcc_, SUFFIX)) {
 		panic("please implement 16/32 reg for jcc!");
 	}
 }
+make_helper(concat(decode_modrm_i2rm_, SUFFIX)) {
+	panic("%d", eip);
+	eip++;
+	int len = concat(decode_i2rm_, SUFFIX)(eip);
+	return len;
+}
 
 void concat(write_operand_, SUFFIX) (Operand *op, DATA_TYPE src) {
 	if(op->type == OP_TYPE_REG) { REG(op->reg) = src; }
