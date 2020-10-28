@@ -205,7 +205,7 @@ make_helper(concat(decode_r_pop_, SUFFIX)) {
 }
 make_helper(concat(decode_c3_, SUFFIX)) {
 	// panic("%x", eip);
-	return 1;
+	return 0;
 }
 
 void concat(write_operand_, SUFFIX) (Operand *op, DATA_TYPE src) {
