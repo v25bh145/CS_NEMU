@@ -204,7 +204,7 @@ make_helper(concat(decode_r_pop_, SUFFIX)) {
 	return len;
 }
 make_helper(concat(decode_c3_, SUFFIX)) {
-	panic("%x", eip);
+	// panic("%x", eip);
 	return 1;
 }
 
