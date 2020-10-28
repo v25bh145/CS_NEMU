@@ -89,6 +89,7 @@ int read_ModR_M(swaddr_t eip, Operand *rm, Operand *reg) {
 	reg->type = OP_TYPE_REG;
 	reg->reg = m.reg;
 	Log("DEBUG: mod %x R_M %x reg %x val %x", m.mod, m.R_M, m.reg, m.val);
+	Log("DEBUG reg: %x", reg_l(0));
 	if(m.mod == 3) {
 		rm->type = OP_TYPE_REG;
 		rm->reg = m.R_M;
