@@ -52,14 +52,9 @@ make_helper(decode_rm_imm_w);
 make_helper(decode_rm_imm_l);
 
 //myself
-make_helper(decode_i_jcc_b);
-make_helper(decode_i_jcc_w);
-make_helper(decode_i_jcc_l);
-// make_helper(decode_modrm_i_b);
-// make_helper(decode_modrm_i_w);
-// make_helper(decode_modrm_i_l);
-// make_helper(decode_modrm_si_w);
-// make_helper(decode_modrm_si_l);
+make_helper(decode_i_condition_b);
+make_helper(decode_i_condition_w);
+make_helper(decode_i_condition_l);
 make_helper(decode_r_pop_w);
 make_helper(decode_r_pop_l);
 make_helper(decode_single_l);
