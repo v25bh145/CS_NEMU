@@ -195,15 +195,14 @@ make_helper(concat(decode_modrm_i_, SUFFIX)) {
 	read_ModR_M(eip, op_dest, op_src2);
 	eip++;
 	int len = concat(decode_i_, SUFFIX)(eip) + 1;
-	return len;
+	return len + 1;
 }
 make_helper(concat(decode_modrm_si_, SUFFIX)) {
-	panic("awa");
 	// ModR_M modrm;
 	read_ModR_M(eip, op_dest, op_src2);
 	eip++;
 	int len = concat(decode_i_, SUFFIX)(eip) + 1;
-	return len;
+	return len + 1;
 }
 make_helper(concat(decode_r_pop_, SUFFIX)) { 
 	op_dest->type = OP_TYPE_REG;
