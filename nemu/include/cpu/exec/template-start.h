@@ -34,5 +34,5 @@
 
 #define MSB(n) ((DATA_TYPE)(n) >> ((DATA_BYTE << 3) - 1))
 
-#define testfor_flags concat(testfor_flags_, SUFFIX)(DATA_TYPE result)
-#define testfor_flags_s concat(testfor_flags_s_, SUFFIX)(DATA_TYPE_S result)
+#define testfor_flags(result) concat(testfor_flags_, SUFFIX)(result)
+#define testfor_flags_s(result) concat(testfor_flags_s_, SUFFIX)(result)
