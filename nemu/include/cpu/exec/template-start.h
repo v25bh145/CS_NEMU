@@ -34,26 +34,5 @@
 
 #define MSB(n) ((DATA_TYPE)(n) >> ((DATA_BYTE << 3) - 1))
 
-#define test_for_flags concat(test_for_flags_, DATA_BYTE)(DATA_TYPE result) {\
-    if(op_src->val > 0 && op_dest->val < 0 && result < 0) {\
-        cpu.psw->SF = 1;\
-        cpu.psw->OF = 1;\
-    } else if (op_src->val < 0 && op_dest->val > 0 && result > 0) {\
-        cpu.psw->SF = 0;\
-        cpu.psw->OF = 1;\
-    } else if (!result) {\
-        cpu.psw->ZF = 1;\
-    } else {\
-        cpu.psw->SF = result < 0;\
-    }\
-	DATA_TYPE cnt = 0, tmp = result, tmp2 = op_dest->val;\
-	while( ( tmp & 1 ) > 0 && tmp > 0) {\
-		cnt += ( tmp & 1 );\
-		tmp = tmp >> 1;\
-	}\
-	cpu.psw->PF = cnt % 2 ? 0 : 1;\
-	cpu.psw->CF = ( ( result | op_dest->val ) - op_dest->val ) > 0;\
-	tmp = result & 0xF;\
-	tmp2 = op_dest->val & 0xF;\
-	cpu.psw->AF = ( ( tmp | tmp2 ) - tmp2) > 0;\
-}
+#define testfor_flags concat(testfor_flags_, SUFFIX)(DATA_TYPE result)
+#define testfor_flags_s concat(testfor_flags_s_, SUFFIX)(DATA_TYPE_S result)
