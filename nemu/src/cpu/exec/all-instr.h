@@ -28,6 +28,7 @@
 #include "instr-jmp/jcc.h"
 #include "instr-jmp/pop.h"
 #include "instr-jmp/ret.h"
+#include "instr-jmp/leave.h"
 
 #include "string/rep.h"
 
