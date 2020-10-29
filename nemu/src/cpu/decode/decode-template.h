@@ -242,7 +242,6 @@ void concat(testfor_flags_s_, SUFFIX) (DATA_TYPE_S result) {
 }
 
 void concat(testfor_flags_, SUFFIX) (DATA_TYPE result) {
-	panic("ues");
     if(op_src->val > 0 && op_dest->val < 0 && result < 0) {
         cpu.psw->SF = 1;
         cpu.psw->OF = 1;
