@@ -190,20 +190,20 @@ make_helper(concat(decode_i_jcc_, SUFFIX)) {
 		panic("please implement 16/32 reg for jcc!");
 	}
 }
-make_helper(concat(decode_modrm_i_, SUFFIX)) {
-	// ModR_M modrm;
-	read_ModR_M(eip, op_dest, op_src2);
-	eip++;
-	int len = concat(decode_i_, SUFFIX)(eip) + 1;
-	return len + 1;
-}
-make_helper(concat(decode_modrm_si_, SUFFIX)) {
-	// ModR_M modrm;
-	read_ModR_M(eip, op_dest, op_src2);
-	eip++;
-	int len = concat(decode_i_, SUFFIX)(eip) + 1;
-	return len + 1;
-}
+// make_helper(concat(decode_modrm_i_, SUFFIX)) {
+// 	// ModR_M modrm;
+// 	read_ModR_M(eip, op_dest, op_src2);
+// 	eip++;
+// 	int len = concat(decode_i_, SUFFIX)(eip) + 1;
+// 	return len + 1;
+// }
+// make_helper(concat(decode_modrm_si_, SUFFIX)) {
+// 	// ModR_M modrm;
+// 	read_ModR_M(eip, op_dest, op_src2);
+// 	eip++;
+// 	int len = concat(decode_si_, SUFFIX)(eip) + 1;
+// 	return len + 1;
+// }
 make_helper(concat(decode_r_pop_, SUFFIX)) { 
 	op_dest->type = OP_TYPE_REG;
 	op_dest->val = instr_fetch(eip - 1, 1) - 0x58;
