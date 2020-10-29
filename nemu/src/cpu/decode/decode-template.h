@@ -198,6 +198,7 @@ make_helper(concat(decode_modrm_i_, SUFFIX)) {
 	return len;
 }
 make_helper(concat(decode_modrm_si_, SUFFIX)) {
+	panic("awa");
 	// ModR_M modrm;
 	read_ModR_M(eip, op_dest, op_src2);
 	eip++;
