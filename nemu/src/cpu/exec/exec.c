@@ -3,10 +3,6 @@
 
 #include "all-instr.h"
 
-void test () {
-	Log("test");
-}
-
 typedef int (*helper_fun)(swaddr_t);
 static make_helper(_2byte_esc);
 
