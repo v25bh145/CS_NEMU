@@ -58,6 +58,8 @@ make_helper(decode_i_jcc_l);
 make_helper(decode_modrm_i_b);
 make_helper(decode_modrm_i_w);
 make_helper(decode_modrm_i_l);
+make_helper(decode_modrm_si_w);
+make_helper(decode_modrm_si_l);
 make_helper(decode_r_pop_w);
 make_helper(decode_r_pop_l);
 make_helper(decode_c3_l);
