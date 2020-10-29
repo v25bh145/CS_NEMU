@@ -55,6 +55,7 @@ make_helper(decode_rm_imm_l);
 make_helper(decode_i_condition_b);
 make_helper(decode_i_condition_w);
 make_helper(decode_i_condition_l);
+make_helper(decode_rm_condition_b);
 make_helper(decode_r_pop_w);
 make_helper(decode_r_pop_l);
 make_helper(decode_single_l);

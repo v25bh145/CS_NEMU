@@ -190,6 +190,16 @@ make_helper(concat(decode_i_condition_, SUFFIX)) {
 		panic("please implement 16/32 reg for jcc!");
 	}
 }
+make_helper(concat(decode_rm_condition_, SUFFIX)) {
+	//TODO for16/32
+    if(!strcmp(str(SUFFIX), "b")) {
+		op_src->abstract_instr_enum = MEM_R(eip - 1);
+		int len = concat(decode_rm_, SUFFIX)(eip);
+		return len;
+    } else {
+		panic("please implement 16/32 reg for setcc!");
+	}
+}
 make_helper(concat(decode_r_pop_, SUFFIX)) { 
 	op_dest->type = OP_TYPE_REG;
 	op_dest->val = instr_fetch(eip - 1, 1) - 0x58;
