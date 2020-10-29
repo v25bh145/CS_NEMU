@@ -217,7 +217,7 @@ void concat(write_operand_, SUFFIX) (Operand *op, DATA_TYPE src) {
 }
 
 void concat(testfor_flags_s_, SUFFIX) (DATA_TYPE_S result) {
-	panic("todo: decode-template.h testfor_flags_s untested");
+	// panic("todo: decode-template.h testfor_flags_s untested");
     if(op_src->val > 0 && op_dest->val < 0 && result < 0) {
         cpu.psw->SF = 1;
         cpu.psw->OF = 1;
@@ -242,7 +242,6 @@ void concat(testfor_flags_s_, SUFFIX) (DATA_TYPE_S result) {
 }
 
 void concat(testfor_flags_, SUFFIX) (DATA_TYPE result) {
-	panic("%d", result);
     if(op_src->val > 0 && op_dest->val < 0 && result < 0) {
         cpu.psw->SF = 1;
         cpu.psw->OF = 1;
