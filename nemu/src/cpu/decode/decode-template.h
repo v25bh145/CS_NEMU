@@ -214,8 +214,7 @@ make_helper(concat(decode_addr2r_, SUFFIX)) {
 	ModR_M m;
 	m.val = instr_fetch(eip, 1);
 	int instr_len = load_addr(eip, &m, op_dest);
-	op_dest->type = 1;
-	Log("%d %d %d", instr_len, op_dest->addr, op_dest->val);
+	Log("eip: %d", eip + instr_len);
 	instr_len += concat(decode_r_, SUFFIX)(eip + instr_len);
 	return instr_len;
 }
