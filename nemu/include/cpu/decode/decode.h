@@ -59,6 +59,8 @@ make_helper(decode_rm_condition_b);
 make_helper(decode_r_pop_w);
 make_helper(decode_r_pop_l);
 make_helper(decode_single_l);
+make_helper(decode_addr2r_w);
+make_helper(decode_addr2r_l);
 
 void write_operand_b(Operand *, uint8_t);
 void write_operand_w(Operand *, uint16_t);

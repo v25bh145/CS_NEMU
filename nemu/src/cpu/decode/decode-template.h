@@ -209,6 +209,13 @@ make_helper(concat(decode_r_pop_, SUFFIX)) {
 make_helper(concat(decode_single_, SUFFIX)) {
 	return 0;
 }
+make_helper(concat(decode_addr2r_, SUFFIX)) {
+	panic("%d", eip);
+	ModR_M m;
+	m.val = instr_fetch(eip, 1);
+	int instr_len = load_addr(eip, &m, op_src);
+	return instr_len;
+}
 
 void concat(write_operand_, SUFFIX) (Operand *op, DATA_TYPE src) {
 	if(op->type == OP_TYPE_REG) { REG(op->reg) = src; }
