@@ -231,6 +231,7 @@ void concat(testfor_flags_s_, SUFFIX) (DATA_TYPE_S result) {
     } else if (!result) {
         cpu.psw->ZF = 1;
     } else {
+		cpu.psw->ZF = 0;
         cpu.psw->SF = result < 0;
     }
 	DATA_TYPE cnt = 0, tmp = result, tmp2 = op_dest->val;
