@@ -210,10 +210,12 @@ make_helper(concat(decode_single_, SUFFIX)) {
 	return 0;
 }
 make_helper(concat(decode_addr2r_, SUFFIX)) {
-	panic("%x", eip);
+	// panic("%x", eip);
 	ModR_M m;
 	m.val = instr_fetch(eip, 1);
 	int instr_len = load_addr(eip, &m, op_src);
+	panic("%d", instr_len);
+	instr_len += concat(decode_r_, SUFFIX)(eip + instr_len);
 	return instr_len;
 }
 
