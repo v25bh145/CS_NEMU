@@ -214,8 +214,7 @@ make_helper(concat(decode_addr2r_, SUFFIX)) {
 	ModR_M m;
 	m.val = instr_fetch(eip, 1);
 	int instr_len = load_addr(eip, &m, op_src);
-	op_src->val = swaddr_read(op_src->addr, op_src->size);
-	panic("%d %d %d", instr_len, op_src->addr, op_src->val);
+	// panic("%d %d %d", instr_len, op_src->addr, op_src->val);
 	instr_len += concat(decode_r_, SUFFIX)(eip + instr_len);
 	return instr_len;
 }
