@@ -18,7 +18,7 @@ static void do_execute () {
 		if(tmp == 1)panic("awa");
 		Log("%x", tmp);
 	}
-	Log("sar: d: %d dest: %d", d, dest);
+	Log("sar: d: %d dest: %d src: %d", d, dest, src);
 
 	print_asm_template2();
 }
