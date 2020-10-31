@@ -12,7 +12,7 @@ static void do_execute () {
 
 	int tmp = dest;
 	int d = 0;
-	while((tmp ^ 1) != 0) {
+	while((tmp ^ 1) != 0 && dest != 0) {
 		tmp >>= 1;
 		d++;
 		if(tmp == 1)panic("awa");
