@@ -10,8 +10,13 @@ static void do_execute () {
 	dest >>= count;
 	OPERAND_W(op_dest, dest);
 
-	/* TODO: Update EFLAGS. */
-	panic("please implement me");
+	int tmp = dest;
+	int d = 0;
+	while((tmp ^ 1) != 0) {
+		tmp >>= 1;
+		d++;
+	}
+	Log("sar: d: %d dest: %d", d, dest);
 
 	print_asm_template2();
 }
