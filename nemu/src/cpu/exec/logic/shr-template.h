@@ -10,7 +10,7 @@ static void do_execute () {
 	dest >>= count;
 	OPERAND_W(op_dest, dest);
 
-	testfor_flags_s(dest);
+	// testfor_flags_s(dest, 0x40 + 0x80 + 0x4);
 
 	print_asm_template2();
 }

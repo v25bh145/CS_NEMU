@@ -67,11 +67,11 @@ void write_operand_w(Operand *, uint16_t);
 void write_operand_l(Operand *, uint32_t);
 
 //myself
-void testfor_flags_b(uint8_t result);
-void testfor_flags_w(uint16_t result);
-void testfor_flags_l(uint32_t result);
-void testfor_flags_s_b(int8_t result);
-void testfor_flags_s_w(int16_t result);
-void testfor_flags_s_l(int32_t result);
+// void testfor_flags_b(uint8_t result);
+// void testfor_flags_w(uint16_t result);
+// void testfor_flags_l(uint32_t result);
+void testfor_flags_s_b(int8_t result, uint32_t type);
+void testfor_flags_s_w(int16_t result, uint32_t type);
+void testfor_flags_s_l(int32_t result, uint32_t type);
 
 #endif

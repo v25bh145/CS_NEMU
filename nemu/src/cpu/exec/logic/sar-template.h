@@ -11,14 +11,14 @@ static void do_execute () {
 	OPERAND_W(op_dest, dest);
 
 	int tmp = dest;
-	int d = 0;
+	cpu.psw->CF = 0;
 	while((tmp ^ 1) != 0 && dest != 0) {
 		tmp >>= 1;
-		d++;
-		if(tmp == 1)panic("awa");
-		Log("%x", tmp);
+		cpu.psw->CF++;
 	}
-	Log("sar: d: %d dest: %d src: %d", d, cpu.eax, src);
+	cpu.psw->OF = 0;
+	//ZF PF SF
+	testfor_flags_s(dest, 0x40 + 0x80 + 0x4);
 
 	print_asm_template2();
 }
