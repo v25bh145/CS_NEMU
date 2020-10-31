@@ -11,12 +11,13 @@ static void do_execute () {
 	OPERAND_W(op_dest, dest);
 
 	int tmp = dest;
+	cpu.psw->OF = 0;
 	cpu.psw->CF = 0;
 	while((tmp ^ 1) != 0 && dest != 0) {
 		tmp >>= 1;
 		cpu.psw->CF++;
 	}
-	cpu.psw->OF = 0;
+	
 	//ZF PF SF
 	testfor_flags_s(dest, 0x40 + 0x80 + 0x4);
 

@@ -10,14 +10,17 @@ static void do_execute () {
 	dest <<= count;
 	OPERAND_W(op_dest, dest);
 
-	// int tmp = dest;
-	// int d = 0;
-	// while(tmp ^ 1 != 0) {
-	// 	tmp >>= 1;
-	// 	d++;
-	// }
-	// Log("shl: d: ")
-	
+	int tmp = dest;
+	cpu.psw->OF = 0;
+	cpu.psw->CF = 0;
+	while((tmp ^ 1) != 0 && dest != 0) {
+		tmp >>= 1;
+		cpu.psw->CF++;
+		if(count == 1)
+			cpu.psw->OF++;
+	}
+	//ZF PF SF
+	testfor_flags_s(dest, 0x40 + 0x80 + 0x4);
 
 	print_asm_template2();
 }
