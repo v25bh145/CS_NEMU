@@ -220,9 +220,9 @@ make_helper(concat(decode_addr2r_, SUFFIX)) {
 }
 make_helper(concat(decode_rmb2r_,SUFFIX)) {
 	op_src->size = 1;
-	/*int len_addr = */read_ModR_M(eip, op_src, op_dest);
+	int len_addr = read_ModR_M(eip, op_src, op_dest);
 	// panic("len: %d %x", len_addr, eip);
-	return 0;
+	return len_addr;
 }
 make_helper(concat(decode_rmw2r_,SUFFIX)) {
 	// panic("len: %x", eip - 1);
