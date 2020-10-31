@@ -218,6 +218,20 @@ make_helper(concat(decode_addr2r_, SUFFIX)) {
 	int instr_len = load_addr(eip, &m, op_dest);
 	return instr_len;
 }
+make_helper(concat(decode_rmb2r_,SUFFIX)) {
+	int len_addr = read_ModR_M(eip, op_src2, op_dest);
+	panic("len: %d", len_addr);
+	//op_src
+	len_addr += concat(decode_r_, SUFFIX) (eip + len_addr);
+	return len_addr;
+}
+make_helper(concat(decode_rmw2r_,SUFFIX)) {
+	int len_addr = read_ModR_M(eip, op_src2, op_dest);
+	panic("len: %d", len_addr);
+	//op_src
+	len_addr += concat(decode_r_, SUFFIX) (eip + len_addr);
+	return len_addr;
+}
 
 void concat(write_operand_, SUFFIX) (Operand *op, DATA_TYPE src) {
 	if(op->type == OP_TYPE_REG) { REG(op->reg) = src; }
@@ -225,6 +239,7 @@ void concat(write_operand_, SUFFIX) (Operand *op, DATA_TYPE src) {
 	else { assert(0); }
 }
 
+//myself
 void concat(testfor_flags_s_, SUFFIX) (DATA_TYPE_S result, uint32_t type) {
 	//type for:
 	//bit      11       10         09	      08	    07	   06      04     02    00
