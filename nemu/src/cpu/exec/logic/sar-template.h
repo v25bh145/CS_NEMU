@@ -15,6 +15,7 @@ static void do_execute () {
 	while((tmp ^ 1) != 0) {
 		tmp >>= 1;
 		d++;
+		Log("%x", tmp);
 	}
 	Log("sar: d: %d dest: %d", d, dest);
 
