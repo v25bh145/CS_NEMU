@@ -3,7 +3,7 @@
 #define instr and
 
 static void do_execute () {
-	Log("before and %x %x eip: %x",  op_dest->val, op_src->val, cpu.eip);
+	Log("before and %x %x eip: %x",  op_dest->val, (DATA_TYPE)op_src->val, cpu.eip);
 	DATA_TYPE result = op_dest->val & op_src->val;
 	OPERAND_W(op_dest, result);
 
