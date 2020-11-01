@@ -3,7 +3,6 @@
 #define instr sar
 
 static void do_execute () {
-	// panic("awa");
 	DATA_TYPE src = op_src->val;
 	DATA_TYPE dest = op_dest->val;
 
@@ -22,6 +21,7 @@ static void do_execute () {
     tmp &= 1;
     cpu.psw->PF = !tmp;
 	
+	Log("sar %d %d eip: %d", src, dest, cpu.eip);
 	//ZF PF SF
 	// testfor_flags_s(dest, 0x40 + 0x80 + 0x4);
 
