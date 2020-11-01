@@ -3,11 +3,11 @@
 #define instr and
 
 static void do_execute () {
-	Log("before and %x %x eip: %x",  op_dest->val, (DATA_TYPE_S)op_src->val, cpu.eip);
+	// Log("before and %x %x eip: %x",  op_dest->val, (DATA_TYPE_S)op_src->val, cpu.eip);
 	DATA_TYPE result = op_dest->val & op_src->val;
 	OPERAND_W(op_dest, result);
 
-	Log("after and %x eip: %x",  result, cpu.eip);
+	// Log("after and %x eip: %x",  result, cpu.eip);
 
 	cpu.psw->CF = cpu.psw->OF = 0;
 

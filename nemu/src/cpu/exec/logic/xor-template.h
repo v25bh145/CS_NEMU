@@ -5,9 +5,11 @@
 static void do_execute () {
 	DATA_TYPE result = op_dest->val ^ op_src->val;
 	OPERAND_W(op_dest, result);
+	
+	cpu.psw->CF = cpu.psw->OF = 0;
 
-	/* TODO: Update EFLAGS. */
-	panic("please implement me");
+	//! (Cf & OF)
+	testfor_flags_s(result, 0xFFF - 0x800 - 0x1);
 
 	print_asm_template2();
 }
