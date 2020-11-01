@@ -181,15 +181,18 @@ make_helper(concat(decode_rm_imm_, SUFFIX)) {
 
 //for myself
 make_helper(concat(decode_i_condition_, SUFFIX)) {
-	//TODO for16/32
-    if(!strcmp(str(SUFFIX), "b")) {
+	// TODO for16/32
 		op_src->abstract_instr_enum = MEM_R(eip - 1);
 		int len = concat(decode_i_, SUFFIX)(eip);
 		return len;
-    } else {
-		Log("eip: qwq  %x", cpu.eip);
-		panic("please implement 16/32 reg for jcc!");
-	}
+    // if(!strcmp(str(SUFFIX), "b")) {
+	// 	op_src->abstract_instr_enum = MEM_R(eip - 1);
+	// 	int len = concat(decode_i_, SUFFIX)(eip);
+	// 	return len;
+    // } else {
+	// 	Log("eip: qwq  %x", cpu.eip);
+	// 	panic("please implement 16/32 reg for jcc!");
+	// }
 }
 make_helper(concat(decode_rm_condition_, SUFFIX)) {
 	//TODO for16/32
