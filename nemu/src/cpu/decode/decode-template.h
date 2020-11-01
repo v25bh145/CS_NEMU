@@ -187,6 +187,7 @@ make_helper(concat(decode_i_condition_, SUFFIX)) {
 		int len = concat(decode_i_, SUFFIX)(eip);
 		return len;
     } else {
+		Log("eip: qwq  %x", cpu.eip);
 		panic("please implement 16/32 reg for jcc!");
 	}
 }
