@@ -3,13 +3,11 @@
 #define instr and
 
 static void do_execute () {
-	Log("before and %d %d eip: %x",  op_dest->val, op_src->val, cpu.eip);
+	// Log("before and %d %d eip: %x",  op_dest->val, op_src->val, cpu.eip);
 	DATA_TYPE result = op_dest->val & op_src->val;
 	OPERAND_W(op_dest, result);
 
-	Log("after and %d eip: %x",  result, cpu.eip);
-	if(cpu.eip == 0x100025)
-		Log("spj: dest %d", MEM_R(cpu.ebp + 0xc));
+	// Log("after and %d eip: %x",  result, cpu.eip);
 
 	cpu.psw->CF = cpu.psw->OF = 0;
 
