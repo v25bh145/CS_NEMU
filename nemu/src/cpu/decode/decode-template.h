@@ -182,8 +182,7 @@ make_helper(concat(decode_rm_imm_, SUFFIX)) {
 //for myself
 make_helper(concat(decode_i_condition_, SUFFIX)) {
 	// TODO for16/32
-	op_src->abstract_instr_enum = MEM_R(eip - 1);
-	panic("? %x", eip);
+	op_src->abstract_instr_enum = MEM_R(cpu.eip);
 	int len = concat(decode_i_, SUFFIX)(eip);
 	return len;
     // if(!strcmp(str(SUFFIX), "b")) {
