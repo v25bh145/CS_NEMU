@@ -6,8 +6,6 @@ static void do_execute () {
 	DATA_TYPE src = op_src->val;
 	DATA_TYPE dest = op_dest->val;
 
-	Log("before sar %d %d eip: %x", src, dest, cpu.eip);
-
 	uint8_t count = src & 0x1f;
 	dest >>= count;
 	OPERAND_W(op_dest, dest);
@@ -23,7 +21,6 @@ static void do_execute () {
     tmp &= 1;
     cpu.psw->PF = !tmp;
 	
-	Log("after sar %d %d eip: %x", src, dest, cpu.eip);
 	//ZF PF SF
 	// testfor_flags_s(dest, 0x40 + 0x80 + 0x4);
 

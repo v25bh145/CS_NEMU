@@ -6,8 +6,6 @@ static void do_execute () {
 	DATA_TYPE src = op_src->val;
 	DATA_TYPE dest = op_dest->val;
 
-	Log("before shl %d %d eip: %x", src, dest, cpu.eip);
-
 	uint8_t count = src & 0x1f;
 	dest <<= count;
 	OPERAND_W(op_dest, dest);
@@ -22,10 +20,6 @@ static void do_execute () {
     tmp ^= tmp >> 1;
     tmp &= 1;
     cpu.psw->PF = !tmp;
-
-	Log("after shl %d %d eip: %x", src, dest, cpu.eip);
-	if(cpu.eip == 0x100035) 
-		Log("spj: 0x-5 %d edx %d 0x-c %d", MEM_R(cpu.ebp - 5), cpu.edx, MEM_R(cpu.ebp - 0xc));
 
 	//ZF PF SF
 	// testfor_flags_s(dest, 0x40 + 0x80 + 0x4);
