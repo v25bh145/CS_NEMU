@@ -24,7 +24,7 @@ int main() {
 	long long test_data[] = {0, 1, 2, 0x7fffffffffffffffLL, 0x8000000000000000LL, 0x8000000000000001LL, 0xfffffffffffffffeLL, 0xffffffffffffffffLL};
 	int j;
 	for(j = 0; j < 3; j++) {
-		nemu_assert(test_data[j] == test_data[j]);
+		nemu_assert(add(test_data[j], 1) == test_data[j] + 1);
 	}
 
 	// int j, ans_idx = 0;
