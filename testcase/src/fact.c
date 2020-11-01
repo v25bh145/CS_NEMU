@@ -9,16 +9,16 @@ int fact(int n) {
 }
 
 int main() {
-	// int i;
+	int i;
 
-	// for(i = 0; i < 13; i ++) {
-		// f[i] = fact(i);
-		// nemu_assert(f[i] == ans[i]);
-	// }
+	for(i = 0; i < 13; i ++) {
+		f[i] = fact(i);
+		nemu_assert(f[i] == ans[i]);
+	}
 
-	// nemu_assert(i == 13);
+	nemu_assert(i == 13);
 
-	nemu_assert(fact(8) == ans[8]);
+	// nemu_assert(fact(8) == ans[8]);
 
 	return 0;
 }
