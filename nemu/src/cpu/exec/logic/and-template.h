@@ -8,6 +8,8 @@ static void do_execute () {
 	OPERAND_W(op_dest, result);
 
 	Log("after and %d eip: %x",  result, cpu.eip);
+	if(cpu.eip == 0x100025)
+		Log("spj: dest %d", MEM_R(cpu.ebp + 0xc));
 
 	cpu.psw->CF = cpu.psw->OF = 0;
 
