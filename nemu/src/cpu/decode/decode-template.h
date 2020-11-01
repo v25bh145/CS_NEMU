@@ -181,16 +181,16 @@ make_helper(concat(decode_rm_imm_, SUFFIX)) {
 
 //for myself
 make_helper(concat(decode_i_condition_, SUFFIX)) {
-	op_src->abstract_instr_enum = MEM_R(cpu.eip);
+	op_src->abstract_instr_enum = instr_fetch(cpu.eip, 1);
 	if(op_src->abstract_instr_enum == 0x0f)
-		op_src->abstract_instr_enum = MEM_R(cpu.eip + 1);
+		op_src->abstract_instr_enum = instr_fetch(cpu.eip + 1, 1);
 	int len = concat(decode_i_, SUFFIX)(eip);
 	return len;
 }
 make_helper(concat(decode_rm_condition_, SUFFIX)) {
-	op_src->abstract_instr_enum = MEM_R(cpu.eip);
+	op_src->abstract_instr_enum = instr_fetch(cpu.eip, 1);
 	if(op_src->abstract_instr_enum == 0x0f)
-		op_src->abstract_instr_enum = MEM_R(cpu.eip + 1);
+		op_src->abstract_instr_enum = instr_fetch(cpu.eip + 1, 1);
 	int len = concat(decode_rm_, SUFFIX)(eip);
 	return len;
 }
