@@ -32,7 +32,7 @@ make_helper(concat(decode_si_, SUFFIX)) {
 	 *
 	op_src->simm = ???
 	 */
-	// panic("please impleme me %d", instr_fetch(eip, DATA_BYTE));
+	panic("please impleme me %d", (DATA_TYPE_S)instr_fetch(eip, DATA_BYTE));
 	op_src->simm = instr_fetch(eip, DATA_BYTE);
 	op_src->val = op_src->simm;
 
