@@ -7,8 +7,7 @@ bool getbit(void *buf, int offset){
 	int byte = offset >> 3;
 	offset &= 7;
 	uint8_t mask = 1 << offset;
-	//mask = 4 => 100
-	//offset = 2
+	//mask = 1
 	//byte = 0
 	//buf 0xaa
 	//10101010
