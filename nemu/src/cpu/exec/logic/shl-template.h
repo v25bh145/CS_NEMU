@@ -25,7 +25,7 @@ static void do_execute () {
 
 	Log("after shl %d %d eip: %x", src, dest, cpu.eip);
 	if(cpu.eip == 0x100035) 
-		Log("spj: 0x-5 %d 0x8 %d 0x-c %d", MEM_R(cpu.ebp - 5), MEM_R(cpu.ebp + 8), MEM_R(cpu.ebp - 0xc));
+		Log("spj: 0x-5 %d edx %d 0x-c %d", MEM_R(cpu.ebp - 5), cpu.edx, MEM_R(cpu.ebp - 0xc));
 
 	//ZF PF SF
 	// testfor_flags_s(dest, 0x40 + 0x80 + 0x4);
