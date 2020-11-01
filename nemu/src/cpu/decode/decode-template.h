@@ -183,7 +183,7 @@ make_helper(concat(decode_rm_imm_, SUFFIX)) {
 make_helper(concat(decode_i_condition_, SUFFIX)) {
 	// TODO for16/32
 	op_src->abstract_instr_enum = instr_fetch(cpu.eip, 1);
-	panic("? %d", cpu.eip);
+	panic("? %d", op_src->abstract_instr_enum);
 	int len = concat(decode_i_, SUFFIX)(eip);
 	return len;
 }
