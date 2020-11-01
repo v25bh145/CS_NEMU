@@ -240,10 +240,11 @@ void concat(testfor_flags_s_, SUFFIX) (DATA_TYPE_S ret, uint32_t type) {
 	//bit      11       10         09	      08	    07	   06      04     02    00
 	//reg     OF       DF	     IF	        TF	      SF     ZF      AF      PF  CF
 	//code 0x800 0x400 0x200 0x100 0x80 0x40 0x10 0x4 0x1
-	if((type & 0x1) != 0)
+	if((type & 0x40) != 0)
     	cpu.psw->ZF = !ret;
 	if((type & 0x80) != 0)
     	cpu.psw->SF = ret >> ((DATA_BYTE << 3) - 1);
+	if((type & 0x1) != 0)
     	cpu.psw->CF = (ret < op_dest -> val);
 	if((type & 0x800) != 0) {
     	int tmp1 = (op_dest -> val) >> ((DATA_BYTE << 3) - 1);
