@@ -235,50 +235,27 @@ void concat(write_operand_, SUFFIX) (Operand *op, DATA_TYPE src) {
 }
 
 //myself
-void concat(testfor_flags_s_, SUFFIX) (DATA_TYPE_S result, uint32_t type) {
+void concat(testfor_flags_s_, SUFFIX) (DATA_TYPE_S ret, uint32_t type) {
 	//type for:
 	//bit      11       10         09	      08	    07	   06      04     02    00
 	//reg     OF       DF	     IF	        TF	      SF     ZF      AF      PF  CF
 	//code 0x800 0x400 0x200 0x100 0x80 0x40 0x10 0x4 0x1
-    if(op_dest->val > 0 && op_src->val < 0 && result < 0) {
-		if((type & 0x1) != 0)
-        	cpu.psw->CF = 1;
-		if((type & 0x80) != 0)
-			cpu.psw->SF = 1;
-		if((type & 0x800) != 0)
-        	cpu.psw->OF = 1;
-    } else if (op_dest->val < 0 && op_src->val > 0 && result > 0) {
-		if((type & 0x1) != 0)
-        	cpu.psw->CF = 0;
-		if((type & 0x80) != 0)
-			cpu.psw->SF = 0;
-		if((type & 0x800) != 0)
-        	cpu.psw->OF = 1;
-    } else if (!result) {
-		if((type & 0x40) != 0)
-        	cpu.psw->ZF = 1;
-    } else {
-		if((type & 0x40) != 0)
-        	cpu.psw->ZF = 0;
-		if((type & 0x1) != 0)
-        	cpu.psw->CF = result < 0;
-		if((type & 0x80) != 0)
-			cpu.psw->SF = result < 0;
-    }
-	DATA_TYPE cnt = 0, tmp = result, tmp2 = op_dest->val;
-	if((type & 0x4) != 0) {
-		while( ( tmp & 1 ) > 0 && tmp > 0) {
-			cnt += ( tmp & 1 );
-			tmp = tmp >> 1;
-		}
-		cpu.psw->PF = cnt % 2 ? 0 : 1;
+	if((type & 0x1) != 0)
+    	cpu.psw->ZF = !ret;
+	if((type & 0x80) != 0)
+    	cpu.psw->SF = ret >> ((DATA_BYTE << 3) - 1);
+    	cpu.psw->CF = (ret < op_dest -> val);
+	if((type & 0x800) != 0) {
+    	int tmp1 = (op_dest -> val) >> ((DATA_BYTE << 3) - 1);
+    	int tmp2 = (op_src -> val) >> ((DATA_BYTE << 3) - 1);
+    	cpu.psw->OF = (tmp1 == tmp2 && tmp1 != ret >> ((DATA_BYTE << 3) - 1));
 	}
-	// cpu.psw->CF = ( ( result | op_dest->val ) - op_dest->val ) > 0;
-	if((type & 0x10) != 0) {
-		tmp = result & 0xF;
-		tmp2 = op_dest->val & 0xF;
-		cpu.psw->AF = ( ( tmp | tmp2 ) - tmp2) > 0;
-	}
+    ret ^= ret >> 4;
+    ret ^= ret >> 2;
+    ret ^= ret >> 1;
+    ret &= 1;
+	if((type & 0x4) != 0)
+    	cpu.psw->PF = !ret;
 }
 
 // void concat(testfor_flags_, SUFFIX) (DATA_TYPE result) {
