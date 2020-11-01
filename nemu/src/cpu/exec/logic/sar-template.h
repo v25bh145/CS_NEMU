@@ -23,7 +23,7 @@ static void do_execute () {
     tmp &= 1;
     cpu.psw->PF = !tmp;
 	
-	Log("sar %d %d eip: %x", src, dest, cpu.eip);
+	Log("after sar %d %d eip: %x", src, dest, cpu.eip);
 	//ZF PF SF
 	// testfor_flags_s(dest, 0x40 + 0x80 + 0x4);
 
