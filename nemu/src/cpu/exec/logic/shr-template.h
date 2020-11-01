@@ -10,17 +10,18 @@ static void do_execute () {
 	dest >>= count;
 	OPERAND_W(op_dest, dest);
 
-	int tmp = dest;
-	cpu.psw->OF = 0;
+	DATA_TYPE tmp = dest;
 	cpu.psw->CF = 0;
-	while((tmp & 1) == 0 && dest != 0) {
-		tmp >>= 1;
-		cpu.psw->CF++;
-		if(count == 1)
-			cpu.psw->OF++;
-	}
+	cpu.psw->OF = 0;
+	cpu.psw->ZF = !tmp;
+    cpu.psw->SF = tmp >> ((DATA_BYTE << 3) - 1);
+	tmp ^= tmp >> 4;
+    tmp ^= tmp >> 2;
+    tmp ^= tmp >> 1;
+    tmp &= 1;
+    cpu.psw->PF = !tmp;
 	//ZF PF SF
-	testfor_flags_s(dest, 0x40 + 0x80 + 0x4);
+	// testfor_flags_s(dest, 0x40 + 0x80 + 0x4);
 
 	print_asm_template2();
 }
