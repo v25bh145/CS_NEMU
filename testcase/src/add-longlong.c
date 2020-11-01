@@ -26,7 +26,7 @@ int main() {
 	// int loop = 0;
 	// for(i = 0; i < NR_DATA; i ++) {
 	// 	for(j = 0; j < NR_DATA; j ++) {
-			nemu_assert(add(test_data[0], test_data[10]) == ans[10]);
+			nemu_assert(add(test_data[0], test_data[8]) == ans[8]);
 	// 		loop ++;
 	// 	}
 	// }
