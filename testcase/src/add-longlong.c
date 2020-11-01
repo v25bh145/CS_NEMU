@@ -22,15 +22,15 @@ int main() {
 
 	// nemu_assert(loop == NR_DATA * NR_DATA);
 
-	// int i, j, ans_idx = 0;
-	// int loop = 0;
+	int j, ans_idx = 0;
+	int loop = 0;
 	// for(i = 0; i < NR_DATA; i ++) {
-	// 	for(j = 0; j < NR_DATA; j ++) {
-	// 		nemu_assert(add(test_data[i], test_data[j]) == ans[ans_idx ++]);
-	// 		loop ++;
-	// 	}
+		for(j = 0; j < NR_DATA; j ++) {
+			nemu_assert(add(test_data[0], test_data[j]) == ans[ans_idx ++]);
+			loop ++;
+		}
 	// }
-	nemu_assert(add(test_data[4], test_data[4]) == ans[36]);
+
 	// nemu_assert(i ==  7);
 	// nemu_assert(loop == NR_DATA * NR_DATA);
 
