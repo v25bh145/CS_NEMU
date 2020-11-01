@@ -3,7 +3,7 @@
 #define instr sar
 
 static void do_execute () {
-	panic("awa");
+	// panic("awa");
 	DATA_TYPE src = op_src->val;
 	DATA_TYPE dest = op_dest->val;
 
