@@ -30,7 +30,7 @@ int main() {
 	// 		loop ++;
 	// 	}
 	// }
-	nemu_assert(add(test_data[0], test_data[3]) == ans[3]);
+	nemu_assert(add(test_data[4], test_data[4]) == ans[36]);
 	// nemu_assert(i ==  7);
 	// nemu_assert(loop == NR_DATA * NR_DATA);
 
