@@ -7,7 +7,7 @@ static void do_execute () {
 	DATA_TYPE result = op_dest->val & op_src->val;
 	OPERAND_W(op_dest, result);
 
-	Log("after and %d %d eip: %x",  op_dest->val, op_src->val, cpu.eip);
+	Log("after and %d %d eip: %x",  op_dest->addr, op_src->val, cpu.eip);
 
 	cpu.psw->CF = cpu.psw->OF = 0;
 
