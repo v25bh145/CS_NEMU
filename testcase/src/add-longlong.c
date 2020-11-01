@@ -23,7 +23,7 @@ int main() {
 	// nemu_assert(loop == NR_DATA * NR_DATA);
 
 	int i;
-	for(i = 0; i < 5; i++) {
+	for(i = 0; i < NR_DATA; i++) {
 		nemu_assert(1);
 	}
 
