@@ -18,8 +18,8 @@ int main() {
 
 	// nemu_assert(i == 13);
 
-	f[7] = fact(7);
-	nemu_assert(f[7] == ans[7]);
+	f[13] = fact(13);
+	nemu_assert(f[13] == ans[13]);
 
 	return 0;
 }
