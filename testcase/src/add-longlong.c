@@ -22,9 +22,9 @@ int main() {
 
 	// nemu_assert(loop == NR_DATA * NR_DATA);
 
-	int i;
-	for(i = 0; i < NR_DATA; i++) {
-		nemu_assert(1);
+	int j,ans_idx = 0;
+	for(j = 0; j < NR_DATA; j++) {
+		nemu_assert(add(test_data[0], test_data[j]) == ans[ans_idx ++]);
 	}
 
 	// int j, ans_idx = 0;
