@@ -5,20 +5,19 @@
 #if DATA_BYTE == 2 || DATA_BYTE == 4
 static void do_execute () {
 
-	panic("awa");
-	DATA_TYPE in = op_dest->val;
-	DATA_TYPE out = op_src2->val;
+	DATA_TYPE src2 = op_src2->val;
+	DATA_TYPE dest = op_dest->val;
 
-	uint8_t count = op_src->val;
-	count &= 0x1f;
-	while(count != 0) {
-		out >>= 1;
-		out |= (in & 1) << ((DATA_BYTE << 3) - 1);
-		in >>= 1;
-		count --;
+	uint8_t tmp = op_src->val;
+	tmp &= 0x1f;
+	while(tmp != 0) {
+		src2 >>= 1;
+		src2 |= (dest & 1) << ((DATA_BYTE << 3) - 1);
+		dest >>= 1;
+		tmp --;
 	}
 
-	OPERAND_W(op_src2, out);
+	OPERAND_W(op_src2, src2);
 
 	print_asm("shrd" str(SUFFIX) " %s,%s,%s", op_src->str, op_dest->str, op_src2->str);
 }
