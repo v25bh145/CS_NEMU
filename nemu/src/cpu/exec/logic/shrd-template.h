@@ -4,6 +4,8 @@
 
 #if DATA_BYTE == 2 || DATA_BYTE == 4
 static void do_execute () {
+
+	panic("awa");
 	DATA_TYPE in = op_dest->val;
 	DATA_TYPE out = op_src2->val;
 
