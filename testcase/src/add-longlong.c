@@ -31,7 +31,7 @@ int main() {
 		}
 	}
 
-	nemu_assert(i ==  8);
+	nemu_assert(NR_DATA ==  8);
 	// nemu_assert(loop == NR_DATA * NR_DATA);
 
 	return 0;
