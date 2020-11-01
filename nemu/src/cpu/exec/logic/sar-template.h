@@ -6,6 +6,8 @@ static void do_execute () {
 	DATA_TYPE src = op_src->val;
 	DATA_TYPE dest = op_dest->val;
 
+	Log("before sar %d %d eip: %x", src, dest, cpu.eip);
+
 	uint8_t count = src & 0x1f;
 	dest >>= count;
 	OPERAND_W(op_dest, dest);
