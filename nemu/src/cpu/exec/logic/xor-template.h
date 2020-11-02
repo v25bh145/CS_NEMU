@@ -3,10 +3,10 @@
 #define instr xor
 
 static void do_execute () {
-	if(cpu.eip == 0x1000b1)
-	Log("bef xor-spj at 0x1000b1: eax %d esi %d edx %d ebx %d", cpu.eax, cpu.esi, cpu.edx, cpu.ebx);
-	if(cpu.eip == 0x1000b1)
-	Log("xor before dest %d reg %s src %d reg %s", op_dest->val, REG_NAME(op_dest->reg), op_src->val, REG_NAME(op_src->reg));
+	// if(cpu.eip == 0x1000b1)
+	// Log("bef xor-spj at 0x1000b1: eax %d esi %d edx %d ebx %d", cpu.eax, cpu.esi, cpu.edx, cpu.ebx);
+	// if(cpu.eip == 0x1000b1)
+	// Log("xor before dest %d reg %s src %d reg %s", op_dest->val, REG_NAME(op_dest->reg), op_src->val, REG_NAME(op_src->reg));
 
 	DATA_TYPE result = op_dest->val ^ op_src->val;
 	OPERAND_W(op_dest, result);
@@ -16,10 +16,10 @@ static void do_execute () {
 	//! (Cf & OF)
 	testfor_flags_s(result, 0xFFF - 0x800 - 0x1);
 
-	if(cpu.eip == 0x1000b1)
-	Log("aft xor-spj at 0x1000b1: eax %d esi %d edx %d ebx %d", cpu.eax, cpu.esi, cpu.edx, cpu.ebx);
-	if(cpu.eip == 0x1000b1)
-	Log("xor after res %d", result);
+	// if(cpu.eip == 0x1000b1)
+	// Log("aft xor-spj at 0x1000b1: eax %d esi %d edx %d ebx %d", cpu.eax, cpu.esi, cpu.edx, cpu.ebx);
+	// if(cpu.eip == 0x1000b1)
+	// Log("xor after res %d", result);
 
 	print_asm_template2();
 }
