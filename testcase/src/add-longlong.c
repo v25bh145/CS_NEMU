@@ -19,26 +19,7 @@ int main() {
 			loop ++;
 		}
 	}
-
-	// nemu_assert(loop == NR_DATA * NR_DATA);
-	// int a[] = {0, 1, 2};
-	// long long test_data[] = {0, 1, 2, 0x7fffffffffffffffLL, 0x8000000000000000LL, 0x8000000000000001LL, 0xfffffffffffffffeLL, 0xffffffffffffffffLL};
-	// int j;
-	// for(j = 0; j < 5; j++) {
-	// 	nemu_assert(add(test_data[j], 4) == add(test_data[j], 4));
-	// }
-	// nemu_assert(add(a[2], 1) == add(a[2], 1));
-	// nemu_assert(add(1, 1) == add(1, 1));
-	// int j, ans_idx = 0;
-	// int loop = 0;
-	// for(i = 0; i < NR_DATA; i ++) {
-		// for(j = 0; j < NR_DATA; j ++) {
-		// 	nemu_assert(add(test_data[0], test_data[j]) == ans[ans_idx ++]);
-		// 	loop ++;
-		// }
-	// }
-
-	// nemu_assert(i ==  7);
+	
 	nemu_assert(loop == NR_DATA * NR_DATA);
 
 	return 0;
