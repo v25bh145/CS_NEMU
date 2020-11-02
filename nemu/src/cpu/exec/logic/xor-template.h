@@ -11,6 +11,9 @@ static void do_execute () {
 	//! (Cf & OF)
 	testfor_flags_s(result, 0xFFF - 0x800 - 0x1);
 
+	if(cpu.eip == 0x1000b1)
+	Log("xor-spj at 0x1000b1: eax %d esi %d edx %d", cpu.eax, cpu.esi, cpu.edx);
+
 	print_asm_template2();
 }
 
