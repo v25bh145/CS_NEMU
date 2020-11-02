@@ -53,7 +53,7 @@ clean: clean-cpp
 
 ##### some convinient rules #####
 
-USERPROG := obj/testcase/max
+USERPROG := obj/testcase/if-else
 # USERPROG := obj/testcase/quick-sort
 ENTRY := $(USERPROG)
 
