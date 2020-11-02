@@ -5,7 +5,7 @@
 static void do_execute () {
 	DATA_TYPE result = op_src->val + 1;
 	OPERAND_W(op_src, result);
-	panic("%x %x ", instr_fetch(0x000010a8, 1), instr_fetch(0x000010a7, 1));
+	// panic("%x %x ", instr_fetch(0x000010a8, 1), instr_fetch(0x000010a7, 1));
 	testfor_flags_s(result, 0x01 + 0x80 + 0x40 + 0x10 + 0x4);
 
 	print_asm_template1();
