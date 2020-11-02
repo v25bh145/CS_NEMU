@@ -53,8 +53,8 @@ clean: clean-cpp
 
 ##### some convinient rules #####
 
-# USERPROG := obj/testcase/string
-USERPROG := obj/testcase/quick-sort
+USERPROG := obj/testcase/string
+# USERPROG := obj/testcase/quick-sort
 ENTRY := $(USERPROG)
 
 entry: $(ENTRY)
