@@ -24,7 +24,7 @@ int main() {
 		// nemu_assert(t.pad1[i] == i + 128);
 		// nemu_assert(t.pad2[i] == i);
 	// }
-	nemu_assert(d.pad1[5] == 5 + 128);
+	nemu_assert(d.pad1[120] == 120 + 128);
 	// nemu_assert(i == N);
 
 	return 0;
