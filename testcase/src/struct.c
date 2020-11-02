@@ -1,15 +1,15 @@
 #include "trap.h"
 
-#define N 16
+#define N 17
 
 struct dummy {
 	int pad1[N];
 	// char pad2[N];
 } d;
 
-struct dummy fun(struct dummy a) {
-	return a;
-}
+// struct dummy fun(struct dummy a) {
+// 	return a;
+// }
 
 int main() {
 	int i;
@@ -18,13 +18,13 @@ int main() {
 		// d.pad2[i] = i;
 	}
 
-	struct dummy t = fun(d);
-	nemu_assert(t.pad1[0] == 0 + 128);
+	// struct dummy t = fun(d);
+	// nemu_assert(t.pad1[0] == 0 + 128);
 	// for(i = 0; i < N; i ++) {
 		// nemu_assert(t.pad1[i] == i + 128);
 		// nemu_assert(t.pad2[i] == i);
 	// }
-
+	nemu_assert(d.pad1[0] == 0 + 128);
 	// nemu_assert(i == N);
 
 	return 0;
