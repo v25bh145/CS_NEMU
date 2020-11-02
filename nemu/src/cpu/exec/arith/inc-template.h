@@ -3,6 +3,7 @@
 #define instr inc
 
 static void do_execute () {
+	panic("%d ", op_src->val);
 	DATA_TYPE result = op_src->val + 1;
 	OPERAND_W(op_src, result);
 
