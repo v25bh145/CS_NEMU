@@ -3,7 +3,11 @@
 #define instr xor
 
 static void do_execute () {
-	Log("xor-spj at 0x1000b1: eax %d esi %d edx %d ebx %d", cpu.eax, cpu.esi, cpu.edx, cpu.ebx);
+	if(cpu.eip == 0x1000b1)
+	Log("bef xor-spj at 0x1000b1: eax %d esi %d edx %d ebx %d", cpu.eax, cpu.esi, cpu.edx, cpu.ebx);
+	if(cpu.eip == 0x1000b1)
+	Log("xor before dest %d src %d", op_dest->val, op_src->val);
+
 	DATA_TYPE result = op_dest->val ^ op_src->val;
 	OPERAND_W(op_dest, result);
 	
@@ -13,7 +17,9 @@ static void do_execute () {
 	testfor_flags_s(result, 0xFFF - 0x800 - 0x1);
 
 	if(cpu.eip == 0x1000b1)
-	Log("xor-spj at 0x1000b1: eax %d esi %d edx %d ebx %d", cpu.eax, cpu.esi, cpu.edx, cpu.ebx);
+	Log("aft xor-spj at 0x1000b1: eax %d esi %d edx %d ebx %d", cpu.eax, cpu.esi, cpu.edx, cpu.ebx);
+	if(cpu.eip == 0x1000b1)
+	Log("xor after res %d", result);
 
 	print_asm_template2();
 }
