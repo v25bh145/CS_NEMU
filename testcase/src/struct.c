@@ -25,7 +25,7 @@ int main() {
 		nemu_assert(t.pad2[i] == i);
 	}
 
-	nemu_assert(i == N);
+	// nemu_assert(i == N);
 
 	return 0;
 }
