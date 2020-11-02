@@ -6,8 +6,7 @@ static void do_execute () {
 	DATA_TYPE result = op_src->val + 1;
 	OPERAND_W(op_src, result);
 
-	/* TODO: Update EFLAGS. */
-	panic("please implement me");
+	testfor_flags_s(result, 0x01 + 0x80 + 0x40 + 0x10 + 0x4);
 
 	print_asm_template1();
 }
