@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "cstdlib": "c",
+        "string": "c",
+        "string_view": "c",
+        "complex": "c",
+        "array": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "typeinfo": "c",
+        "decode-template.h": "c",
+        "algorithm": "cpp"
+    }
+}
