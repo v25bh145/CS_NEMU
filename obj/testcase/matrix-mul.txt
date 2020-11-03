@@ -1,0 +1,25 @@
+
+obj/testcase/matrix-mul：     文件格式 elf32-i386
+
+
+Disassembly of section .text:
+
+00100000 <_start>:
+  100000:	bd 00 00 00 00       	mov    $0x0,%ebp
+  100005:	bc f0 ff ff 07       	mov    $0x7fffff0,%esp
+  10000a:	e8 06 00 00 00       	call   100015 <main>
+  10000f:	b8 00 00 00 00       	mov    $0x0,%eax
+  100014:	d6                   	(bad)  
+
+00100015 <main>:
+  100015:	55                   	push   %ebp
+  100016:	89 e5                	mov    %esp,%ebp
+  100018:	83 ec 10             	sub    $0x10,%esp
+  10001b:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+  100022:	eb 04                	jmp    100028 <main+0x13>
+  100024:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  100028:	83 7d fc 00          	cmpl   $0x0,-0x4(%ebp)
+  10002c:	7e f6                	jle    100024 <main+0xf>
+  10002e:	b8 00 00 00 00       	mov    $0x0,%eax
+  100033:	c9                   	leave  
+  100034:	c3                   	ret    
