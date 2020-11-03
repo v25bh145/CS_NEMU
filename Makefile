@@ -54,7 +54,7 @@ clean: clean-cpp
 ##### some convinient rules #####
 
 # USERPROG := obj/testcase/switch
-USERPROG := obj/testcase/max
+USERPROG := obj/testcase/switch
 ENTRY := $(USERPROG)
 
 entry: $(ENTRY)
