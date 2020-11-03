@@ -310,10 +310,10 @@ int c[N][N];
 int main() {
 	int i, j, k;
 	int loop = 0;
-	for(i = 0; i < N; i ++) {
-		for(j = 0; j < N; j ++) {
+	for(i = 0; i < 1; i ++) {
+		for(j = 0; j < 1; j ++) {
 			c[i][j] = 0;
-			for(k = 0; k < N; k ++) {
+			for(k = 0; k < 1; k ++) {
 				c[i][j] += a[i][k] * b[k][j];
 				loop ++;
 			}

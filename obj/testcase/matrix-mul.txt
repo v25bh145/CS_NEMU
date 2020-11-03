@@ -55,7 +55,7 @@ Disassembly of section .text:
   1000a8:	89 14 85 00 d6 11 00 	mov    %edx,0x11d600(,%eax,4)
   1000af:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
   1000b3:	83 45 ec 01          	addl   $0x1,-0x14(%ebp)
-  1000b7:	83 7d ec 63          	cmpl   $0x63,-0x14(%ebp)
+  1000b7:	83 7d ec 00          	cmpl   $0x0,-0x14(%ebp)
   1000bb:	7e a0                	jle    10005d <main+0x48>
   1000bd:	8b 55 e4             	mov    -0x1c(%ebp),%edx
   1000c0:	8b 45 e8             	mov    -0x18(%ebp),%eax
@@ -72,10 +72,10 @@ Disassembly of section .text:
   1000e7:	b8 01 00 00 00       	mov    $0x1,%eax
   1000ec:	d6                   	(bad)  
   1000ed:	83 45 e8 01          	addl   $0x1,-0x18(%ebp)
-  1000f1:	83 7d e8 63          	cmpl   $0x63,-0x18(%ebp)
+  1000f1:	83 7d e8 00          	cmpl   $0x0,-0x18(%ebp)
   1000f5:	0f 8e 42 ff ff ff    	jle    10003d <main+0x28>
   1000fb:	83 45 e4 01          	addl   $0x1,-0x1c(%ebp)
-  1000ff:	83 7d e4 63          	cmpl   $0x63,-0x1c(%ebp)
+  1000ff:	83 7d e4 00          	cmpl   $0x0,-0x1c(%ebp)
   100103:	0f 8e 28 ff ff ff    	jle    100031 <main+0x1c>
   100109:	83 7d f0 7d          	cmpl   $0x7d,-0x10(%ebp)
   10010d:	74 06                	je     100115 <main+0x100>
