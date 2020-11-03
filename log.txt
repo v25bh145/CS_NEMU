@@ -3,16 +3,65 @@
   10000a:   e8 06 00 00 00                        calll $0x6
   100015:   55                                    pushl %ebp
   100016:   89 e5                                 movl %esp,%ebp
-  100018:   83 ec 10                              subl $0x10,%esp
-  10001b:   c7 45 fc 00 00 00 00                  movl $0x0,-0x4(%ebp)
-  100022:   eb 04                                 jccb $0x4
-  100028:   83 7d fc 00                           cmpl $0x0,-0x4(%ebp)
-  10002c:   7e f6                                 jccb $0xf6
-  100024:   83 45 fc 01                           addl $0x1,-0x4(%ebp)
-  100028:   83 7d fc 00                           cmpl $0x0,-0x4(%ebp)
-  10002c:   7e f6                                 jccb $0xf6
-  10002e:   b8 00 00 00 00                        movl $0x0,%eax
-  100033:   c9                                    leavel $0x0
-  100034:   c3                                    retl $0x0
-  10000f:   b8 00 00 00 00                        movl $0x0,%eax
-  100014:   d6                                    nemu trap (eax = 0)
+  100018:   57                                    pushl %edi
+  100019:   56                                    pushl %esi
+  10001a:   53                                    pushl %ebx
+  10001b:   83 ec 10                              subl $0x10,%esp
+  10001e:   c7 45 f0 00 00 00 00                  movl $0x0,-0x10(%ebp)
+  100025:   c7 45 e4 00 00 00 00                  movl $0x0,-0x1c(%ebp)
+  10002c:   e9 ce 00 00 00                        jccl $0xce
+  1000ff:   83 7d e4 00                           cmpl $0x0,-0x1c(%ebp)
+  100103:   0f 8e 28 ff ff ff                     jccl $0xffffff28
+  100031:   c7 45 e8 00 00 00 00                  movl $0x0,-0x18(%ebp)
+  100038:   e9 b4 00 00 00                        jccl $0xb4
+  1000f1:   83 7d e8 00                           cmpl $0x0,-0x18(%ebp)
+  1000f5:   0f 8e 42 ff ff ff                     jccl $0xffffff42
+  10003d:   8b 55 e4                              movl -0x1c(%ebp),%edx
+  100040:   8b 45 e8                              movl -0x18(%ebp),%eax
+  100043:   6b d2 64                              imull $0x64,%edx,%edx
+  100046:   8d 04 02                              leal $0x64,(%edx,%eax,1)
+  100049:   c7 04 85 00 d6 11 00 00 00 00 00      movl $0x0,0x11d600(,%eax,4)
+  100054:   c7 45 ec 00 00 00 00                  movl $0x0,-0x14(%ebp)
+  10005b:   eb 5a                                 jccb $0x5a
+  1000b7:   83 7d ec 00                           cmpl $0x0,-0x14(%ebp)
+  1000bb:   7e a0                                 jccb $0xa0
+  10005d:   8b 4d e4                              movl -0x1c(%ebp),%ecx
+  100060:   8b 45 e8                              movl -0x18(%ebp),%eax
+  100063:   8b 5d e4                              movl -0x1c(%ebp),%ebx
+  100066:   8b 55 e8                              movl -0x18(%ebp),%edx
+  100069:   6b db 64                              imull $0x64,%ebx,%ebx
+  10006c:   8d 14 13                              leal $0x64,(%ebx,%edx,1)
+  10006f:   8b 1c 95 00 d6 11 00                  movl 0x11d600(,%edx,4),%ebx
+  100076:   8b 75 e4                              movl -0x1c(%ebp),%esi
+  100079:   8b 55 ec                              movl -0x14(%ebp),%edx
+  10007c:   6b f6 64                              imull $0x64,%esi,%esi
+  10007f:   8d 14 16                              leal $0x64,(%esi,%edx,1)
+  100082:   8b 34 95 40 01 10 00                  movl 0x100140(,%edx,4),%esi
+  100089:   8b 7d ec                              movl -0x14(%ebp),%edi
+  10008c:   8b 55 e8                              movl -0x18(%ebp),%edx
+  10008f:   6b ff 64                              imull $0x64,%edi,%edi
+  100092:   8d 14 17                              leal $0x64,(%edi,%edx,1)
+  100095:   8b 14 95 80 9d 10 00                  movl 0x109d80(,%edx,4),%edx
+  10009c:   0f af d6                              imull %esi,%edx,%edx
+  10009f:   8d 14 13                              leal %esi,(%ebx,%edx,1)
+  1000a2:   6b c9 64                              imull $0x64,%ecx,%ecx
+  1000a5:   8d 04 01                              leal $0x64,(%ecx,%eax,1)
+  1000a8:   89 14 85 00 d6 11 00                  movl %edx,0x11d600(,%eax,4)
+  1000af:   83 45 f0 01                           addl $0x1,-0x10(%ebp)
+  1000b3:   83 45 ec 01                           addl $0x1,-0x14(%ebp)
+  1000b7:   83 7d ec 00                           cmpl $0x0,-0x14(%ebp)
+  1000bb:   7e a0                                 jccb $0xa0
+  1000bd:   8b 55 e4                              movl -0x1c(%ebp),%edx
+  1000c0:   8b 45 e8                              movl -0x18(%ebp),%eax
+  1000c3:   6b d2 64                              imull $0x64,%edx,%edx
+  1000c6:   8d 04 02                              leal $0x64,(%edx,%eax,1)
+  1000c9:   8b 14 85 00 d6 11 00                  movl 0x11d600(,%eax,4),%edx
+  1000d0:   8b 4d e4                              movl -0x1c(%ebp),%ecx
+  1000d3:   8b 45 e8                              movl -0x18(%ebp),%eax
+  1000d6:   6b c9 64                              imull $0x64,%ecx,%ecx
+  1000d9:   8d 04 01                              leal $0x64,(%ecx,%eax,1)
+  1000dc:   8b 04 85 c0 39 11 00                  movl 0x1139c0(,%eax,4),%eax
+  1000e3:   39 c2                                 cmpl %eax,%edx
+  1000e5:   74 06                                 jccb $0x6
+  1000e7:   b8 01 00 00 00                        movl $0x1,%eax
+  1000ec:   d6                                    nemu trap (eax = 1)
