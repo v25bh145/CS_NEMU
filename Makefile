@@ -53,8 +53,9 @@ clean: clean-cpp
 
 ##### some convinient rules #####
 
-USERPROG := obj/testcase/integral
+# USERPROG := obj/testcase/integral
 # USERPROG := obj/testcase/matrix-mul
+USERPROG := obj/testcase/quadratic-eq
 ENTRY := $(USERPROG)
 
 entry: $(ENTRY)
