@@ -1,0 +1,429 @@
+
+obj/testcase/string：     文件格式 elf32-i386
+
+
+Disassembly of section .text:
+
+00100000 <_start>:
+  100000:	bd 00 00 00 00       	mov    $0x0,%ebp
+  100005:	bc f0 ff ff 07       	mov    $0x7fffff0,%esp
+  10000a:	e8 06 00 00 00       	call   100015 <main>
+  10000f:	b8 00 00 00 00       	mov    $0x0,%eax
+  100014:	d6                   	(bad)  
+
+00100015 <main>:
+  100015:	55                   	push   %ebp
+  100016:	89 e5                	mov    %esp,%ebp
+  100018:	83 e4 f0             	and    $0xfffffff0,%esp
+  10001b:	56                   	push   %esi
+  10001c:	53                   	push   %ebx
+  10001d:	83 ec 18             	sub    $0x18,%esp
+  100020:	8b 15 28 06 10 00    	mov    0x100628,%edx
+  100026:	a1 20 06 10 00       	mov    0x100620,%eax
+  10002b:	89 54 24 04          	mov    %edx,0x4(%esp)
+  10002f:	89 04 24             	mov    %eax,(%esp)
+  100032:	e8 52 01 00 00       	call   100189 <__GI_strcmp>
+  100037:	85 c0                	test   %eax,%eax
+  100039:	74 06                	je     100041 <main+0x2c>
+  10003b:	b8 01 00 00 00       	mov    $0x1,%eax
+  100040:	d6                   	(bad)  
+  100041:	8b 15 24 06 10 00    	mov    0x100624,%edx
+  100047:	a1 20 06 10 00       	mov    0x100620,%eax
+  10004c:	89 54 24 04          	mov    %edx,0x4(%esp)
+  100050:	89 04 24             	mov    %eax,(%esp)
+  100053:	e8 31 01 00 00       	call   100189 <__GI_strcmp>
+  100058:	83 f8 ff             	cmp    $0xffffffff,%eax
+  10005b:	74 06                	je     100063 <main+0x4e>
+  10005d:	b8 01 00 00 00       	mov    $0x1,%eax
+  100062:	d6                   	(bad)  
+  100063:	a1 24 06 10 00       	mov    0x100624,%eax
+  100068:	8d 50 01             	lea    0x1(%eax),%edx
+  10006b:	a1 20 06 10 00       	mov    0x100620,%eax
+  100070:	83 c0 01             	add    $0x1,%eax
+  100073:	89 54 24 04          	mov    %edx,0x4(%esp)
+  100077:	89 04 24             	mov    %eax,(%esp)
+  10007a:	e8 0a 01 00 00       	call   100189 <__GI_strcmp>
+  10007f:	83 f8 ff             	cmp    $0xffffffff,%eax
+  100082:	74 06                	je     10008a <main+0x75>
+  100084:	b8 01 00 00 00       	mov    $0x1,%eax
+  100089:	d6                   	(bad)  
+  10008a:	a1 24 06 10 00       	mov    0x100624,%eax
+  10008f:	8d 50 02             	lea    0x2(%eax),%edx
+  100092:	a1 20 06 10 00       	mov    0x100620,%eax
+  100097:	83 c0 02             	add    $0x2,%eax
+  10009a:	89 54 24 04          	mov    %edx,0x4(%esp)
+  10009e:	89 04 24             	mov    %eax,(%esp)
+  1000a1:	e8 e3 00 00 00       	call   100189 <__GI_strcmp>
+  1000a6:	83 f8 ff             	cmp    $0xffffffff,%eax
+  1000a9:	74 06                	je     1000b1 <main+0x9c>
+  1000ab:	b8 01 00 00 00       	mov    $0x1,%eax
+  1000b0:	d6                   	(bad)  
+  1000b1:	a1 24 06 10 00       	mov    0x100624,%eax
+  1000b6:	8d 50 03             	lea    0x3(%eax),%edx
+  1000b9:	a1 20 06 10 00       	mov    0x100620,%eax
+  1000be:	83 c0 03             	add    $0x3,%eax
+  1000c1:	89 54 24 04          	mov    %edx,0x4(%esp)
+  1000c5:	89 04 24             	mov    %eax,(%esp)
+  1000c8:	e8 bc 00 00 00       	call   100189 <__GI_strcmp>
+  1000cd:	83 f8 ff             	cmp    $0xffffffff,%eax
+  1000d0:	74 06                	je     1000d8 <main+0xc3>
+  1000d2:	b8 01 00 00 00       	mov    $0x1,%eax
+  1000d7:	d6                   	(bad)  
+  1000d8:	8b 1d 30 06 10 00    	mov    0x100630,%ebx
+  1000de:	a1 2c 06 10 00       	mov    0x10062c,%eax
+  1000e3:	89 c6                	mov    %eax,%esi
+  1000e5:	b8 38 06 10 00       	mov    $0x100638,%eax
+  1000ea:	89 44 24 04          	mov    %eax,0x4(%esp)
+  1000ee:	c7 04 24 3e 06 10 00 	movl   $0x10063e,(%esp)
+  1000f5:	e8 ac 00 00 00       	call   1001a6 <__GI_strcpy>
+  1000fa:	89 74 24 04          	mov    %esi,0x4(%esp)
+  1000fe:	89 04 24             	mov    %eax,(%esp)
+  100101:	e8 64 00 00 00       	call   10016a <__GI_strcat>
+  100106:	89 5c 24 04          	mov    %ebx,0x4(%esp)
+  10010a:	89 04 24             	mov    %eax,(%esp)
+  10010d:	e8 77 00 00 00       	call   100189 <__GI_strcmp>
+  100112:	85 c0                	test   %eax,%eax
+  100114:	74 06                	je     10011c <main+0x107>
+  100116:	b8 01 00 00 00       	mov    $0x1,%eax
+  10011b:	d6                   	(bad)  
+  10011c:	8b 1d 34 06 10 00    	mov    0x100634,%ebx
+  100122:	c7 44 24 08 05 00 00 	movl   $0x5,0x8(%esp)
+  100129:	00 
+  10012a:	c7 44 24 04 23 00 00 	movl   $0x23,0x4(%esp)
+  100131:	00 
+  100132:	c7 04 24 3e 06 10 00 	movl   $0x10063e,(%esp)
+  100139:	e8 7f 00 00 00       	call   1001bd <__GI_memset>
+  10013e:	c7 44 24 08 05 00 00 	movl   $0x5,0x8(%esp)
+  100145:	00 
+  100146:	89 5c 24 04          	mov    %ebx,0x4(%esp)
+  10014a:	89 04 24             	mov    %eax,(%esp)
+  10014d:	e8 bf 00 00 00       	call   100211 <__GI_memcmp>
+  100152:	85 c0                	test   %eax,%eax
+  100154:	74 06                	je     10015c <main+0x147>
+  100156:	b8 01 00 00 00       	mov    $0x1,%eax
+  10015b:	d6                   	(bad)  
+  10015c:	b8 00 00 00 00       	mov    $0x0,%eax
+  100161:	83 c4 18             	add    $0x18,%esp
+  100164:	5b                   	pop    %ebx
+  100165:	5e                   	pop    %esi
+  100166:	89 ec                	mov    %ebp,%esp
+  100168:	5d                   	pop    %ebp
+  100169:	c3                   	ret    
+
+0010016a <__GI_strcat>:
+  10016a:	57                   	push   %edi
+  10016b:	56                   	push   %esi
+  10016c:	31 c0                	xor    %eax,%eax
+  10016e:	8b 54 24 0c          	mov    0xc(%esp),%edx
+  100172:	8b 74 24 10          	mov    0x10(%esp),%esi
+  100176:	83 c9 ff             	or     $0xffffffff,%ecx
+  100179:	89 d7                	mov    %edx,%edi
+  10017b:	f2 ae                	repnz scas %es:(%edi),%al
+  10017d:	4f                   	dec    %edi
+  10017e:	ac                   	lods   %ds:(%esi),%al
+  10017f:	aa                   	stos   %al,%es:(%edi)
+  100180:	84 c0                	test   %al,%al
+  100182:	75 fa                	jne    10017e <__GI_strcat+0x14>
+  100184:	89 d0                	mov    %edx,%eax
+  100186:	5e                   	pop    %esi
+  100187:	5f                   	pop    %edi
+  100188:	c3                   	ret    
+
+00100189 <__GI_strcmp>:
+  100189:	57                   	push   %edi
+  10018a:	56                   	push   %esi
+  10018b:	8b 74 24 0c          	mov    0xc(%esp),%esi
+  10018f:	8b 7c 24 10          	mov    0x10(%esp),%edi
+  100193:	ac                   	lods   %ds:(%esi),%al
+  100194:	ae                   	scas   %es:(%edi),%al
+  100195:	75 08                	jne    10019f <__GI_strcmp+0x16>
+  100197:	84 c0                	test   %al,%al
+  100199:	75 f8                	jne    100193 <__GI_strcmp+0xa>
+  10019b:	31 c0                	xor    %eax,%eax
+  10019d:	eb 04                	jmp    1001a3 <__GI_strcmp+0x1a>
+  10019f:	19 c0                	sbb    %eax,%eax
+  1001a1:	0c 01                	or     $0x1,%al
+  1001a3:	5e                   	pop    %esi
+  1001a4:	5f                   	pop    %edi
+  1001a5:	c3                   	ret    
+
+001001a6 <__GI_strcpy>:
+  1001a6:	57                   	push   %edi
+  1001a7:	56                   	push   %esi
+  1001a8:	8b 54 24 0c          	mov    0xc(%esp),%edx
+  1001ac:	8b 74 24 10          	mov    0x10(%esp),%esi
+  1001b0:	89 d7                	mov    %edx,%edi
+  1001b2:	ac                   	lods   %ds:(%esi),%al
+  1001b3:	aa                   	stos   %al,%es:(%edi)
+  1001b4:	84 c0                	test   %al,%al
+  1001b6:	75 fa                	jne    1001b2 <__GI_strcpy+0xc>
+  1001b8:	89 d0                	mov    %edx,%eax
+  1001ba:	5e                   	pop    %esi
+  1001bb:	5f                   	pop    %edi
+  1001bc:	c3                   	ret    
+
+001001bd <__GI_memset>:
+  1001bd:	57                   	push   %edi
+  1001be:	53                   	push   %ebx
+  1001bf:	8b 54 24 0c          	mov    0xc(%esp),%edx
+  1001c3:	8b 4c 24 14          	mov    0x14(%esp),%ecx
+  1001c7:	8b 44 24 10          	mov    0x10(%esp),%eax
+  1001cb:	89 d7                	mov    %edx,%edi
+  1001cd:	89 cb                	mov    %ecx,%ebx
+  1001cf:	c1 e9 02             	shr    $0x2,%ecx
+  1001d2:	74 0b                	je     1001df <__GI_memset+0x22>
+  1001d4:	0f b6 c0             	movzbl %al,%eax
+  1001d7:	69 c0 01 01 01 01    	imul   $0x1010101,%eax,%eax
+  1001dd:	f3 ab                	rep stos %eax,%es:(%edi)
+  1001df:	83 e3 03             	and    $0x3,%ebx
+  1001e2:	74 04                	je     1001e8 <__GI_memset+0x2b>
+  1001e4:	aa                   	stos   %al,%es:(%edi)
+  1001e5:	4b                   	dec    %ebx
+  1001e6:	75 fc                	jne    1001e4 <__GI_memset+0x27>
+  1001e8:	89 d0                	mov    %edx,%eax
+  1001ea:	5b                   	pop    %ebx
+  1001eb:	5f                   	pop    %edi
+  1001ec:	c3                   	ret    
+  1001ed:	53                   	push   %ebx
+  1001ee:	83 ec 08             	sub    $0x8,%esp
+  1001f1:	8d 4c 24 04          	lea    0x4(%esp),%ecx
+  1001f5:	89 14 24             	mov    %edx,(%esp)
+  1001f8:	89 44 24 04          	mov    %eax,0x4(%esp)
+  1001fc:	89 e2                	mov    %esp,%edx
+  1001fe:	0f b6 01             	movzbl (%ecx),%eax
+  100201:	0f b6 1a             	movzbl (%edx),%ebx
+  100204:	41                   	inc    %ecx
+  100205:	42                   	inc    %edx
+  100206:	39 d8                	cmp    %ebx,%eax
+  100208:	74 f4                	je     1001fe <__GI_memset+0x41>
+  10020a:	83 c4 08             	add    $0x8,%esp
+  10020d:	29 d8                	sub    %ebx,%eax
+  10020f:	5b                   	pop    %ebx
+  100210:	c3                   	ret    
+
+00100211 <__GI_memcmp>:
+  100211:	55                   	push   %ebp
+  100212:	57                   	push   %edi
+  100213:	56                   	push   %esi
+  100214:	53                   	push   %ebx
+  100215:	83 ec 20             	sub    $0x20,%esp
+  100218:	83 7c 24 3c 0f       	cmpl   $0xf,0x3c(%esp)
+  10021d:	8b 4c 24 34          	mov    0x34(%esp),%ecx
+  100221:	8b 6c 24 38          	mov    0x38(%esp),%ebp
+  100225:	0f 86 69 02 00 00    	jbe    100494 <__GI_memcmp+0x283>
+  10022b:	f7 c5 03 00 00 00    	test   $0x3,%ebp
+  100231:	89 6c 24 1c          	mov    %ebp,0x1c(%esp)
+  100235:	74 17                	je     10024e <__GI_memcmp+0x3d>
+  100237:	0f b6 01             	movzbl (%ecx),%eax
+  10023a:	0f b6 55 00          	movzbl 0x0(%ebp),%edx
+  10023e:	41                   	inc    %ecx
+  10023f:	45                   	inc    %ebp
+  100240:	29 d0                	sub    %edx,%eax
+  100242:	0f 85 55 02 00 00    	jne    10049d <__GI_memcmp+0x28c>
+  100248:	ff 4c 24 3c          	decl   0x3c(%esp)
+  10024c:	eb dd                	jmp    10022b <__GI_memcmp+0x1a>
+  10024e:	89 c8                	mov    %ecx,%eax
+  100250:	89 4c 24 18          	mov    %ecx,0x18(%esp)
+  100254:	83 e0 03             	and    $0x3,%eax
+  100257:	0f 85 98 00 00 00    	jne    1002f5 <__GI_memcmp+0xe4>
+  10025d:	8b 7c 24 3c          	mov    0x3c(%esp),%edi
+  100261:	c1 ef 02             	shr    $0x2,%edi
+  100264:	89 f8                	mov    %edi,%eax
+  100266:	83 e0 03             	and    $0x3,%eax
+  100269:	83 f8 01             	cmp    $0x1,%eax
+  10026c:	74 2c                	je     10029a <__GI_memcmp+0x89>
+  10026e:	72 23                	jb     100293 <__GI_memcmp+0x82>
+  100270:	83 f8 03             	cmp    $0x3,%eax
+  100273:	74 10                	je     100285 <__GI_memcmp+0x74>
+  100275:	8b 01                	mov    (%ecx),%eax
+  100277:	8b 55 00             	mov    0x0(%ebp),%edx
+  10027a:	83 e9 08             	sub    $0x8,%ecx
+  10027d:	83 ed 08             	sub    $0x8,%ebp
+  100280:	83 c7 02             	add    $0x2,%edi
+  100283:	eb 42                	jmp    1002c7 <__GI_memcmp+0xb6>
+  100285:	8b 19                	mov    (%ecx),%ebx
+  100287:	8b 75 00             	mov    0x0(%ebp),%esi
+  10028a:	83 e9 04             	sub    $0x4,%ecx
+  10028d:	83 ed 04             	sub    $0x4,%ebp
+  100290:	47                   	inc    %edi
+  100291:	eb 2a                	jmp    1002bd <__GI_memcmp+0xac>
+  100293:	8b 01                	mov    (%ecx),%eax
+  100295:	8b 55 00             	mov    0x0(%ebp),%edx
+  100298:	eb 15                	jmp    1002af <__GI_memcmp+0x9e>
+  10029a:	8b 19                	mov    (%ecx),%ebx
+  10029c:	8b 75 00             	mov    0x0(%ebp),%esi
+  10029f:	83 c1 04             	add    $0x4,%ecx
+  1002a2:	83 c5 04             	add    $0x4,%ebp
+  1002a5:	4f                   	dec    %edi
+  1002a6:	39 f3                	cmp    %esi,%ebx
+  1002a8:	8b 01                	mov    (%ecx),%eax
+  1002aa:	8b 55 00             	mov    0x0(%ebp),%edx
+  1002ad:	75 3d                	jne    1002ec <__GI_memcmp+0xdb>
+  1002af:	39 d0                	cmp    %edx,%eax
+  1002b1:	8b 59 04             	mov    0x4(%ecx),%ebx
+  1002b4:	8b 75 04             	mov    0x4(%ebp),%esi
+  1002b7:	0f 85 a3 01 00 00    	jne    100460 <__GI_memcmp+0x24f>
+  1002bd:	39 f3                	cmp    %esi,%ebx
+  1002bf:	8b 41 08             	mov    0x8(%ecx),%eax
+  1002c2:	8b 55 08             	mov    0x8(%ebp),%edx
+  1002c5:	75 25                	jne    1002ec <__GI_memcmp+0xdb>
+  1002c7:	39 d0                	cmp    %edx,%eax
+  1002c9:	8b 59 0c             	mov    0xc(%ecx),%ebx
+  1002cc:	8b 75 0c             	mov    0xc(%ebp),%esi
+  1002cf:	0f 85 8b 01 00 00    	jne    100460 <__GI_memcmp+0x24f>
+  1002d5:	83 ef 04             	sub    $0x4,%edi
+  1002d8:	74 08                	je     1002e2 <__GI_memcmp+0xd1>
+  1002da:	83 c1 10             	add    $0x10,%ecx
+  1002dd:	83 c5 10             	add    $0x10,%ebp
+  1002e0:	eb c4                	jmp    1002a6 <__GI_memcmp+0x95>
+  1002e2:	31 c0                	xor    %eax,%eax
+  1002e4:	39 f3                	cmp    %esi,%ebx
+  1002e6:	0f 84 79 01 00 00    	je     100465 <__GI_memcmp+0x254>
+  1002ec:	89 f2                	mov    %esi,%edx
+  1002ee:	89 d8                	mov    %ebx,%eax
+  1002f0:	e9 6b 01 00 00       	jmp    100460 <__GI_memcmp+0x24f>
+  1002f5:	c1 e0 03             	shl    $0x3,%eax
+  1002f8:	8b 74 24 3c          	mov    0x3c(%esp),%esi
+  1002fc:	8b 5c 24 18          	mov    0x18(%esp),%ebx
+  100300:	89 04 24             	mov    %eax,(%esp)
+  100303:	b8 20 00 00 00       	mov    $0x20,%eax
+  100308:	2b 04 24             	sub    (%esp),%eax
+  10030b:	c1 ee 02             	shr    $0x2,%esi
+  10030e:	83 e3 fc             	and    $0xfffffffc,%ebx
+  100311:	89 44 24 04          	mov    %eax,0x4(%esp)
+  100315:	89 f0                	mov    %esi,%eax
+  100317:	83 e0 03             	and    $0x3,%eax
+  10031a:	83 f8 01             	cmp    $0x1,%eax
+  10031d:	74 50                	je     10036f <__GI_memcmp+0x15e>
+  10031f:	72 3a                	jb     10035b <__GI_memcmp+0x14a>
+  100321:	83 f8 03             	cmp    $0x3,%eax
+  100324:	8b 03                	mov    (%ebx),%eax
+  100326:	74 1c                	je     100344 <__GI_memcmp+0x133>
+  100328:	89 44 24 14          	mov    %eax,0x14(%esp)
+  10032c:	8b 43 04             	mov    0x4(%ebx),%eax
+  10032f:	83 ed 08             	sub    $0x8,%ebp
+  100332:	8b 55 08             	mov    0x8(%ebp),%edx
+  100335:	83 eb 04             	sub    $0x4,%ebx
+  100338:	83 c6 02             	add    $0x2,%esi
+  10033b:	89 44 24 0c          	mov    %eax,0xc(%esp)
+  10033f:	e9 c4 00 00 00       	jmp    100408 <__GI_memcmp+0x1f7>
+  100344:	89 44 24 10          	mov    %eax,0x10(%esp)
+  100348:	8b 43 04             	mov    0x4(%ebx),%eax
+  10034b:	83 ed 04             	sub    $0x4,%ebp
+  10034e:	8b 7d 04             	mov    0x4(%ebp),%edi
+  100351:	46                   	inc    %esi
+  100352:	89 44 24 14          	mov    %eax,0x14(%esp)
+  100356:	e9 80 00 00 00       	jmp    1003db <__GI_memcmp+0x1ca>
+  10035b:	8b 03                	mov    (%ebx),%eax
+  10035d:	8b 55 00             	mov    0x0(%ebp),%edx
+  100360:	83 c3 04             	add    $0x4,%ebx
+  100363:	89 44 24 08          	mov    %eax,0x8(%esp)
+  100367:	8b 03                	mov    (%ebx),%eax
+  100369:	89 44 24 10          	mov    %eax,0x10(%esp)
+  10036d:	eb 3f                	jmp    1003ae <__GI_memcmp+0x19d>
+  10036f:	8b 03                	mov    (%ebx),%eax
+  100371:	8b 7d 00             	mov    0x0(%ebp),%edi
+  100374:	83 c3 08             	add    $0x8,%ebx
+  100377:	83 c5 04             	add    $0x4,%ebp
+  10037a:	4e                   	dec    %esi
+  10037b:	89 44 24 0c          	mov    %eax,0xc(%esp)
+  10037f:	8b 43 fc             	mov    -0x4(%ebx),%eax
+  100382:	89 44 24 08          	mov    %eax,0x8(%esp)
+  100386:	8b 03                	mov    (%ebx),%eax
+  100388:	8a 4c 24 04          	mov    0x4(%esp),%cl
+  10038c:	8b 55 00             	mov    0x0(%ebp),%edx
+  10038f:	89 44 24 10          	mov    %eax,0x10(%esp)
+  100393:	8b 44 24 08          	mov    0x8(%esp),%eax
+  100397:	d3 e0                	shl    %cl,%eax
+  100399:	8a 0c 24             	mov    (%esp),%cl
+  10039c:	89 44 24 14          	mov    %eax,0x14(%esp)
+  1003a0:	8b 44 24 0c          	mov    0xc(%esp),%eax
+  1003a4:	d3 e8                	shr    %cl,%eax
+  1003a6:	0b 44 24 14          	or     0x14(%esp),%eax
+  1003aa:	39 f8                	cmp    %edi,%eax
+  1003ac:	75 56                	jne    100404 <__GI_memcmp+0x1f3>
+  1003ae:	8b 43 04             	mov    0x4(%ebx),%eax
+  1003b1:	8a 4c 24 04          	mov    0x4(%esp),%cl
+  1003b5:	8b 7d 04             	mov    0x4(%ebp),%edi
+  1003b8:	89 44 24 14          	mov    %eax,0x14(%esp)
+  1003bc:	8b 44 24 10          	mov    0x10(%esp),%eax
+  1003c0:	d3 e0                	shl    %cl,%eax
+  1003c2:	8a 0c 24             	mov    (%esp),%cl
+  1003c5:	89 44 24 0c          	mov    %eax,0xc(%esp)
+  1003c9:	8b 44 24 08          	mov    0x8(%esp),%eax
+  1003cd:	d3 e8                	shr    %cl,%eax
+  1003cf:	0b 44 24 0c          	or     0xc(%esp),%eax
+  1003d3:	39 d0                	cmp    %edx,%eax
+  1003d5:	0f 85 85 00 00 00    	jne    100460 <__GI_memcmp+0x24f>
+  1003db:	8b 43 08             	mov    0x8(%ebx),%eax
+  1003de:	8a 4c 24 04          	mov    0x4(%esp),%cl
+  1003e2:	8b 55 08             	mov    0x8(%ebp),%edx
+  1003e5:	89 44 24 0c          	mov    %eax,0xc(%esp)
+  1003e9:	8b 44 24 14          	mov    0x14(%esp),%eax
+  1003ed:	d3 e0                	shl    %cl,%eax
+  1003ef:	8a 0c 24             	mov    (%esp),%cl
+  1003f2:	89 44 24 08          	mov    %eax,0x8(%esp)
+  1003f6:	8b 44 24 10          	mov    0x10(%esp),%eax
+  1003fa:	d3 e8                	shr    %cl,%eax
+  1003fc:	0b 44 24 08          	or     0x8(%esp),%eax
+  100400:	39 f8                	cmp    %edi,%eax
+  100402:	74 04                	je     100408 <__GI_memcmp+0x1f7>
+  100404:	89 fa                	mov    %edi,%edx
+  100406:	eb 58                	jmp    100460 <__GI_memcmp+0x24f>
+  100408:	8b 43 0c             	mov    0xc(%ebx),%eax
+  10040b:	8a 4c 24 04          	mov    0x4(%esp),%cl
+  10040f:	8b 7d 0c             	mov    0xc(%ebp),%edi
+  100412:	89 44 24 08          	mov    %eax,0x8(%esp)
+  100416:	8b 44 24 0c          	mov    0xc(%esp),%eax
+  10041a:	d3 e0                	shl    %cl,%eax
+  10041c:	8a 0c 24             	mov    (%esp),%cl
+  10041f:	89 44 24 10          	mov    %eax,0x10(%esp)
+  100423:	8b 44 24 14          	mov    0x14(%esp),%eax
+  100427:	d3 e8                	shr    %cl,%eax
+  100429:	0b 44 24 10          	or     0x10(%esp),%eax
+  10042d:	39 d0                	cmp    %edx,%eax
+  10042f:	75 2f                	jne    100460 <__GI_memcmp+0x24f>
+  100431:	83 ee 04             	sub    $0x4,%esi
+  100434:	74 0b                	je     100441 <__GI_memcmp+0x230>
+  100436:	83 c3 10             	add    $0x10,%ebx
+  100439:	83 c5 10             	add    $0x10,%ebp
+  10043c:	e9 45 ff ff ff       	jmp    100386 <__GI_memcmp+0x175>
+  100441:	8a 4c 24 04          	mov    0x4(%esp),%cl
+  100445:	8b 44 24 08          	mov    0x8(%esp),%eax
+  100449:	8b 6c 24 0c          	mov    0xc(%esp),%ebp
+  10044d:	d3 e0                	shl    %cl,%eax
+  10044f:	8a 0c 24             	mov    (%esp),%cl
+  100452:	d3 ed                	shr    %cl,%ebp
+  100454:	09 c5                	or     %eax,%ebp
+  100456:	31 c0                	xor    %eax,%eax
+  100458:	39 fd                	cmp    %edi,%ebp
+  10045a:	74 09                	je     100465 <__GI_memcmp+0x254>
+  10045c:	89 fa                	mov    %edi,%edx
+  10045e:	89 e8                	mov    %ebp,%eax
+  100460:	e8 88 fd ff ff       	call   1001ed <__GI_memset+0x30>
+  100465:	85 c0                	test   %eax,%eax
+  100467:	75 34                	jne    10049d <__GI_memcmp+0x28c>
+  100469:	8b 44 24 3c          	mov    0x3c(%esp),%eax
+  10046d:	8b 4c 24 18          	mov    0x18(%esp),%ecx
+  100471:	8b 6c 24 1c          	mov    0x1c(%esp),%ebp
+  100475:	83 64 24 3c 03       	andl   $0x3,0x3c(%esp)
+  10047a:	83 e0 fc             	and    $0xfffffffc,%eax
+  10047d:	01 c1                	add    %eax,%ecx
+  10047f:	01 c5                	add    %eax,%ebp
+  100481:	eb 11                	jmp    100494 <__GI_memcmp+0x283>
+  100483:	0f b6 01             	movzbl (%ecx),%eax
+  100486:	0f b6 55 00          	movzbl 0x0(%ebp),%edx
+  10048a:	41                   	inc    %ecx
+  10048b:	45                   	inc    %ebp
+  10048c:	29 d0                	sub    %edx,%eax
+  10048e:	75 0d                	jne    10049d <__GI_memcmp+0x28c>
+  100490:	ff 4c 24 3c          	decl   0x3c(%esp)
+  100494:	83 7c 24 3c 00       	cmpl   $0x0,0x3c(%esp)
+  100499:	75 e8                	jne    100483 <__GI_memcmp+0x272>
+  10049b:	31 c0                	xor    %eax,%eax
+  10049d:	83 c4 20             	add    $0x20,%esp
+  1004a0:	5b                   	pop    %ebx
+  1004a1:	5e                   	pop    %esi
+  1004a2:	5f                   	pop    %edi
+  1004a3:	5d                   	pop    %ebp
+  1004a4:	c3                   	ret    

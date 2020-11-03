@@ -1,0 +1,2080 @@
+  100000:   bd 00 00 00 00                        movl $0x0,%ebp
+  100005:   bc f0 ff ff 07                        movl $0x7fffff0,%esp
+  10000a:   e8 a1 00 00 00                        calll $0xa1
+  1000b0:   55                                    pushl %ebp
+  1000b1:   89 e5                                 movl %esp,%ebp
+  1000b3:   83 e4 f0                              andl $0xfffffff0,%esp
+  1000b6:   53                                    pushl %ebx
+  1000b7:   83 ec 1c                              subl $0x1c,%esp
+  1000ba:   c7 04 24 00 00 80 3f                  movl $0x3f800000,(%esp)
+  1000c1:   e8 02 01 00 00                        calll $0x102
+  1001c8:   55                                    pushl %ebp
+  1001c9:   89 e5                                 movl %esp,%ebp
+  1001cb:   53                                    pushl %ebx
+  1001cc:   8b 45 08                              movl 0x8(%ebp),%eax
+  1001cf:   89 c2                                 movl %eax,%edx
+  1001d1:   81 e2 00 00 00 80                     andl $0x80000000,%edx
+  1001d7:   89 c1                                 movl %eax,%ecx
+  1001d9:   c1 f9 17                              sarl $0x17,%ecx
+  1001dc:   81 e1 ff 00 00 00                     andl $0xff,%ecx
+  1001e2:   81 f9 ff 00 00 00                     cmpl $0xff,%ecx
+  1001e8:   74 42                                 jccb $0x42
+  1001ea:   85 c9                                 testl %ecx,%ecx
+  1001ec:   74 36                                 jccb $0x36
+  1001ee:   25 ff ff 7f 00                        andl $0x7fffff,%eax
+  1001f3:   0d 00 00 80 00                        orl $0x800000,%eax
+  1001f8:   8d 99 6a ff ff ff                     leal $0x800000,-0x96(%ecx)
+  1001fe:   83 fb f0                              cmpl $0xfffffff0,%ebx
+  100201:   7d 15                                 jccb $0x15
+  100203:   b9 f0 ff ff ff                        movl $0xfffffff0,%ecx
+  100208:   29 d9                                 subl %ebx,%ecx
+  10020a:   d3 f8                                 sarl %cl,%eax
+  10020c:   85 d2                                 testl %edx,%edx
+  10020e:   74 02                                 jccb $0x2
+  100212:   5b                                    popl %ebx
+  100213:   c9                                    leavel %ebx
+  100214:   c3                                    retl %ebx
+  1000c6:   c7 04 24 00 00 80 bf                  movl $0xbf800000,(%esp)
+  1000cd:   89 c3                                 movl %eax,%ebx
+  1000cf:   e8 f4 00 00 00                        calll $0xf4
+  1001c8:   55                                    pushl %ebp
+  1001c9:   89 e5                                 movl %esp,%ebp
+  1001cb:   53                                    pushl %ebx
+  1001cc:   8b 45 08                              movl 0x8(%ebp),%eax
+  1001cf:   89 c2                                 movl %eax,%edx
+  1001d1:   81 e2 00 00 00 80                     andl $0x80000000,%edx
+  1001d7:   89 c1                                 movl %eax,%ecx
+  1001d9:   c1 f9 17                              sarl $0x17,%ecx
+  1001dc:   81 e1 ff 00 00 00                     andl $0xff,%ecx
+  1001e2:   81 f9 ff 00 00 00                     cmpl $0xff,%ecx
+  1001e8:   74 42                                 jccb $0x42
+  1001ea:   85 c9                                 testl %ecx,%ecx
+  1001ec:   74 36                                 jccb $0x36
+  1001ee:   25 ff ff 7f 00                        andl $0x7fffff,%eax
+  1001f3:   0d 00 00 80 00                        orl $0x800000,%eax
+  1001f8:   8d 99 6a ff ff ff                     leal $0x800000,-0x96(%ecx)
+  1001fe:   83 fb f0                              cmpl $0xfffffff0,%ebx
+  100201:   7d 15                                 jccb $0x15
+  100203:   b9 f0 ff ff ff                        movl $0xfffffff0,%ecx
+  100208:   29 d9                                 subl %ebx,%ecx
+  10020a:   d3 f8                                 sarl %cl,%eax
+  10020c:   85 d2                                 testl %edx,%edx
+  10020e:   74 02                                 jccb $0x2
+  100210:   f7 d8                                 negl %eax
+  100212:   5b                                    popl %ebx
+  100213:   c9                                    leavel %ebx
+  100214:   c3                                    retl %ebx
+  1000d4:   89 5c 24 08                           movl %ebx,0x8(%esp)
+  1000d8:   c7 44 24 0c 30 01 10 00               movl $0x100130,0xc(%esp)
+  1000e0:   c7 04 24 0a 00 00 00                  movl $0xa,(%esp)
+  1000e7:   89 44 24 04                           movl %eax,0x4(%esp)
+  1000eb:   e8 30 ff ff ff                        calll $0xffffff30
+  100020:   55                                    pushl %ebp
+  100021:   89 e5                                 movl %esp,%ebp
+  100023:   57                                    pushl %edi
+  100024:   56                                    pushl %esi
+  100025:   53                                    pushl %ebx
+  100026:   83 ec 2c                              subl $0x2c,%esp
+  100029:   8b 75 10                              movl 0x10(%ebp),%esi
+  10002c:   8b 7d 0c                              movl 0xc(%ebp),%edi
+  10002f:   8b 45 08                              movl 0x8(%ebp),%eax
+  100032:   8b 5d 14                              movl 0x14(%ebp),%ebx
+  100035:   89 f2                                 movl %esi,%edx
+  100037:   29 fa                                 subl %edi,%edx
+  100039:   89 45 e4                              movl %eax,-0x1c(%ebp)
+  10003c:   89 d0                                 movl %edx,%eax
+  10003e:   c1 fa 1f                              sarl $0x1f,%edx
+  100041:   f7 7d e4                              idivl -0x1c(%ebp)
+  100044:   89 45 e0                              movl %eax,-0x20(%ebp)
+  100047:   89 3c 24                              movl %edi,(%esp)
+  10004a:   ff d3                                 calll %ebx
+  100130:   55                                    pushl %ebp
+  100131:   89 e5                                 movl %esp,%ebp
+  100133:   83 ec 18                              subl $0x18,%esp
+  100136:   8b 45 08                              movl 0x8(%ebp),%eax
+  100139:   89 44 24 04                           movl %eax,0x4(%esp)
+  10013d:   89 04 24                              movl %eax,(%esp)
+  100140:   e8 1f 00 00 00                        calll $0x1f
+  100164:   55                                    pushl %ebp
+  100165:   89 e5                                 movl %esp,%ebp
+  100167:   8b 45 0c                              movl 0xc(%ebp),%eax
+  10016a:   f7 6d 08                              imull 0x8(%ebp)
+  10016d:   0f ac d0 10                           shrdl $0x10,%edx
+  100171:   c1 fa 10                              sarl $0x10,%edx
+  100174:   c9                                    leavel $0x10
+  100175:   c3                                    retl $0x10
+  100145:   c7 04 24 00 00 01 00                  movl $0x10000,(%esp)
+  10014c:   8d 04 80                              leal $0x10000,(%eax,%eax,4)
+  10014f:   8d 84 80 00 00 01 00                  leal $0x10000,0x10000(%eax,%eax,4)
+  100156:   89 44 24 04                           movl %eax,0x4(%esp)
+  10015a:   e8 19 00 00 00                        calll $0x19
+  100178:   55                                    pushl %ebp
+  100179:   89 e5                                 movl %esp,%ebp
+  10017b:   56                                    pushl %esi
+  10017c:   53                                    pushl %ebx
+  10017d:   8b 45 08                              movl 0x8(%ebp),%eax
+  100180:   8b 4d 0c                              movl 0xc(%ebp),%ecx
+  100183:   85 c0                                 testl %eax,%eax
+  100185:   78 2d                                 jccb $0x2d
+  100187:   bb 01 00 00 00                        movl $0x1,%ebx
+  10018c:   85 c9                                 testl %ecx,%ecx
+  10018e:   78 2f                                 jccb $0x2f
+  100190:   99                                    cwdcdql $0x2f
+  100191:   f7 f9                                 idivl %ecx
+  100193:   31 f6                                 xorl %esi,%esi
+  100195:   8d 76 00                              leal %esi,0(%esi)
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  1001ab:   0f af c3                              imull %ebx,%eax,%eax
+  1001ae:   5b                                    popl %ebx
+  1001af:   5e                                    popl %esi
+  1001b0:   c9                                    leavel %esi
+  1001b1:   c3                                    retl %esi
+  10015f:   c9                                    leavel %esi
+  100160:   c3                                    retl %esi
+  10004c:   89 45 dc                              movl %eax,-0x24(%ebp)
+  10004f:   89 34 24                              movl %esi,(%esp)
+  100052:   ff d3                                 calll %ebx
+  100130:   55                                    pushl %ebp
+  100131:   89 e5                                 movl %esp,%ebp
+  100133:   83 ec 18                              subl $0x18,%esp
+  100136:   8b 45 08                              movl 0x8(%ebp),%eax
+  100139:   89 44 24 04                           movl %eax,0x4(%esp)
+  10013d:   89 04 24                              movl %eax,(%esp)
+  100140:   e8 1f 00 00 00                        calll $0x1f
+  100164:   55                                    pushl %ebp
+  100165:   89 e5                                 movl %esp,%ebp
+  100167:   8b 45 0c                              movl 0xc(%ebp),%eax
+  10016a:   f7 6d 08                              imull 0x8(%ebp)
+  10016d:   0f ac d0 10                           shrdl $0x10,%edx
+  100171:   c1 fa 10                              sarl $0x10,%edx
+  100174:   c9                                    leavel $0x10
+  100175:   c3                                    retl $0x10
+  100145:   c7 04 24 00 00 01 00                  movl $0x10000,(%esp)
+  10014c:   8d 04 80                              leal $0x10000,(%eax,%eax,4)
+  10014f:   8d 84 80 00 00 01 00                  leal $0x10000,0x10000(%eax,%eax,4)
+  100156:   89 44 24 04                           movl %eax,0x4(%esp)
+  10015a:   e8 19 00 00 00                        calll $0x19
+  100178:   55                                    pushl %ebp
+  100179:   89 e5                                 movl %esp,%ebp
+  10017b:   56                                    pushl %esi
+  10017c:   53                                    pushl %ebx
+  10017d:   8b 45 08                              movl 0x8(%ebp),%eax
+  100180:   8b 4d 0c                              movl 0xc(%ebp),%ecx
+  100183:   85 c0                                 testl %eax,%eax
+  100185:   78 2d                                 jccb $0x2d
+  100187:   bb 01 00 00 00                        movl $0x1,%ebx
+  10018c:   85 c9                                 testl %ecx,%ecx
+  10018e:   78 2f                                 jccb $0x2f
+  100190:   99                                    cwdcdql $0x2f
+  100191:   f7 f9                                 idivl %ecx
+  100193:   31 f6                                 xorl %esi,%esi
+  100195:   8d 76 00                              leal %esi,0(%esi)
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  1001ab:   0f af c3                              imull %ebx,%eax,%eax
+  1001ae:   5b                                    popl %ebx
+  1001af:   5e                                    popl %esi
+  1001b0:   c9                                    leavel %esi
+  1001b1:   c3                                    retl %esi
+  10015f:   c9                                    leavel %esi
+  100160:   c3                                    retl %esi
+  100054:   03 45 dc                              addl -0x24(%ebp),%eax
+  100057:   89 c2                                 movl %eax,%edx
+  100059:   c1 ea 1f                              shrl $0x1f,%edx
+  10005c:   8d 04 02                              leal $0x1f,(%edx,%eax,1)
+  10005f:   d1 f8                                 sarl $1,%eax
+  100061:   83 7d e4 01                           cmpl $0x1,-0x1c(%ebp)
+  100065:   7e 26                                 jccb $0x26
+  100067:   03 7d e0                              addl -0x20(%ebp),%edi
+  10006a:   be 01 00 00 00                        movl $0x1,%esi
+  10006f:   89 5d dc                              movl %ebx,-0x24(%ebp)
+  100072:   89 c3                                 movl %eax,%ebx
+  100074:   8d 74 26 00                           leal %eax,0(%esi)
+  100078:   89 3c 24                              movl %edi,(%esp)
+  10007b:   83 c6 01                              addl $0x1,%esi
+  10007e:   ff 55 dc                              calll -0x24(%ebp)
+  100130:   55                                    pushl %ebp
+  100131:   89 e5                                 movl %esp,%ebp
+  100133:   83 ec 18                              subl $0x18,%esp
+  100136:   8b 45 08                              movl 0x8(%ebp),%eax
+  100139:   89 44 24 04                           movl %eax,0x4(%esp)
+  10013d:   89 04 24                              movl %eax,(%esp)
+  100140:   e8 1f 00 00 00                        calll $0x1f
+  100164:   55                                    pushl %ebp
+  100165:   89 e5                                 movl %esp,%ebp
+  100167:   8b 45 0c                              movl 0xc(%ebp),%eax
+  10016a:   f7 6d 08                              imull 0x8(%ebp)
+  10016d:   0f ac d0 10                           shrdl $0x10,%edx
+  100171:   c1 fa 10                              sarl $0x10,%edx
+  100174:   c9                                    leavel $0x10
+  100175:   c3                                    retl $0x10
+  100145:   c7 04 24 00 00 01 00                  movl $0x10000,(%esp)
+  10014c:   8d 04 80                              leal $0x10000,(%eax,%eax,4)
+  10014f:   8d 84 80 00 00 01 00                  leal $0x10000,0x10000(%eax,%eax,4)
+  100156:   89 44 24 04                           movl %eax,0x4(%esp)
+  10015a:   e8 19 00 00 00                        calll $0x19
+  100178:   55                                    pushl %ebp
+  100179:   89 e5                                 movl %esp,%ebp
+  10017b:   56                                    pushl %esi
+  10017c:   53                                    pushl %ebx
+  10017d:   8b 45 08                              movl 0x8(%ebp),%eax
+  100180:   8b 4d 0c                              movl 0xc(%ebp),%ecx
+  100183:   85 c0                                 testl %eax,%eax
+  100185:   78 2d                                 jccb $0x2d
+  100187:   bb 01 00 00 00                        movl $0x1,%ebx
+  10018c:   85 c9                                 testl %ecx,%ecx
+  10018e:   78 2f                                 jccb $0x2f
+  100190:   99                                    cwdcdql $0x2f
+  100191:   f7 f9                                 idivl %ecx
+  100193:   31 f6                                 xorl %esi,%esi
+  100195:   8d 76 00                              leal %esi,0(%esi)
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  1001ab:   0f af c3                              imull %ebx,%eax,%eax
+  1001ae:   5b                                    popl %ebx
+  1001af:   5e                                    popl %esi
+  1001b0:   c9                                    leavel %esi
+  1001b1:   c3                                    retl %esi
+  10015f:   c9                                    leavel %esi
+  100160:   c3                                    retl %esi
+  100081:   03 7d e0                              addl -0x20(%ebp),%edi
+  100084:   01 c3                                 addl %eax,%ebx
+  100086:   39 75 e4                              cmpl %esi,-0x1c(%ebp)
+  100089:   7f ed                                 jccb $0xed
+  100078:   89 3c 24                              movl %edi,(%esp)
+  10007b:   83 c6 01                              addl $0x1,%esi
+  10007e:   ff 55 dc                              calll -0x24(%ebp)
+  100130:   55                                    pushl %ebp
+  100131:   89 e5                                 movl %esp,%ebp
+  100133:   83 ec 18                              subl $0x18,%esp
+  100136:   8b 45 08                              movl 0x8(%ebp),%eax
+  100139:   89 44 24 04                           movl %eax,0x4(%esp)
+  10013d:   89 04 24                              movl %eax,(%esp)
+  100140:   e8 1f 00 00 00                        calll $0x1f
+  100164:   55                                    pushl %ebp
+  100165:   89 e5                                 movl %esp,%ebp
+  100167:   8b 45 0c                              movl 0xc(%ebp),%eax
+  10016a:   f7 6d 08                              imull 0x8(%ebp)
+  10016d:   0f ac d0 10                           shrdl $0x10,%edx
+  100171:   c1 fa 10                              sarl $0x10,%edx
+  100174:   c9                                    leavel $0x10
+  100175:   c3                                    retl $0x10
+  100145:   c7 04 24 00 00 01 00                  movl $0x10000,(%esp)
+  10014c:   8d 04 80                              leal $0x10000,(%eax,%eax,4)
+  10014f:   8d 84 80 00 00 01 00                  leal $0x10000,0x10000(%eax,%eax,4)
+  100156:   89 44 24 04                           movl %eax,0x4(%esp)
+  10015a:   e8 19 00 00 00                        calll $0x19
+  100178:   55                                    pushl %ebp
+  100179:   89 e5                                 movl %esp,%ebp
+  10017b:   56                                    pushl %esi
+  10017c:   53                                    pushl %ebx
+  10017d:   8b 45 08                              movl 0x8(%ebp),%eax
+  100180:   8b 4d 0c                              movl 0xc(%ebp),%ecx
+  100183:   85 c0                                 testl %eax,%eax
+  100185:   78 2d                                 jccb $0x2d
+  100187:   bb 01 00 00 00                        movl $0x1,%ebx
+  10018c:   85 c9                                 testl %ecx,%ecx
+  10018e:   78 2f                                 jccb $0x2f
+  100190:   99                                    cwdcdql $0x2f
+  100191:   f7 f9                                 idivl %ecx
+  100193:   31 f6                                 xorl %esi,%esi
+  100195:   8d 76 00                              leal %esi,0(%esi)
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  1001ab:   0f af c3                              imull %ebx,%eax,%eax
+  1001ae:   5b                                    popl %ebx
+  1001af:   5e                                    popl %esi
+  1001b0:   c9                                    leavel %esi
+  1001b1:   c3                                    retl %esi
+  10015f:   c9                                    leavel %esi
+  100160:   c3                                    retl %esi
+  100081:   03 7d e0                              addl -0x20(%ebp),%edi
+  100084:   01 c3                                 addl %eax,%ebx
+  100086:   39 75 e4                              cmpl %esi,-0x1c(%ebp)
+  100089:   7f ed                                 jccb $0xed
+  100078:   89 3c 24                              movl %edi,(%esp)
+  10007b:   83 c6 01                              addl $0x1,%esi
+  10007e:   ff 55 dc                              calll -0x24(%ebp)
+  100130:   55                                    pushl %ebp
+  100131:   89 e5                                 movl %esp,%ebp
+  100133:   83 ec 18                              subl $0x18,%esp
+  100136:   8b 45 08                              movl 0x8(%ebp),%eax
+  100139:   89 44 24 04                           movl %eax,0x4(%esp)
+  10013d:   89 04 24                              movl %eax,(%esp)
+  100140:   e8 1f 00 00 00                        calll $0x1f
+  100164:   55                                    pushl %ebp
+  100165:   89 e5                                 movl %esp,%ebp
+  100167:   8b 45 0c                              movl 0xc(%ebp),%eax
+  10016a:   f7 6d 08                              imull 0x8(%ebp)
+  10016d:   0f ac d0 10                           shrdl $0x10,%edx
+  100171:   c1 fa 10                              sarl $0x10,%edx
+  100174:   c9                                    leavel $0x10
+  100175:   c3                                    retl $0x10
+  100145:   c7 04 24 00 00 01 00                  movl $0x10000,(%esp)
+  10014c:   8d 04 80                              leal $0x10000,(%eax,%eax,4)
+  10014f:   8d 84 80 00 00 01 00                  leal $0x10000,0x10000(%eax,%eax,4)
+  100156:   89 44 24 04                           movl %eax,0x4(%esp)
+  10015a:   e8 19 00 00 00                        calll $0x19
+  100178:   55                                    pushl %ebp
+  100179:   89 e5                                 movl %esp,%ebp
+  10017b:   56                                    pushl %esi
+  10017c:   53                                    pushl %ebx
+  10017d:   8b 45 08                              movl 0x8(%ebp),%eax
+  100180:   8b 4d 0c                              movl 0xc(%ebp),%ecx
+  100183:   85 c0                                 testl %eax,%eax
+  100185:   78 2d                                 jccb $0x2d
+  100187:   bb 01 00 00 00                        movl $0x1,%ebx
+  10018c:   85 c9                                 testl %ecx,%ecx
+  10018e:   78 2f                                 jccb $0x2f
+  100190:   99                                    cwdcdql $0x2f
+  100191:   f7 f9                                 idivl %ecx
+  100193:   31 f6                                 xorl %esi,%esi
+  100195:   8d 76 00                              leal %esi,0(%esi)
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  1001ab:   0f af c3                              imull %ebx,%eax,%eax
+  1001ae:   5b                                    popl %ebx
+  1001af:   5e                                    popl %esi
+  1001b0:   c9                                    leavel %esi
+  1001b1:   c3                                    retl %esi
+  10015f:   c9                                    leavel %esi
+  100160:   c3                                    retl %esi
+  100081:   03 7d e0                              addl -0x20(%ebp),%edi
+  100084:   01 c3                                 addl %eax,%ebx
+  100086:   39 75 e4                              cmpl %esi,-0x1c(%ebp)
+  100089:   7f ed                                 jccb $0xed
+  100078:   89 3c 24                              movl %edi,(%esp)
+  10007b:   83 c6 01                              addl $0x1,%esi
+  10007e:   ff 55 dc                              calll -0x24(%ebp)
+  100130:   55                                    pushl %ebp
+  100131:   89 e5                                 movl %esp,%ebp
+  100133:   83 ec 18                              subl $0x18,%esp
+  100136:   8b 45 08                              movl 0x8(%ebp),%eax
+  100139:   89 44 24 04                           movl %eax,0x4(%esp)
+  10013d:   89 04 24                              movl %eax,(%esp)
+  100140:   e8 1f 00 00 00                        calll $0x1f
+  100164:   55                                    pushl %ebp
+  100165:   89 e5                                 movl %esp,%ebp
+  100167:   8b 45 0c                              movl 0xc(%ebp),%eax
+  10016a:   f7 6d 08                              imull 0x8(%ebp)
+  10016d:   0f ac d0 10                           shrdl $0x10,%edx
+  100171:   c1 fa 10                              sarl $0x10,%edx
+  100174:   c9                                    leavel $0x10
+  100175:   c3                                    retl $0x10
+  100145:   c7 04 24 00 00 01 00                  movl $0x10000,(%esp)
+  10014c:   8d 04 80                              leal $0x10000,(%eax,%eax,4)
+  10014f:   8d 84 80 00 00 01 00                  leal $0x10000,0x10000(%eax,%eax,4)
+  100156:   89 44 24 04                           movl %eax,0x4(%esp)
+  10015a:   e8 19 00 00 00                        calll $0x19
+  100178:   55                                    pushl %ebp
+  100179:   89 e5                                 movl %esp,%ebp
+  10017b:   56                                    pushl %esi
+  10017c:   53                                    pushl %ebx
+  10017d:   8b 45 08                              movl 0x8(%ebp),%eax
+  100180:   8b 4d 0c                              movl 0xc(%ebp),%ecx
+  100183:   85 c0                                 testl %eax,%eax
+  100185:   78 2d                                 jccb $0x2d
+  100187:   bb 01 00 00 00                        movl $0x1,%ebx
+  10018c:   85 c9                                 testl %ecx,%ecx
+  10018e:   78 2f                                 jccb $0x2f
+  100190:   99                                    cwdcdql $0x2f
+  100191:   f7 f9                                 idivl %ecx
+  100193:   31 f6                                 xorl %esi,%esi
+  100195:   8d 76 00                              leal %esi,0(%esi)
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  1001ab:   0f af c3                              imull %ebx,%eax,%eax
+  1001ae:   5b                                    popl %ebx
+  1001af:   5e                                    popl %esi
+  1001b0:   c9                                    leavel %esi
+  1001b1:   c3                                    retl %esi
+  10015f:   c9                                    leavel %esi
+  100160:   c3                                    retl %esi
+  100081:   03 7d e0                              addl -0x20(%ebp),%edi
+  100084:   01 c3                                 addl %eax,%ebx
+  100086:   39 75 e4                              cmpl %esi,-0x1c(%ebp)
+  100089:   7f ed                                 jccb $0xed
+  100078:   89 3c 24                              movl %edi,(%esp)
+  10007b:   83 c6 01                              addl $0x1,%esi
+  10007e:   ff 55 dc                              calll -0x24(%ebp)
+  100130:   55                                    pushl %ebp
+  100131:   89 e5                                 movl %esp,%ebp
+  100133:   83 ec 18                              subl $0x18,%esp
+  100136:   8b 45 08                              movl 0x8(%ebp),%eax
+  100139:   89 44 24 04                           movl %eax,0x4(%esp)
+  10013d:   89 04 24                              movl %eax,(%esp)
+  100140:   e8 1f 00 00 00                        calll $0x1f
+  100164:   55                                    pushl %ebp
+  100165:   89 e5                                 movl %esp,%ebp
+  100167:   8b 45 0c                              movl 0xc(%ebp),%eax
+  10016a:   f7 6d 08                              imull 0x8(%ebp)
+  10016d:   0f ac d0 10                           shrdl $0x10,%edx
+  100171:   c1 fa 10                              sarl $0x10,%edx
+  100174:   c9                                    leavel $0x10
+  100175:   c3                                    retl $0x10
+  100145:   c7 04 24 00 00 01 00                  movl $0x10000,(%esp)
+  10014c:   8d 04 80                              leal $0x10000,(%eax,%eax,4)
+  10014f:   8d 84 80 00 00 01 00                  leal $0x10000,0x10000(%eax,%eax,4)
+  100156:   89 44 24 04                           movl %eax,0x4(%esp)
+  10015a:   e8 19 00 00 00                        calll $0x19
+  100178:   55                                    pushl %ebp
+  100179:   89 e5                                 movl %esp,%ebp
+  10017b:   56                                    pushl %esi
+  10017c:   53                                    pushl %ebx
+  10017d:   8b 45 08                              movl 0x8(%ebp),%eax
+  100180:   8b 4d 0c                              movl 0xc(%ebp),%ecx
+  100183:   85 c0                                 testl %eax,%eax
+  100185:   78 2d                                 jccb $0x2d
+  100187:   bb 01 00 00 00                        movl $0x1,%ebx
+  10018c:   85 c9                                 testl %ecx,%ecx
+  10018e:   78 2f                                 jccb $0x2f
+  100190:   99                                    cwdcdql $0x2f
+  100191:   f7 f9                                 idivl %ecx
+  100193:   31 f6                                 xorl %esi,%esi
+  100195:   8d 76 00                              leal %esi,0(%esi)
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  1001ab:   0f af c3                              imull %ebx,%eax,%eax
+  1001ae:   5b                                    popl %ebx
+  1001af:   5e                                    popl %esi
+  1001b0:   c9                                    leavel %esi
+  1001b1:   c3                                    retl %esi
+  10015f:   c9                                    leavel %esi
+  100160:   c3                                    retl %esi
+  100081:   03 7d e0                              addl -0x20(%ebp),%edi
+  100084:   01 c3                                 addl %eax,%ebx
+  100086:   39 75 e4                              cmpl %esi,-0x1c(%ebp)
+  100089:   7f ed                                 jccb $0xed
+  100078:   89 3c 24                              movl %edi,(%esp)
+  10007b:   83 c6 01                              addl $0x1,%esi
+  10007e:   ff 55 dc                              calll -0x24(%ebp)
+  100130:   55                                    pushl %ebp
+  100131:   89 e5                                 movl %esp,%ebp
+  100133:   83 ec 18                              subl $0x18,%esp
+  100136:   8b 45 08                              movl 0x8(%ebp),%eax
+  100139:   89 44 24 04                           movl %eax,0x4(%esp)
+  10013d:   89 04 24                              movl %eax,(%esp)
+  100140:   e8 1f 00 00 00                        calll $0x1f
+  100164:   55                                    pushl %ebp
+  100165:   89 e5                                 movl %esp,%ebp
+  100167:   8b 45 0c                              movl 0xc(%ebp),%eax
+  10016a:   f7 6d 08                              imull 0x8(%ebp)
+  10016d:   0f ac d0 10                           shrdl $0x10,%edx
+  100171:   c1 fa 10                              sarl $0x10,%edx
+  100174:   c9                                    leavel $0x10
+  100175:   c3                                    retl $0x10
+  100145:   c7 04 24 00 00 01 00                  movl $0x10000,(%esp)
+  10014c:   8d 04 80                              leal $0x10000,(%eax,%eax,4)
+  10014f:   8d 84 80 00 00 01 00                  leal $0x10000,0x10000(%eax,%eax,4)
+  100156:   89 44 24 04                           movl %eax,0x4(%esp)
+  10015a:   e8 19 00 00 00                        calll $0x19
+  100178:   55                                    pushl %ebp
+  100179:   89 e5                                 movl %esp,%ebp
+  10017b:   56                                    pushl %esi
+  10017c:   53                                    pushl %ebx
+  10017d:   8b 45 08                              movl 0x8(%ebp),%eax
+  100180:   8b 4d 0c                              movl 0xc(%ebp),%ecx
+  100183:   85 c0                                 testl %eax,%eax
+  100185:   78 2d                                 jccb $0x2d
+  100187:   bb 01 00 00 00                        movl $0x1,%ebx
+  10018c:   85 c9                                 testl %ecx,%ecx
+  10018e:   78 2f                                 jccb $0x2f
+  100190:   99                                    cwdcdql $0x2f
+  100191:   f7 f9                                 idivl %ecx
+  100193:   31 f6                                 xorl %esi,%esi
+  100195:   8d 76 00                              leal %esi,0(%esi)
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  1001ab:   0f af c3                              imull %ebx,%eax,%eax
+  1001ae:   5b                                    popl %ebx
+  1001af:   5e                                    popl %esi
+  1001b0:   c9                                    leavel %esi
+  1001b1:   c3                                    retl %esi
+  10015f:   c9                                    leavel %esi
+  100160:   c3                                    retl %esi
+  100081:   03 7d e0                              addl -0x20(%ebp),%edi
+  100084:   01 c3                                 addl %eax,%ebx
+  100086:   39 75 e4                              cmpl %esi,-0x1c(%ebp)
+  100089:   7f ed                                 jccb $0xed
+  100078:   89 3c 24                              movl %edi,(%esp)
+  10007b:   83 c6 01                              addl $0x1,%esi
+  10007e:   ff 55 dc                              calll -0x24(%ebp)
+  100130:   55                                    pushl %ebp
+  100131:   89 e5                                 movl %esp,%ebp
+  100133:   83 ec 18                              subl $0x18,%esp
+  100136:   8b 45 08                              movl 0x8(%ebp),%eax
+  100139:   89 44 24 04                           movl %eax,0x4(%esp)
+  10013d:   89 04 24                              movl %eax,(%esp)
+  100140:   e8 1f 00 00 00                        calll $0x1f
+  100164:   55                                    pushl %ebp
+  100165:   89 e5                                 movl %esp,%ebp
+  100167:   8b 45 0c                              movl 0xc(%ebp),%eax
+  10016a:   f7 6d 08                              imull 0x8(%ebp)
+  10016d:   0f ac d0 10                           shrdl $0x10,%edx
+  100171:   c1 fa 10                              sarl $0x10,%edx
+  100174:   c9                                    leavel $0x10
+  100175:   c3                                    retl $0x10
+  100145:   c7 04 24 00 00 01 00                  movl $0x10000,(%esp)
+  10014c:   8d 04 80                              leal $0x10000,(%eax,%eax,4)
+  10014f:   8d 84 80 00 00 01 00                  leal $0x10000,0x10000(%eax,%eax,4)
+  100156:   89 44 24 04                           movl %eax,0x4(%esp)
+  10015a:   e8 19 00 00 00                        calll $0x19
+  100178:   55                                    pushl %ebp
+  100179:   89 e5                                 movl %esp,%ebp
+  10017b:   56                                    pushl %esi
+  10017c:   53                                    pushl %ebx
+  10017d:   8b 45 08                              movl 0x8(%ebp),%eax
+  100180:   8b 4d 0c                              movl 0xc(%ebp),%ecx
+  100183:   85 c0                                 testl %eax,%eax
+  100185:   78 2d                                 jccb $0x2d
+  100187:   bb 01 00 00 00                        movl $0x1,%ebx
+  10018c:   85 c9                                 testl %ecx,%ecx
+  10018e:   78 2f                                 jccb $0x2f
+  100190:   99                                    cwdcdql $0x2f
+  100191:   f7 f9                                 idivl %ecx
+  100193:   31 f6                                 xorl %esi,%esi
+  100195:   8d 76 00                              leal %esi,0(%esi)
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  1001ab:   0f af c3                              imull %ebx,%eax,%eax
+  1001ae:   5b                                    popl %ebx
+  1001af:   5e                                    popl %esi
+  1001b0:   c9                                    leavel %esi
+  1001b1:   c3                                    retl %esi
+  10015f:   c9                                    leavel %esi
+  100160:   c3                                    retl %esi
+  100081:   03 7d e0                              addl -0x20(%ebp),%edi
+  100084:   01 c3                                 addl %eax,%ebx
+  100086:   39 75 e4                              cmpl %esi,-0x1c(%ebp)
+  100089:   7f ed                                 jccb $0xed
+  100078:   89 3c 24                              movl %edi,(%esp)
+  10007b:   83 c6 01                              addl $0x1,%esi
+  10007e:   ff 55 dc                              calll -0x24(%ebp)
+  100130:   55                                    pushl %ebp
+  100131:   89 e5                                 movl %esp,%ebp
+  100133:   83 ec 18                              subl $0x18,%esp
+  100136:   8b 45 08                              movl 0x8(%ebp),%eax
+  100139:   89 44 24 04                           movl %eax,0x4(%esp)
+  10013d:   89 04 24                              movl %eax,(%esp)
+  100140:   e8 1f 00 00 00                        calll $0x1f
+  100164:   55                                    pushl %ebp
+  100165:   89 e5                                 movl %esp,%ebp
+  100167:   8b 45 0c                              movl 0xc(%ebp),%eax
+  10016a:   f7 6d 08                              imull 0x8(%ebp)
+  10016d:   0f ac d0 10                           shrdl $0x10,%edx
+  100171:   c1 fa 10                              sarl $0x10,%edx
+  100174:   c9                                    leavel $0x10
+  100175:   c3                                    retl $0x10
+  100145:   c7 04 24 00 00 01 00                  movl $0x10000,(%esp)
+  10014c:   8d 04 80                              leal $0x10000,(%eax,%eax,4)
+  10014f:   8d 84 80 00 00 01 00                  leal $0x10000,0x10000(%eax,%eax,4)
+  100156:   89 44 24 04                           movl %eax,0x4(%esp)
+  10015a:   e8 19 00 00 00                        calll $0x19
+  100178:   55                                    pushl %ebp
+  100179:   89 e5                                 movl %esp,%ebp
+  10017b:   56                                    pushl %esi
+  10017c:   53                                    pushl %ebx
+  10017d:   8b 45 08                              movl 0x8(%ebp),%eax
+  100180:   8b 4d 0c                              movl 0xc(%ebp),%ecx
+  100183:   85 c0                                 testl %eax,%eax
+  100185:   78 2d                                 jccb $0x2d
+  100187:   bb 01 00 00 00                        movl $0x1,%ebx
+  10018c:   85 c9                                 testl %ecx,%ecx
+  10018e:   78 2f                                 jccb $0x2f
+  100190:   99                                    cwdcdql $0x2f
+  100191:   f7 f9                                 idivl %ecx
+  100193:   31 f6                                 xorl %esi,%esi
+  100195:   8d 76 00                              leal %esi,0(%esi)
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  1001ab:   0f af c3                              imull %ebx,%eax,%eax
+  1001ae:   5b                                    popl %ebx
+  1001af:   5e                                    popl %esi
+  1001b0:   c9                                    leavel %esi
+  1001b1:   c3                                    retl %esi
+  10015f:   c9                                    leavel %esi
+  100160:   c3                                    retl %esi
+  100081:   03 7d e0                              addl -0x20(%ebp),%edi
+  100084:   01 c3                                 addl %eax,%ebx
+  100086:   39 75 e4                              cmpl %esi,-0x1c(%ebp)
+  100089:   7f ed                                 jccb $0xed
+  100078:   89 3c 24                              movl %edi,(%esp)
+  10007b:   83 c6 01                              addl $0x1,%esi
+  10007e:   ff 55 dc                              calll -0x24(%ebp)
+  100130:   55                                    pushl %ebp
+  100131:   89 e5                                 movl %esp,%ebp
+  100133:   83 ec 18                              subl $0x18,%esp
+  100136:   8b 45 08                              movl 0x8(%ebp),%eax
+  100139:   89 44 24 04                           movl %eax,0x4(%esp)
+  10013d:   89 04 24                              movl %eax,(%esp)
+  100140:   e8 1f 00 00 00                        calll $0x1f
+  100164:   55                                    pushl %ebp
+  100165:   89 e5                                 movl %esp,%ebp
+  100167:   8b 45 0c                              movl 0xc(%ebp),%eax
+  10016a:   f7 6d 08                              imull 0x8(%ebp)
+  10016d:   0f ac d0 10                           shrdl $0x10,%edx
+  100171:   c1 fa 10                              sarl $0x10,%edx
+  100174:   c9                                    leavel $0x10
+  100175:   c3                                    retl $0x10
+  100145:   c7 04 24 00 00 01 00                  movl $0x10000,(%esp)
+  10014c:   8d 04 80                              leal $0x10000,(%eax,%eax,4)
+  10014f:   8d 84 80 00 00 01 00                  leal $0x10000,0x10000(%eax,%eax,4)
+  100156:   89 44 24 04                           movl %eax,0x4(%esp)
+  10015a:   e8 19 00 00 00                        calll $0x19
+  100178:   55                                    pushl %ebp
+  100179:   89 e5                                 movl %esp,%ebp
+  10017b:   56                                    pushl %esi
+  10017c:   53                                    pushl %ebx
+  10017d:   8b 45 08                              movl 0x8(%ebp),%eax
+  100180:   8b 4d 0c                              movl 0xc(%ebp),%ecx
+  100183:   85 c0                                 testl %eax,%eax
+  100185:   78 2d                                 jccb $0x2d
+  100187:   bb 01 00 00 00                        movl $0x1,%ebx
+  10018c:   85 c9                                 testl %ecx,%ecx
+  10018e:   78 2f                                 jccb $0x2f
+  100190:   99                                    cwdcdql $0x2f
+  100191:   f7 f9                                 idivl %ecx
+  100193:   31 f6                                 xorl %esi,%esi
+  100195:   8d 76 00                              leal %esi,0(%esi)
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  100198:   d1 e2                                 shll $1,%edx
+  10019a:   d1 e0                                 shll $1,%eax
+  10019c:   39 d1                                 cmpl %edx,%ecx
+  10019e:   7f 05                                 jccb $0x5
+  1001a0:   29 ca                                 subl %ecx,%edx
+  1001a2:   83 c8 01                              orl $0x1,%eax
+  1001a5:   46                                    incl %esi
+  1001a6:   83 fe 10                              cmpl $0x10,%esi
+  1001a9:   75 ed                                 jccb $0xed
+  1001ab:   0f af c3                              imull %ebx,%eax,%eax
+  1001ae:   5b                                    popl %ebx
+  1001af:   5e                                    popl %esi
+  1001b0:   c9                                    leavel %esi
+  1001b1:   c3                                    retl %esi
+  10015f:   c9                                    leavel %esi
+  100160:   c3                                    retl %esi
+  100081:   03 7d e0                              addl -0x20(%ebp),%edi
+  100084:   01 c3                                 addl %eax,%ebx
+  100086:   39 75 e4                              cmpl %esi,-0x1c(%ebp)
+  100089:   7f ed                                 jccb $0xed
+  10008b:   89 d8                                 movl %ebx,%eax
+  10008d:   8b 55 e0                              movl -0x20(%ebp),%edx
+  100090:   89 45 08                              movl %eax,0x8(%ebp)
+  100093:   89 55 0c                              movl %edx,0xc(%ebp)
+  100096:   83 c4 2c                              addl $0x2c,%esp
+  100099:   5b                                    popl %ebx
+  10009a:   5e                                    popl %esi
+  10009b:   5f                                    popl %edi
+  10009c:   5d                                    popl %ebp
+  10009d:   e9 c2 00 00 00                        jccl $0xc2
+  100164:   55                                    pushl %ebp
+  100165:   89 e5                                 movl %esp,%ebp
+  100167:   8b 45 0c                              movl 0xc(%ebp),%eax
+  10016a:   f7 6d 08                              imull 0x8(%ebp)
+  10016d:   0f ac d0 10                           shrdl $0x10,%edx
+  100171:   c1 fa 10                              sarl $0x10,%edx
+  100174:   c9                                    leavel $0x10
+  100175:   c3                                    retl $0x10
+  1000f0:   c7 04 24 e3 1c 0d 3f                  movl $0x3f0d1ce3,(%esp)
+  1000f7:   89 c3                                 movl %eax,%ebx
+  1000f9:   e8 ca 00 00 00                        calll $0xca
+  1001c8:   55                                    pushl %ebp
+  1001c9:   89 e5                                 movl %esp,%ebp
+  1001cb:   53                                    pushl %ebx
+  1001cc:   8b 45 08                              movl 0x8(%ebp),%eax
+  1001cf:   89 c2                                 movl %eax,%edx
+  1001d1:   81 e2 00 00 00 80                     andl $0x80000000,%edx
+  1001d7:   89 c1                                 movl %eax,%ecx
+  1001d9:   c1 f9 17                              sarl $0x17,%ecx
+  1001dc:   81 e1 ff 00 00 00                     andl $0xff,%ecx
+  1001e2:   81 f9 ff 00 00 00                     cmpl $0xff,%ecx
+  1001e8:   74 42                                 jccb $0x42
+  1001ea:   85 c9                                 testl %ecx,%ecx
+  1001ec:   74 36                                 jccb $0x36
+  1001ee:   25 ff ff 7f 00                        andl $0x7fffff,%eax
+  1001f3:   0d 00 00 80 00                        orl $0x800000,%eax
+  1001f8:   8d 99 6a ff ff ff                     leal $0x800000,-0x96(%ecx)
+  1001fe:   83 fb f0                              cmpl $0xfffffff0,%ebx
+  100201:   7d 15                                 jccb $0x15
+  100203:   b9 f0 ff ff ff                        movl $0xfffffff0,%ecx
+  100208:   29 d9                                 subl %ebx,%ecx
+  10020a:   d3 f8                                 sarl %cl,%eax
+  10020c:   85 d2                                 testl %edx,%edx
+  10020e:   74 02                                 jccb $0x2
+  100212:   5b                                    popl %ebx
+  100213:   c9                                    leavel %ebx
+  100214:   c3                                    retl %ebx
+  1000fe:   29 c3                                 subl %eax,%ebx
+  100100:   89 1c 24                              movl %ebx,(%esp)
+  100103:   e8 34 01 00 00                        calll $0x134
+  10023c:   55                                    pushl %ebp
+  10023d:   89 e5                                 movl %esp,%ebp
+  10023f:   8b 45 08                              movl 0x8(%ebp),%eax
+  100242:   85 c0                                 testl %eax,%eax
+  100244:   78 02                                 jccb $0x2
+  100246:   c9                                    leavel $0x2
+  100247:   c3                                    retl $0x2
+  100108:   c7 04 24 17 b7 d1 38                  movl $0x38d1b717,(%esp)
+  10010f:   89 c3                                 movl %eax,%ebx
+  100111:   e8 b2 00 00 00                        calll $0xb2
+  1001c8:   55                                    pushl %ebp
+  1001c9:   89 e5                                 movl %esp,%ebp
+  1001cb:   53                                    pushl %ebx
+  1001cc:   8b 45 08                              movl 0x8(%ebp),%eax
+  1001cf:   89 c2                                 movl %eax,%edx
+  1001d1:   81 e2 00 00 00 80                     andl $0x80000000,%edx
+  1001d7:   89 c1                                 movl %eax,%ecx
+  1001d9:   c1 f9 17                              sarl $0x17,%ecx
+  1001dc:   81 e1 ff 00 00 00                     andl $0xff,%ecx
+  1001e2:   81 f9 ff 00 00 00                     cmpl $0xff,%ecx
+  1001e8:   74 42                                 jccb $0x42
+  1001ea:   85 c9                                 testl %ecx,%ecx
+  1001ec:   74 36                                 jccb $0x36
+  1001ee:   25 ff ff 7f 00                        andl $0x7fffff,%eax
+  1001f3:   0d 00 00 80 00                        orl $0x800000,%eax
+  1001f8:   8d 99 6a ff ff ff                     leal $0x800000,-0x96(%ecx)
+  1001fe:   83 fb f0                              cmpl $0xfffffff0,%ebx
+  100201:   7d 15                                 jccb $0x15
+  100203:   b9 f0 ff ff ff                        movl $0xfffffff0,%ecx
+  100208:   29 d9                                 subl %ebx,%ecx
+  10020a:   d3 f8                                 sarl %cl,%eax
+  10020c:   85 d2                                 testl %edx,%edx
+  10020e:   74 02                                 jccb $0x2
+  100212:   5b                                    popl %ebx
+  100213:   c9                                    leavel %ebx
+  100214:   c3                                    retl %ebx
+  100116:   39 c3                                 cmpl %eax,%ebx
+  100118:   7c 06                                 jccb $0x6
+  100120:   83 c4 1c                              addl $0x1c,%esp
+  100123:   31 c0                                 xorl %eax,%eax
+  100125:   5b                                    popl %ebx
+  100126:   89 ec                                 movl %ebp,%esp
+  100128:   5d                                    popl %ebp
+  100129:   c3                                    retl %ebp
+  10000f:   b8 00 00 00 00                        movl $0x0,%eax
+  100014:   d6                                    nemu trap (eax = 0)
