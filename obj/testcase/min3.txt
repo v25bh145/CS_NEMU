@@ -1,0 +1,85 @@
+
+obj/testcase/min3：     文件格式 elf32-i386
+
+
+Disassembly of section .text:
+
+00100000 <_start>:
+  100000:	bd 00 00 00 00       	mov    $0x0,%ebp
+  100005:	bc f0 ff ff 07       	mov    $0x7fffff0,%esp
+  10000a:	e8 35 00 00 00       	call   100044 <main>
+  10000f:	b8 00 00 00 00       	mov    $0x0,%eax
+  100014:	d6                   	(bad)  
+
+00100015 <min3>:
+  100015:	55                   	push   %ebp
+  100016:	89 e5                	mov    %esp,%ebp
+  100018:	83 ec 10             	sub    $0x10,%esp
+  10001b:	8b 45 08             	mov    0x8(%ebp),%eax
+  10001e:	3b 45 0c             	cmp    0xc(%ebp),%eax
+  100021:	7d 08                	jge    10002b <min3+0x16>
+  100023:	8b 45 08             	mov    0x8(%ebp),%eax
+  100026:	89 45 fc             	mov    %eax,-0x4(%ebp)
+  100029:	eb 06                	jmp    100031 <min3+0x1c>
+  10002b:	8b 45 0c             	mov    0xc(%ebp),%eax
+  10002e:	89 45 fc             	mov    %eax,-0x4(%ebp)
+  100031:	8b 45 10             	mov    0x10(%ebp),%eax
+  100034:	3b 45 fc             	cmp    -0x4(%ebp),%eax
+  100037:	7d 06                	jge    10003f <min3+0x2a>
+  100039:	8b 45 10             	mov    0x10(%ebp),%eax
+  10003c:	89 45 fc             	mov    %eax,-0x4(%ebp)
+  10003f:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  100042:	c9                   	leave  
+  100043:	c3                   	ret    
+
+00100044 <main>:
+  100044:	55                   	push   %ebp
+  100045:	89 e5                	mov    %esp,%ebp
+  100047:	83 ec 2c             	sub    $0x2c,%esp
+  10004a:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+  100051:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+  100058:	c7 45 ec 00 00 00 00 	movl   $0x0,-0x14(%ebp)
+  10005f:	eb 7d                	jmp    1000de <main+0x9a>
+  100061:	c7 45 f0 00 00 00 00 	movl   $0x0,-0x10(%ebp)
+  100068:	eb 68                	jmp    1000d2 <main+0x8e>
+  10006a:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%ebp)
+  100071:	eb 53                	jmp    1000c6 <main+0x82>
+  100073:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  100076:	8b 0c 85 00 01 10 00 	mov    0x100100(,%eax,4),%ecx
+  10007d:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  100080:	8b 14 85 00 01 10 00 	mov    0x100100(,%eax,4),%edx
+  100087:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  10008a:	8b 04 85 00 01 10 00 	mov    0x100100(,%eax,4),%eax
+  100091:	89 4c 24 08          	mov    %ecx,0x8(%esp)
+  100095:	89 54 24 04          	mov    %edx,0x4(%esp)
+  100099:	89 04 24             	mov    %eax,(%esp)
+  10009c:	e8 74 ff ff ff       	call   100015 <min3>
+  1000a1:	8b 55 f8             	mov    -0x8(%ebp),%edx
+  1000a4:	8b 14 95 20 01 10 00 	mov    0x100120(,%edx,4),%edx
+  1000ab:	39 d0                	cmp    %edx,%eax
+  1000ad:	0f 95 c0             	setne  %al
+  1000b0:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+  1000b4:	84 c0                	test   %al,%al
+  1000b6:	74 06                	je     1000be <main+0x7a>
+  1000b8:	b8 01 00 00 00       	mov    $0x1,%eax
+  1000bd:	d6                   	(bad)  
+  1000be:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  1000c2:	83 45 f4 01          	addl   $0x1,-0xc(%ebp)
+  1000c6:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  1000c9:	83 f8 07             	cmp    $0x7,%eax
+  1000cc:	76 a5                	jbe    100073 <main+0x2f>
+  1000ce:	83 45 f0 01          	addl   $0x1,-0x10(%ebp)
+  1000d2:	8b 45 f0             	mov    -0x10(%ebp),%eax
+  1000d5:	83 f8 07             	cmp    $0x7,%eax
+  1000d8:	76 90                	jbe    10006a <main+0x26>
+  1000da:	83 45 ec 01          	addl   $0x1,-0x14(%ebp)
+  1000de:	8b 45 ec             	mov    -0x14(%ebp),%eax
+  1000e1:	83 f8 07             	cmp    $0x7,%eax
+  1000e4:	0f 86 77 ff ff ff    	jbe    100061 <main+0x1d>
+  1000ea:	81 7d fc 00 02 00 00 	cmpl   $0x200,-0x4(%ebp)
+  1000f1:	74 06                	je     1000f9 <main+0xb5>
+  1000f3:	b8 01 00 00 00       	mov    $0x1,%eax
+  1000f8:	d6                   	(bad)  
+  1000f9:	b8 00 00 00 00       	mov    $0x0,%eax
+  1000fe:	c9                   	leave  
+  1000ff:	c3                   	ret    

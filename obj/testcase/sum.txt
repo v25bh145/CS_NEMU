@@ -1,0 +1,32 @@
+
+obj/testcase/sum：     文件格式 elf32-i386
+
+
+Disassembly of section .text:
+
+00100000 <_start>:
+  100000:	bd 00 00 00 00       	mov    $0x0,%ebp
+  100005:	bc f0 ff ff 07       	mov    $0x7fffff0,%esp
+  10000a:	e8 06 00 00 00       	call   100015 <main>
+  10000f:	b8 00 00 00 00       	mov    $0x0,%eax
+  100014:	d6                   	(bad)  
+
+00100015 <main>:
+  100015:	55                   	push   %ebp
+  100016:	89 e5                	mov    %esp,%ebp
+  100018:	83 ec 10             	sub    $0x10,%esp
+  10001b:	c7 45 f8 01 00 00 00 	movl   $0x1,-0x8(%ebp)
+  100022:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+  100029:	eb 0a                	jmp    100035 <main+0x20>
+  10002b:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  10002e:	01 45 fc             	add    %eax,-0x4(%ebp)
+  100031:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+  100035:	83 7d f8 64          	cmpl   $0x64,-0x8(%ebp)
+  100039:	7e f0                	jle    10002b <main+0x16>
+  10003b:	81 7d fc ba 13 00 00 	cmpl   $0x13ba,-0x4(%ebp)
+  100042:	74 06                	je     10004a <main+0x35>
+  100044:	b8 01 00 00 00       	mov    $0x1,%eax
+  100049:	d6                   	(bad)  
+  10004a:	b8 00 00 00 00       	mov    $0x0,%eax
+  10004f:	c9                   	leave  
+  100050:	c3                   	ret    

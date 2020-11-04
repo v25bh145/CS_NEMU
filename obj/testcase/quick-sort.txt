@@ -1,0 +1,164 @@
+
+obj/testcase/quick-sort：     文件格式 elf32-i386
+
+
+Disassembly of section .text:
+
+00100000 <_start>:
+  100000:	bd 00 00 00 00       	mov    $0x0,%ebp
+  100005:	bc f0 ff ff 07       	mov    $0x7fffff0,%esp
+  10000a:	e8 10 01 00 00       	call   10011f <main>
+  10000f:	b8 00 00 00 00       	mov    $0x0,%eax
+  100014:	d6                   	(bad)  
+
+00100015 <partition>:
+  100015:	55                   	push   %ebp
+  100016:	89 e5                	mov    %esp,%ebp
+  100018:	83 ec 10             	sub    $0x10,%esp
+  10001b:	8b 45 0c             	mov    0xc(%ebp),%eax
+  10001e:	c1 e0 02             	shl    $0x2,%eax
+  100021:	03 45 08             	add    0x8(%ebp),%eax
+  100024:	8b 00                	mov    (%eax),%eax
+  100026:	89 45 f4             	mov    %eax,-0xc(%ebp)
+  100029:	8b 45 0c             	mov    0xc(%ebp),%eax
+  10002c:	89 45 f8             	mov    %eax,-0x8(%ebp)
+  10002f:	8b 45 10             	mov    0x10(%ebp),%eax
+  100032:	89 45 fc             	mov    %eax,-0x4(%ebp)
+  100035:	eb 66                	jmp    10009d <partition+0x88>
+  100037:	83 6d fc 01          	subl   $0x1,-0x4(%ebp)
+  10003b:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  10003e:	3b 45 fc             	cmp    -0x4(%ebp),%eax
+  100041:	7d 10                	jge    100053 <partition+0x3e>
+  100043:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  100046:	c1 e0 02             	shl    $0x2,%eax
+  100049:	03 45 08             	add    0x8(%ebp),%eax
+  10004c:	8b 00                	mov    (%eax),%eax
+  10004e:	3b 45 f4             	cmp    -0xc(%ebp),%eax
+  100051:	7f e4                	jg     100037 <partition+0x22>
+  100053:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  100056:	c1 e0 02             	shl    $0x2,%eax
+  100059:	03 45 08             	add    0x8(%ebp),%eax
+  10005c:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  10005f:	c1 e2 02             	shl    $0x2,%edx
+  100062:	03 55 08             	add    0x8(%ebp),%edx
+  100065:	8b 12                	mov    (%edx),%edx
+  100067:	89 10                	mov    %edx,(%eax)
+  100069:	eb 04                	jmp    10006f <partition+0x5a>
+  10006b:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+  10006f:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  100072:	3b 45 fc             	cmp    -0x4(%ebp),%eax
+  100075:	7d 10                	jge    100087 <partition+0x72>
+  100077:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  10007a:	c1 e0 02             	shl    $0x2,%eax
+  10007d:	03 45 08             	add    0x8(%ebp),%eax
+  100080:	8b 00                	mov    (%eax),%eax
+  100082:	3b 45 f4             	cmp    -0xc(%ebp),%eax
+  100085:	7e e4                	jle    10006b <partition+0x56>
+  100087:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  10008a:	c1 e0 02             	shl    $0x2,%eax
+  10008d:	03 45 08             	add    0x8(%ebp),%eax
+  100090:	8b 55 f8             	mov    -0x8(%ebp),%edx
+  100093:	c1 e2 02             	shl    $0x2,%edx
+  100096:	03 55 08             	add    0x8(%ebp),%edx
+  100099:	8b 12                	mov    (%edx),%edx
+  10009b:	89 10                	mov    %edx,(%eax)
+  10009d:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  1000a0:	3b 45 fc             	cmp    -0x4(%ebp),%eax
+  1000a3:	7c 96                	jl     10003b <partition+0x26>
+  1000a5:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  1000a8:	c1 e0 02             	shl    $0x2,%eax
+  1000ab:	03 45 08             	add    0x8(%ebp),%eax
+  1000ae:	8b 55 f4             	mov    -0xc(%ebp),%edx
+  1000b1:	89 10                	mov    %edx,(%eax)
+  1000b3:	8b 45 f8             	mov    -0x8(%ebp),%eax
+  1000b6:	c9                   	leave  
+  1000b7:	c3                   	ret    
+
+001000b8 <quick_sort>:
+  1000b8:	55                   	push   %ebp
+  1000b9:	89 e5                	mov    %esp,%ebp
+  1000bb:	83 ec 28             	sub    $0x28,%esp
+  1000be:	8b 45 0c             	mov    0xc(%ebp),%eax
+  1000c1:	3b 45 10             	cmp    0x10(%ebp),%eax
+  1000c4:	7d 56                	jge    10011c <quick_sort+0x64>
+  1000c6:	8b 45 10             	mov    0x10(%ebp),%eax
+  1000c9:	89 44 24 08          	mov    %eax,0x8(%esp)
+  1000cd:	8b 45 0c             	mov    0xc(%ebp),%eax
+  1000d0:	89 44 24 04          	mov    %eax,0x4(%esp)
+  1000d4:	8b 45 08             	mov    0x8(%ebp),%eax
+  1000d7:	89 04 24             	mov    %eax,(%esp)
+  1000da:	e8 36 ff ff ff       	call   100015 <partition>
+  1000df:	89 45 f4             	mov    %eax,-0xc(%ebp)
+  1000e2:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  1000e5:	83 e8 01             	sub    $0x1,%eax
+  1000e8:	89 44 24 08          	mov    %eax,0x8(%esp)
+  1000ec:	8b 45 0c             	mov    0xc(%ebp),%eax
+  1000ef:	89 44 24 04          	mov    %eax,0x4(%esp)
+  1000f3:	8b 45 08             	mov    0x8(%ebp),%eax
+  1000f6:	89 04 24             	mov    %eax,(%esp)
+  1000f9:	e8 ba ff ff ff       	call   1000b8 <quick_sort>
+  1000fe:	8b 45 f4             	mov    -0xc(%ebp),%eax
+  100101:	8d 50 01             	lea    0x1(%eax),%edx
+  100104:	8b 45 10             	mov    0x10(%ebp),%eax
+  100107:	89 44 24 08          	mov    %eax,0x8(%esp)
+  10010b:	89 54 24 04          	mov    %edx,0x4(%esp)
+  10010f:	8b 45 08             	mov    0x8(%ebp),%eax
+  100112:	89 04 24             	mov    %eax,(%esp)
+  100115:	e8 9e ff ff ff       	call   1000b8 <quick_sort>
+  10011a:	eb 01                	jmp    10011d <quick_sort+0x65>
+  10011c:	90                   	nop
+  10011d:	c9                   	leave  
+  10011e:	c3                   	ret    
+
+0010011f <main>:
+  10011f:	55                   	push   %ebp
+  100120:	89 e5                	mov    %esp,%ebp
+  100122:	83 e4 f0             	and    $0xfffffff0,%esp
+  100125:	83 ec 20             	sub    $0x20,%esp
+  100128:	c7 44 24 08 63 00 00 	movl   $0x63,0x8(%esp)
+  10012f:	00 
+  100130:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+  100137:	00 
+  100138:	c7 04 24 e0 01 10 00 	movl   $0x1001e0,(%esp)
+  10013f:	e8 74 ff ff ff       	call   1000b8 <quick_sort>
+  100144:	c7 44 24 1c 00 00 00 	movl   $0x0,0x1c(%esp)
+  10014b:	00 
+  10014c:	eb 1c                	jmp    10016a <main+0x4b>
+  10014e:	8b 44 24 1c          	mov    0x1c(%esp),%eax
+  100152:	8b 04 85 e0 01 10 00 	mov    0x1001e0(,%eax,4),%eax
+  100159:	3b 44 24 1c          	cmp    0x1c(%esp),%eax
+  10015d:	74 06                	je     100165 <main+0x46>
+  10015f:	b8 01 00 00 00       	mov    $0x1,%eax
+  100164:	d6                   	(bad)  
+  100165:	83 44 24 1c 01       	addl   $0x1,0x1c(%esp)
+  10016a:	83 7c 24 1c 63       	cmpl   $0x63,0x1c(%esp)
+  10016f:	7e dd                	jle    10014e <main+0x2f>
+  100171:	83 7c 24 1c 64       	cmpl   $0x64,0x1c(%esp)
+  100176:	74 06                	je     10017e <main+0x5f>
+  100178:	b8 01 00 00 00       	mov    $0x1,%eax
+  10017d:	d6                   	(bad)  
+  10017e:	c7 44 24 08 63 00 00 	movl   $0x63,0x8(%esp)
+  100185:	00 
+  100186:	c7 44 24 04 00 00 00 	movl   $0x0,0x4(%esp)
+  10018d:	00 
+  10018e:	c7 04 24 e0 01 10 00 	movl   $0x1001e0,(%esp)
+  100195:	e8 1e ff ff ff       	call   1000b8 <quick_sort>
+  10019a:	c7 44 24 1c 00 00 00 	movl   $0x0,0x1c(%esp)
+  1001a1:	00 
+  1001a2:	eb 1c                	jmp    1001c0 <main+0xa1>
+  1001a4:	8b 44 24 1c          	mov    0x1c(%esp),%eax
+  1001a8:	8b 04 85 e0 01 10 00 	mov    0x1001e0(,%eax,4),%eax
+  1001af:	3b 44 24 1c          	cmp    0x1c(%esp),%eax
+  1001b3:	74 06                	je     1001bb <main+0x9c>
+  1001b5:	b8 01 00 00 00       	mov    $0x1,%eax
+  1001ba:	d6                   	(bad)  
+  1001bb:	83 44 24 1c 01       	addl   $0x1,0x1c(%esp)
+  1001c0:	83 7c 24 1c 63       	cmpl   $0x63,0x1c(%esp)
+  1001c5:	7e dd                	jle    1001a4 <main+0x85>
+  1001c7:	83 7c 24 1c 64       	cmpl   $0x64,0x1c(%esp)
+  1001cc:	74 06                	je     1001d4 <main+0xb5>
+  1001ce:	b8 01 00 00 00       	mov    $0x1,%eax
+  1001d3:	d6                   	(bad)  
+  1001d4:	b8 00 00 00 00       	mov    $0x0,%eax
+  1001d9:	c9                   	leave  
+  1001da:	c3                   	ret    

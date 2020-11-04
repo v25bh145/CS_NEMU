@@ -1,0 +1,46 @@
+
+obj/testcase/fib：     文件格式 elf32-i386
+
+
+Disassembly of section .text:
+
+00100000 <_start>:
+  100000:	bd 00 00 00 00       	mov    $0x0,%ebp
+  100005:	bc f0 ff ff 07       	mov    $0x7fffff0,%esp
+  10000a:	e8 06 00 00 00       	call   100015 <main>
+  10000f:	b8 00 00 00 00       	mov    $0x0,%eax
+  100014:	d6                   	(bad)  
+
+00100015 <main>:
+  100015:	55                   	push   %ebp
+  100016:	89 e5                	mov    %esp,%ebp
+  100018:	83 ec 10             	sub    $0x10,%esp
+  10001b:	c7 45 fc 02 00 00 00 	movl   $0x2,-0x4(%ebp)
+  100022:	eb 49                	jmp    10006d <main+0x58>
+  100024:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  100027:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  10002a:	83 ea 01             	sub    $0x1,%edx
+  10002d:	8b 0c 95 a0 00 10 00 	mov    0x1000a0(,%edx,4),%ecx
+  100034:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  100037:	83 ea 02             	sub    $0x2,%edx
+  10003a:	8b 14 95 a0 00 10 00 	mov    0x1000a0(,%edx,4),%edx
+  100041:	8d 14 11             	lea    (%ecx,%edx,1),%edx
+  100044:	89 14 85 a0 00 10 00 	mov    %edx,0x1000a0(,%eax,4)
+  10004b:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  10004e:	8b 14 85 a0 00 10 00 	mov    0x1000a0(,%eax,4),%edx
+  100055:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  100058:	8b 04 85 40 01 10 00 	mov    0x100140(,%eax,4),%eax
+  10005f:	39 c2                	cmp    %eax,%edx
+  100061:	74 06                	je     100069 <main+0x54>
+  100063:	b8 01 00 00 00       	mov    $0x1,%eax
+  100068:	d6                   	(bad)  
+  100069:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  10006d:	83 7d fc 27          	cmpl   $0x27,-0x4(%ebp)
+  100071:	7e b1                	jle    100024 <main+0xf>
+  100073:	83 7d fc 28          	cmpl   $0x28,-0x4(%ebp)
+  100077:	74 06                	je     10007f <main+0x6a>
+  100079:	b8 01 00 00 00       	mov    $0x1,%eax
+  10007e:	d6                   	(bad)  
+  10007f:	b8 00 00 00 00       	mov    $0x0,%eax
+  100084:	c9                   	leave  
+  100085:	c3                   	ret    

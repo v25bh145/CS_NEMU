@@ -1,0 +1,87 @@
+
+obj/testcase/leap-year：     文件格式 elf32-i386
+
+
+Disassembly of section .text:
+
+00100000 <_start>:
+  100000:	bd 00 00 00 00       	mov    $0x0,%ebp
+  100005:	bc f0 ff ff 07       	mov    $0x7fffff0,%esp
+  10000a:	e8 74 00 00 00       	call   100083 <main>
+  10000f:	b8 00 00 00 00       	mov    $0x0,%eax
+  100014:	d6                   	(bad)  
+
+00100015 <is_leap_year>:
+  100015:	55                   	push   %ebp
+  100016:	89 e5                	mov    %esp,%ebp
+  100018:	53                   	push   %ebx
+  100019:	8b 45 08             	mov    0x8(%ebp),%eax
+  10001c:	83 e0 03             	and    $0x3,%eax
+  10001f:	85 c0                	test   %eax,%eax
+  100021:	75 27                	jne    10004a <is_leap_year+0x35>
+  100023:	8b 4d 08             	mov    0x8(%ebp),%ecx
+  100026:	ba 1f 85 eb 51       	mov    $0x51eb851f,%edx
+  10002b:	89 c8                	mov    %ecx,%eax
+  10002d:	f7 ea                	imul   %edx
+  10002f:	c1 fa 05             	sar    $0x5,%edx
+  100032:	89 c8                	mov    %ecx,%eax
+  100034:	c1 f8 1f             	sar    $0x1f,%eax
+  100037:	89 d3                	mov    %edx,%ebx
+  100039:	29 c3                	sub    %eax,%ebx
+  10003b:	89 d8                	mov    %ebx,%eax
+  10003d:	6b c0 64             	imul   $0x64,%eax,%eax
+  100040:	89 ca                	mov    %ecx,%edx
+  100042:	29 c2                	sub    %eax,%edx
+  100044:	89 d0                	mov    %edx,%eax
+  100046:	85 c0                	test   %eax,%eax
+  100048:	75 2a                	jne    100074 <is_leap_year+0x5f>
+  10004a:	8b 4d 08             	mov    0x8(%ebp),%ecx
+  10004d:	ba 1f 85 eb 51       	mov    $0x51eb851f,%edx
+  100052:	89 c8                	mov    %ecx,%eax
+  100054:	f7 ea                	imul   %edx
+  100056:	c1 fa 07             	sar    $0x7,%edx
+  100059:	89 c8                	mov    %ecx,%eax
+  10005b:	c1 f8 1f             	sar    $0x1f,%eax
+  10005e:	89 d3                	mov    %edx,%ebx
+  100060:	29 c3                	sub    %eax,%ebx
+  100062:	89 d8                	mov    %ebx,%eax
+  100064:	69 c0 90 01 00 00    	imul   $0x190,%eax,%eax
+  10006a:	89 ca                	mov    %ecx,%edx
+  10006c:	29 c2                	sub    %eax,%edx
+  10006e:	89 d0                	mov    %edx,%eax
+  100070:	85 c0                	test   %eax,%eax
+  100072:	75 07                	jne    10007b <is_leap_year+0x66>
+  100074:	b8 01 00 00 00       	mov    $0x1,%eax
+  100079:	eb 05                	jmp    100080 <is_leap_year+0x6b>
+  10007b:	b8 00 00 00 00       	mov    $0x0,%eax
+  100080:	5b                   	pop    %ebx
+  100081:	5d                   	pop    %ebp
+  100082:	c3                   	ret    
+
+00100083 <main>:
+  100083:	55                   	push   %ebp
+  100084:	89 e5                	mov    %esp,%ebp
+  100086:	83 ec 14             	sub    $0x14,%esp
+  100089:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%ebp)
+  100090:	eb 28                	jmp    1000ba <main+0x37>
+  100092:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  100095:	05 62 07 00 00       	add    $0x762,%eax
+  10009a:	89 04 24             	mov    %eax,(%esp)
+  10009d:	e8 73 ff ff ff       	call   100015 <is_leap_year>
+  1000a2:	8b 55 fc             	mov    -0x4(%ebp),%edx
+  1000a5:	8b 14 95 e0 00 10 00 	mov    0x1000e0(,%edx,4),%edx
+  1000ac:	39 d0                	cmp    %edx,%eax
+  1000ae:	74 06                	je     1000b6 <main+0x33>
+  1000b0:	b8 01 00 00 00       	mov    $0x1,%eax
+  1000b5:	d6                   	(bad)  
+  1000b6:	83 45 fc 01          	addl   $0x1,-0x4(%ebp)
+  1000ba:	8b 45 fc             	mov    -0x4(%ebp),%eax
+  1000bd:	83 f8 7c             	cmp    $0x7c,%eax
+  1000c0:	76 d0                	jbe    100092 <main+0xf>
+  1000c2:	83 7d fc 7d          	cmpl   $0x7d,-0x4(%ebp)
+  1000c6:	74 06                	je     1000ce <main+0x4b>
+  1000c8:	b8 01 00 00 00       	mov    $0x1,%eax
+  1000cd:	d6                   	(bad)  
+  1000ce:	b8 00 00 00 00       	mov    $0x0,%eax
+  1000d3:	c9                   	leave  
+  1000d4:	c3                   	ret    

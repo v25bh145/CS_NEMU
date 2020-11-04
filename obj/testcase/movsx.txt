@@ -1,0 +1,98 @@
+
+obj/testcase/movsx：     文件格式 elf32-i386
+
+
+Disassembly of section .text:
+
+00100000 <_start>:
+  100000:	bd 00 00 00 00       	mov    $0x0,%ebp
+  100005:	bc f0 ff ff 07       	mov    $0x7fffff0,%esp
+  10000a:	e8 06 00 00 00       	call   100015 <main>
+  10000f:	b8 00 00 00 00       	mov    $0x0,%eax
+  100014:	d6                   	(bad)  
+
+00100015 <main>:
+  100015:	55                   	push   %ebp
+  100016:	89 e5                	mov    %esp,%ebp
+  100018:	c7 05 80 01 10 00 00 	movl   $0x0,0x100180
+  10001f:	00 00 00 
+  100022:	c7 05 84 01 10 00 01 	movl   $0x1,0x100184
+  100029:	00 00 00 
+  10002c:	c7 05 88 01 10 00 02 	movl   $0x2,0x100188
+  100033:	00 00 00 
+  100036:	c7 05 8c 01 10 00 03 	movl   $0x3,0x10018c
+  10003d:	00 00 00 
+  100040:	c7 05 90 01 10 00 04 	movl   $0x4,0x100190
+  100047:	00 00 00 
+  10004a:	a1 8c 01 10 00       	mov    0x10018c,%eax
+  10004f:	a3 60 01 10 00       	mov    %eax,0x100160
+  100054:	a1 60 01 10 00       	mov    0x100160,%eax
+  100059:	a3 94 01 10 00       	mov    %eax,0x100194
+  10005e:	c6 05 a8 01 10 00 61 	movb   $0x61,0x1001a8
+  100065:	0f b6 05 a8 01 10 00 	movzbl 0x1001a8,%eax
+  10006c:	3c 61                	cmp    $0x61,%al
+  10006e:	74 06                	je     100076 <main+0x61>
+  100070:	b8 01 00 00 00       	mov    $0x1,%eax
+  100075:	d6                   	(bad)  
+  100076:	0f b6 05 a8 01 10 00 	movzbl 0x1001a8,%eax
+  10007d:	a2 a9 01 10 00       	mov    %al,0x1001a9
+  100082:	0f b6 05 a9 01 10 00 	movzbl 0x1001a9,%eax
+  100089:	3c 61                	cmp    $0x61,%al
+  10008b:	74 06                	je     100093 <main+0x7e>
+  10008d:	b8 01 00 00 00       	mov    $0x1,%eax
+  100092:	d6                   	(bad)  
+  100093:	0f b6 05 a8 01 10 00 	movzbl 0x1001a8,%eax
+  10009a:	0f be c0             	movsbl %al,%eax
+  10009d:	a3 80 01 10 00       	mov    %eax,0x100180
+  1000a2:	a1 80 01 10 00       	mov    0x100180,%eax
+  1000a7:	83 f8 61             	cmp    $0x61,%eax
+  1000aa:	74 06                	je     1000b2 <main+0x9d>
+  1000ac:	b8 01 00 00 00       	mov    $0x1,%eax
+  1000b1:	d6                   	(bad)  
+  1000b2:	c6 05 a9 01 10 00 80 	movb   $0x80,0x1001a9
+  1000b9:	0f b6 05 a9 01 10 00 	movzbl 0x1001a9,%eax
+  1000c0:	0f be c0             	movsbl %al,%eax
+  1000c3:	a3 80 01 10 00       	mov    %eax,0x100180
+  1000c8:	a1 84 01 10 00       	mov    0x100184,%eax
+  1000cd:	83 f8 01             	cmp    $0x1,%eax
+  1000d0:	74 06                	je     1000d8 <main+0xc3>
+  1000d2:	b8 01 00 00 00       	mov    $0x1,%eax
+  1000d7:	d6                   	(bad)  
+  1000d8:	a1 88 01 10 00       	mov    0x100188,%eax
+  1000dd:	83 f8 02             	cmp    $0x2,%eax
+  1000e0:	74 06                	je     1000e8 <main+0xd3>
+  1000e2:	b8 01 00 00 00       	mov    $0x1,%eax
+  1000e7:	d6                   	(bad)  
+  1000e8:	a1 8c 01 10 00       	mov    0x10018c,%eax
+  1000ed:	83 f8 03             	cmp    $0x3,%eax
+  1000f0:	74 06                	je     1000f8 <main+0xe3>
+  1000f2:	b8 01 00 00 00       	mov    $0x1,%eax
+  1000f7:	d6                   	(bad)  
+  1000f8:	a1 90 01 10 00       	mov    0x100190,%eax
+  1000fd:	83 f8 04             	cmp    $0x4,%eax
+  100100:	74 06                	je     100108 <main+0xf3>
+  100102:	b8 01 00 00 00       	mov    $0x1,%eax
+  100107:	d6                   	(bad)  
+  100108:	a1 60 01 10 00       	mov    0x100160,%eax
+  10010d:	83 f8 03             	cmp    $0x3,%eax
+  100110:	74 06                	je     100118 <main+0x103>
+  100112:	b8 01 00 00 00       	mov    $0x1,%eax
+  100117:	d6                   	(bad)  
+  100118:	a1 94 01 10 00       	mov    0x100194,%eax
+  10011d:	83 f8 03             	cmp    $0x3,%eax
+  100120:	74 06                	je     100128 <main+0x113>
+  100122:	b8 01 00 00 00       	mov    $0x1,%eax
+  100127:	d6                   	(bad)  
+  100128:	0f b6 05 a9 01 10 00 	movzbl 0x1001a9,%eax
+  10012f:	3c 80                	cmp    $0x80,%al
+  100131:	74 06                	je     100139 <main+0x124>
+  100133:	b8 01 00 00 00       	mov    $0x1,%eax
+  100138:	d6                   	(bad)  
+  100139:	a1 80 01 10 00       	mov    0x100180,%eax
+  10013e:	83 f8 80             	cmp    $0xffffff80,%eax
+  100141:	74 06                	je     100149 <main+0x134>
+  100143:	b8 01 00 00 00       	mov    $0x1,%eax
+  100148:	d6                   	(bad)  
+  100149:	b8 00 00 00 00       	mov    $0x0,%eax
+  10014e:	5d                   	pop    %ebp
+  10014f:	c3                   	ret    
