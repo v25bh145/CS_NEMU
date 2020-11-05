@@ -64,6 +64,7 @@ WP *get_wp_head();
 int setWatchpoint(swaddr_t step);
 void printAllPool();
 int delWatchpoint(int count);
+void load_elf_tables(int argc, char *argv[]);
 long long int expr_cmd(char *e, bool *success);
 
 static int cmd_help(char *args);
@@ -355,15 +356,27 @@ static int cmd_x(char *args)
 	}
 	return 0;
 }
-
+#define maxArgc 20
 static int cmd_nemu(char *args) {
 	if(args == NULL) {
 		Log("error: please input right expr!");
 		return 2;
 	}
-	char *argv = (char *)malloc(strlen(args + 1) * sizeof(char));
-	strcpy(argv, args);
-	char *arg = strtok(args, " ");
-	Log("%s | %s", arg, argv);
+
+	char *argv[maxArgc];
+	char* token;
+
+   token = strtok(args, " ");
+   int argc = 0;
+   while( token != NULL ) {
+	  argc++;
+	  if(argc >= maxArgc + 1) {
+			Log("error: too many args!");
+			return 2;
+	  }
+	  argv[argc - 1] = token;
+      token = strtok(NULL, " ");
+   }
+	load_elf_tables(argc, argv);
 	return 0;
 }

@@ -1,2 +1,3 @@
-[nemu/src/monitor/debug/ui.c,367,cmd_nemu] add | add -t
+[nemu/src/monitor/debug/ui.c,361,cmd_nemu] error: please input right expr!
 [nemu/src/monitor/debug/ui.c,367,cmd_nemu] add | add
+[nemu/src/monitor/debug/ui.c,367,cmd_nemu] add | add -r
