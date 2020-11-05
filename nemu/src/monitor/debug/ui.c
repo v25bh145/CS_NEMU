@@ -380,6 +380,6 @@ static int cmd_nemu(char *args) {
       token = strtok(NULL, " ");
    }
 	load_elf_tables(argc, argv);
-	Log("successfully load file %s", argv[1]);
+	Log("successfully load elf in file %s", argv[1]);
 	return 0;
 }
