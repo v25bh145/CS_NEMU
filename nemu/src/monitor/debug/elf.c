@@ -78,7 +78,7 @@ void load_elf_tables(int argc, char *argv[]) {
 
 	assert(strtab != NULL && symtab != NULL);
 
-	Log("awa %s", exec_file);
+	Log("awa %s", shstrtab);
 
 	fclose(fp);
 }
