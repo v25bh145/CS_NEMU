@@ -360,6 +360,10 @@ static int cmd_nemu(char *args) {
 	char *argv = (char *)malloc(strlen(args + 1) * sizeof(char));
 	strcpy(argv, args);
 	char *arg = strtok(args, " ");
-	Log("%s %s", arg, argv);
+	if(arg == NULL) {
+		Log("error: please input right expr!");
+		return 2;
+	}
+	Log("%s | %s", arg, argv);
 	return 0;
 }
