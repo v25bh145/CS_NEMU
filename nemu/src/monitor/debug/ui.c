@@ -119,6 +119,7 @@ static int cmd_help(char *args)
 
 static int cmd_si(char *args)
 {
+	Log("test");
 	char *arg = strtok(args, " ");
 	char *argOverflow = strtok(NULL, " ");
 	if (argOverflow != NULL)
