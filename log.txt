@@ -1,9 +1,1 @@
-[nemu/src/monitor/debug/ui.c,364,cmd_nemu] -a
-[nemu/src/monitor/debug/ui.c,365,cmd_nemu] Wrong params!
-[nemu/src/monitor/debug/ui.c,366,cmd_nemu] help: info [SUBCMD {r, w}]
-[nemu/src/monitor/debug/ui.c,364,cmd_nemu] -a
-[nemu/src/monitor/debug/ui.c,365,cmd_nemu] Wrong params!
-[nemu/src/monitor/debug/ui.c,366,cmd_nemu] help: info [SUBCMD {r, w}]
-[nemu/src/monitor/debug/ui.c,364,cmd_nemu] -t
-[nemu/src/monitor/debug/ui.c,365,cmd_nemu] Wrong params!
-[nemu/src/monitor/debug/ui.c,366,cmd_nemu] help: info [SUBCMD {r, w}]
+[nemu/src/monitor/debug/ui.c,369,cmd_nemu] add -a
