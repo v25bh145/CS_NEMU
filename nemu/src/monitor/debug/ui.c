@@ -357,13 +357,13 @@ static int cmd_x(char *args)
 }
 
 static int cmd_nemu(char *args) {
-	char *argv = (char *)malloc(strlen(args + 1) * sizeof(char));
-	strcpy(argv, args);
-	char *arg = strtok(args, " ");
-	if(arg == NULL) {
+	if(args == NULL) {
 		Log("error: please input right expr!");
 		return 2;
 	}
+	char *argv = (char *)malloc(strlen(args + 1) * sizeof(char));
+	strcpy(argv, args);
+	char *arg = strtok(args, " ");
 	Log("%s | %s", arg, argv);
 	return 0;
 }

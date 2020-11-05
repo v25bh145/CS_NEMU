@@ -1,1 +1,2 @@
-[nemu/src/monitor/debug/ui.c,363,cmd_nemu] add add -t- -t
+[nemu/src/monitor/debug/ui.c,367,cmd_nemu] add | add -t
+[nemu/src/monitor/debug/ui.c,367,cmd_nemu] add | add
