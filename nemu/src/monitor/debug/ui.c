@@ -361,6 +361,7 @@ static int cmd_nemu(char *args) {
 	char *argOverflow = strtok(NULL, " ");
 	if (argOverflow != NULL)
 	{
+		Log("%s", argOverflow);
 		Log("Wrong params!");
 		Log("help: info [SUBCMD {r, w}]");
 		return 1;
