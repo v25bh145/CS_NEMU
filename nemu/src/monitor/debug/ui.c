@@ -377,6 +377,7 @@ static int cmd_nemu(char *args) {
 	  argv[argc - 1] = token;
       token = strtok(NULL, " ");
    }
+   Log("argc: %d", argc);
 	load_elf_tables(argc, argv);
 	return 0;
 }
