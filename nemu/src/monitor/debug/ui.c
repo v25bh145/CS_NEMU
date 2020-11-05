@@ -362,10 +362,13 @@ static int cmd_nemu(char *args) {
 		Log("error: please input right expr!");
 		return 2;
 	}
+	char* tmpArgs = (char *)malloc(strlen(args + 5) * sizeof(char));
+	tmpArgs = "nemu ";
+	strcat(tmpArgs, args);
 
 	char *argv[maxArgc];
 	char* token;
-	Log("args: %s", args);
+	Log("args: %s", tmpArgs);
    token = strtok(args, " ");
    Log("token: %s", token);
    int argc = 0;
