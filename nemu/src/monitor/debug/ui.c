@@ -367,9 +367,11 @@ static int cmd_nemu(char *args) {
 	char* token;
 
    token = strtok(args, " ");
+   Log("token: %s", token);
    int argc = 0;
    while( token != NULL ) {
 	  argc++;
+	   Log("token awa: %s", token);
 	  if(argc >= maxArgc + 1) {
 			Log("error: too many args!");
 			return 2;
