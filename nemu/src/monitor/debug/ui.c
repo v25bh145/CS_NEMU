@@ -55,6 +55,8 @@ static int cmd_w(char *args);
 
 static int cmd_d(char *args);
 
+static int cmd_nemu(char *args);
+
 // static int cmd_bt(char* args);
 
 //external
@@ -82,7 +84,8 @@ static struct
 	{"w", "Set a watchpoint", cmd_w},
 	{"d", "Del a watchpoint", cmd_d},
 	{"p", "Calculate an expr", cmd_p},
-	{"x", "Scan the memory", cmd_x}
+	{"x", "Scan the memory", cmd_x},
+	{"nemu", "run program", cmd_nemu}
 
 };
 
@@ -350,5 +353,18 @@ static int cmd_x(char *args)
 	for(i = 0; i < n; i++) {
 		printf("%d: %d\n", i, swaddr_read(val + i * 4, 1));
 	}
+	return 0;
+}
+
+static int cmd_nemu(char *args) {
+	char *arg = strtok(args, " ");
+	char *argOverflow = strtok(NULL, " ");
+	if (argOverflow != NULL)
+	{
+		Log("Wrong params!");
+		Log("help: info [SUBCMD {r, w}]");
+		return 1;
+	}
+	Log("%s", arg);
 	return 0;
 }
