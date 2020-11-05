@@ -356,10 +356,12 @@ static int cmd_x(char *args)
 	}
 	return 0;
 }
+
 #define maxArgc 20
 static int cmd_nemu(char *args) {
 	if(args == NULL) {
 		Log("error: please input right expr!");
+		Log("example: nemu ./obj/testcase/add");
 		return 2;
 	}
 
@@ -379,5 +381,6 @@ static int cmd_nemu(char *args) {
    }
    Log("argc: %d", argc);
 	load_elf_tables(argc, argv);
+	Log("success load file %s", argv[1]);
 	return 0;
 }
