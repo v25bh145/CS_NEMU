@@ -1,1 +1,1 @@
-[nemu/src/monitor/debug/ui.c,382,cmd_nemu] argc: 3
+[nemu/src/monitor/debug/ui.c,382,cmd_nemu] argc: 2
