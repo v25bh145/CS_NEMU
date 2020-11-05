@@ -12,6 +12,7 @@
         "utility": "cpp",
         "typeinfo": "c",
         "decode-template.h": "c",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "*.tcc": "cpp"
     }
 }
