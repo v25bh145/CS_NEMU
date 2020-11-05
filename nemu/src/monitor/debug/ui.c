@@ -365,7 +365,7 @@ static int cmd_nemu(char *args) {
 
 	char *argv[maxArgc];
 	char* token;
-
+	Log("args: %s", args);
    token = strtok(args, " ");
    Log("token: %s", token);
    int argc = 0;

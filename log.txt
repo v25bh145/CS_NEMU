@@ -1,1 +1,3 @@
-[nemu/src/monitor/debug/ui.c,380,cmd_nemu] argc: 1
+[nemu/src/monitor/debug/ui.c,370,cmd_nemu] token: add
+[nemu/src/monitor/debug/ui.c,374,cmd_nemu] token awa: add
+[nemu/src/monitor/debug/ui.c,382,cmd_nemu] argc: 1
