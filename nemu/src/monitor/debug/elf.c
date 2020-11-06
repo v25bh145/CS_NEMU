@@ -87,7 +87,7 @@ long long get_var_by_name(char* var_name, bool*success) {
 		success = false;
 		return 0;
 	}
-	Log("symtab: %c", symtab[2].st_info);
+	Log("symtab: %d", (int)symtab[2].st_info);
 	return 0;
 }
 
