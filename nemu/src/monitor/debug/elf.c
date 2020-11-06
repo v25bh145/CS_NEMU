@@ -99,7 +99,7 @@ char* get_function_by_addr(uint32_t ebp, bool* success) {
 	int i = 0;
 	for(i = 0; i < nr_symtab_entry; i++) {
 		if(((int)symtab[i].st_info & 0xf) == STT_FUNC) {
-			Log("get function");
+			Log("get function size %x value %x", symtab[i].st_size, symtab[i].st_value);
 			return "qwq";
 		}
 	}
