@@ -81,8 +81,8 @@ void load_elf_tables(int argc, char *argv[]) {
 	fclose(fp);
 }
 
-long long get_var_by_name(char* var_name) {
-	Log("into function");
-	return 1;
+long long get_var_by_name(char* var_name, bool*success) {
+	Log("into function %s", var_name);
+	return 0;
 }
 

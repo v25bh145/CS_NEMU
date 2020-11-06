@@ -58,7 +58,7 @@ static regex_t re[NR_REGEX];
 
 uint32_t swaddr_read(swaddr_t, size_t);
 
-long long get_var_by_name(char* var_name);
+long long get_var_by_name(char* var_name, bool* success);
 
 int *weight;
 
@@ -230,7 +230,12 @@ static bool make_token(char *e)
 					else {
 						//VARS
 						Log("meet vars: %s", substr_start);
-						tokens[nr_token].num = get_var_by_name(substr_start);
+						bool success = true;
+						tokens[nr_token].num = get_var_by_name(substr_start, &success);
+						if(!success) {
+							Log("connot get var: %s", substr_start);
+							return false;
+						}
 					}
 					nr_token++;
 				}
