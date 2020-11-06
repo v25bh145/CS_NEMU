@@ -205,6 +205,7 @@ static bool make_token(char *e)
 					nr_token++;
 				}
 				else if(rules[i].token_type == VAR) {
+					rules[i].token_type = NUM;
 					if (substr_start[0] == '$')
 					{
 						//regs
