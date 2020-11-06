@@ -1,6 +1,6 @@
 [nemu/src/monitor/debug/ui.c,383,cmd_nemu] successfully load elf in file ./obj/testcase/add
-[nemu/src/monitor/debug/expr.c,232,make_token] meet vars: q
-[nemu/src/monitor/debug/elf.c,85,get_var_by_name] into function q
+[nemu/src/monitor/debug/expr.c,232,make_token] meet vars: e
+[nemu/src/monitor/debug/elf.c,85,get_var_by_name] into function e
 [nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 0
 [nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 3
 [nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 3
@@ -10,5 +10,7 @@
 [nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 16
 [nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 18
 [nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 17
+[nemu/src/monitor/debug/elf.c,94,get_var_by_name] meet var 1048800
 [nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 17
+[nemu/src/monitor/debug/elf.c,94,get_var_by_name] meet var 1048768
 [nemu/src/monitor/debug/ui.c,325,cmd_p] 0
