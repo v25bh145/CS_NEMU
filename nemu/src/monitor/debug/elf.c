@@ -95,3 +95,7 @@ long long get_var_by_name(char* var_name, bool*success) {
 	return 0;
 }
 
+char* get_function_by_addr(uint32_t ebp, bool* success) {
+	Log("awa %x", ebp);
+	return "awa";
+}

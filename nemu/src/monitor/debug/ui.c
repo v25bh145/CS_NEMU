@@ -65,7 +65,8 @@ int setWatchpoint(swaddr_t step);
 void printAllPool();
 int delWatchpoint(int count);
 void load_elf_tables(int argc, char *argv[]);
-long long int expr_cmd(char *e, bool *success);
+long long int expr_cmd(char *e, bool* success);
+char* get_function_by_addr(uint32_t ebp, bool* success);
 
 static int cmd_help(char *args);
 
@@ -389,9 +390,16 @@ static int cmd_nemu(char *args) {
 static int cmd_bt(char* args) {
 	Log("if fail, please check if you run this program.");
 	int i = 0;
+	char* func_name;
+	bool success = true;
 	uint32_t ebp = cpu.ebp;
 	while(ebp != 0) {
-		printf("*stack %d\t %x\n", i++, ebp);
+		func_name = get_function_by_addr(ebp, &success);
+		if(!success) {
+			Log("fail to get the func name in addr: %x", ebp);
+			return 2;
+		}
+		printf("*stack %d\t %x <%s>\n", i++, ebp, func_name);
 		ebp = swaddr_read(ebp, 4);
 	}
 	printf("*stack %d\t %x\n", i++, ebp);
