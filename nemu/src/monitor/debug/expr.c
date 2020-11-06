@@ -205,7 +205,7 @@ static bool make_token(char *e)
 					nr_token++;
 				}
 				else if(rules[i].token_type == VAR) {
-					rules[i].token_type = NUM;
+					
 					if (substr_start[0] == '$')
 					{
 						//regs
@@ -235,6 +235,8 @@ static bool make_token(char *e)
 						//VARS
 						Log("meet vars: %s", substr_start);
 					}
+					rules[i].token_type = NUM;
+					nr_token++;
 				}
 				else if (rules[i].token_type != NOTYPE)
 				{
