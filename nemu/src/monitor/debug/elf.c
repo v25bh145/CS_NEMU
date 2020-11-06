@@ -83,6 +83,7 @@ void load_elf_tables(int argc, char *argv[]) {
 
 long long get_var_by_name(char* var_name, bool*success) {
 	Log("into function %s", var_name);
+	Log("symtab: %d", nr_symtab_entry);
 	return 0;
 }
 

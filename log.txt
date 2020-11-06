@@ -1,3 +1,3 @@
-[nemu/src/monitor/debug/expr.c,232,make_token] meet vars: eq
-[nemu/src/monitor/debug/elf.c,85,get_var_by_name] into function
-[nemu/src/monitor/debug/ui.c,325,cmd_p] 1
+[nemu/src/monitor/debug/expr.c,232,make_token] meet vars: y_y
+[nemu/src/monitor/debug/elf.c,85,get_var_by_name] into function y_y
+[nemu/src/monitor/debug/ui.c,325,cmd_p] 0
