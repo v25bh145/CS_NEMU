@@ -356,7 +356,9 @@ long long int eval(int p, int q, bool *success)
 	}
 	else
 	{
+		Log("1");
 		int op = find_domintant(p, q, success);
+		Log("2 op: %d", op);
 		long long int val1 = eval(p, op - 1, success);
 		long long int val2 = eval(op + 1, q, success);
 		if (!success)
