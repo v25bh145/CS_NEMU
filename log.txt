@@ -1,3 +1,3 @@
-[nemu/src/monitor/debug/elf.c,81,load_elf_tables] awa obj/testcase/add
-[nemu/src/monitor/debug/elf.c,81,load_elf_tables] awa ./obj/testcase/add
+[nemu/src/monitor/debug/elf.c,81,load_elf_tables] awa 
+[nemu/src/monitor/debug/elf.c,81,load_elf_tables] awa P/C	
 [nemu/src/monitor/debug/ui.c,383,cmd_nemu] successfully load elf in file ./obj/testcase/add

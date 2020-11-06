@@ -18,7 +18,8 @@ enum
 	AND,
 	OR,
 	NEG, //negative
-	DRF	 //dereference
+	DRF,	//dereference
+	VAR	//variable
 };
 int theLastRule = DRF;
 
@@ -46,7 +47,8 @@ static struct rule
 	{"-", '-'},
 	{"\\*", '*'},
 	{"/", '/'},
-	{"(\\$[A-Z]+)|(\\$[a-z]+)", NUM},
+	{"(\\$[A-Z]+)|(\\$[a-z]+)", VAR},
+	{"[A-Za-z]([(A-Za-z0-9_)]+)", VAR},
 	{"0x[0-z]+", NUM},
 	{"[0-9]+", NUM}
 };
@@ -185,6 +187,24 @@ static bool make_token(char *e)
 						return false;
 					}
 					tokens[nr_token].type = rules[i].token_type;
+					if (substr_start[1] == 'x')
+					{
+						//0x
+						char* sub0x =  (char *)malloc(substr_len * sizeof(char));
+						int i;
+						uint32_t tmp;
+						for(i = 2; i < substr_len; i++) {
+							sub0x[i - 2] = tolower(substr_start[i]);
+						}
+						sub0x[i - 2] = '\0';
+						sscanf(sub0x, "%x", &tmp);
+						tokens[nr_token].num = (long long int)tmp;
+					}
+					else
+						tokens[nr_token].num = atoi(substr_start);
+					nr_token++;
+				}
+				else if(rules[i].token_type == VAR) {
 					if (substr_start[0] == '$')
 					{
 						//regs
@@ -209,22 +229,10 @@ static bool make_token(char *e)
 							return false;
 						}
 					}
-					else if (substr_start[1] == 'x')
-					{
-						//0x
-						char* sub0x =  (char *)malloc(substr_len * sizeof(char));
-						int i;
-						uint32_t tmp;
-						for(i = 2; i < substr_len; i++) {
-							sub0x[i - 2] = tolower(substr_start[i]);
-						}
-						sub0x[i - 2] = '\0';
-						sscanf(sub0x, "%x", &tmp);
-						tokens[nr_token].num = (long long int)tmp;
+					else {
+						//VARS
+						Log("meet vars: %s", substr_start);
 					}
-					else
-						tokens[nr_token].num = atoi(substr_start);
-					nr_token++;
 				}
 				else if (rules[i].token_type != NOTYPE)
 				{
