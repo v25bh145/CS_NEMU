@@ -83,7 +83,7 @@ void load_elf_tables(int argc, char *argv[]) {
 
 long long get_var_by_name(char* var_name, bool*success) {
 	if(nr_symtab_entry <= 0) {
-		success = false;
+		*success = false;
 		return 0;
 	}
 	int i = 0;
@@ -103,6 +103,6 @@ char* get_function_by_addr(uint32_t ebp, bool* success) {
 			// return "qwq";
 		}
 	}
-	success = false;
+	*success = false;
 	return NULL;
 }
