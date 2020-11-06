@@ -1,18 +1,3 @@
 [nemu/src/monitor/debug/ui.c,383,cmd_nemu] successfully load elf in file ./obj/testcase/add
-[nemu/src/monitor/debug/expr.c,232,make_token] meet vars: a
-[nemu/src/monitor/debug/elf.c,85,get_var_by_name] into function a
-[nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 0
-[nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 3
-[nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 3
-[nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 3
-[nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 4
-[nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 18
-[nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 16
-[nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 18
-[nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 17
-[nemu/src/monitor/debug/elf.c,94,get_var_by_name] meet var 1048800 23
-[nemu/src/monitor/debug/elf.c,95,get_var_by_name] find name ans
-[nemu/src/monitor/debug/elf.c,92,get_var_by_name] meet type 17
-[nemu/src/monitor/debug/elf.c,94,get_var_by_name] meet var 1048768 27
-[nemu/src/monitor/debug/elf.c,95,get_var_by_name] find name test_data
-[nemu/src/monitor/debug/ui.c,325,cmd_p] 0
+[nemu/src/monitor/debug/expr.c,232,make_token] meet vars: test_data
+[nemu/src/monitor/debug/ui.c,325,cmd_p] 1048768

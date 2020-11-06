@@ -90,8 +90,6 @@ long long get_var_by_name(char* var_name, bool*success) {
 	for(i = 0; i < nr_symtab_entry; i++) {
 		if(((int)symtab[i].st_info & 0xf) == STT_OBJECT && !strcmp(strtab + symtab[i].st_name, var_name)) {
 			return symtab[i].st_value;
-			// Log("meet var %d %d", symtab[i].st_value, symtab[i].st_name);
-			// Log("find name %s", strtab + symtab[i].st_name);
 		}
 	}
 	return 0;
