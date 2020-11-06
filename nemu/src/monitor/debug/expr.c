@@ -229,7 +229,6 @@ static bool make_token(char *e)
 					}
 					else {
 						//VARS
-						Log("meet vars: %s", substr_start);
 						bool success = true;
 						tokens[nr_token].num = get_var_by_name(substr_start, &success);
 						if(!success) {
