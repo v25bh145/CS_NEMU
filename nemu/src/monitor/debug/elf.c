@@ -87,7 +87,12 @@ long long get_var_by_name(char* var_name, bool*success) {
 		success = false;
 		return 0;
 	}
-	Log("symtab: %d", (int)symtab[2].st_info);
+	int i = 0;
+	for(i = 0; i < nr_symtab_entry; i++) {
+		if((int)symtab[i].st_info == STT_OBJECT) {
+			Log("meet var %d", symtab[i].st_value);
+		}
+	}
 	return 0;
 }
 
