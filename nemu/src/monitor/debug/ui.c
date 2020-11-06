@@ -387,11 +387,12 @@ static int cmd_nemu(char *args) {
 #undef maxArgc
 
 static int cmd_bt(char* args) {
+	Log("if fail, please check if you run this program.");
 	int i = 0;
 	while(cpu.ebp != 0) {
-		Log("*%d\t %d", i++, cpu.ebp);
+		printf("*%d\t %d", i++, cpu.ebp);
 		cpu.ebp = swaddr_read(cpu.ebp, 4);
 	}
-	Log("*%d\t %d", i++, cpu.ebp);
+	printf("*%d\t %d", i++, cpu.ebp);
 	return 0;
 }

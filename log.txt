@@ -1,1 +1,3 @@
-[nemu/src/monitor/debug/ui.c,392,cmd_bt] *1	 154109764
+[nemu/src/monitor/debug/ui.c,326,cmd_p] 623617935
+[nemu/src/monitor/debug/ui.c,326,cmd_p] 623617935
+[nemu/src/monitor/debug/ui.c,326,cmd_p] 623617935
