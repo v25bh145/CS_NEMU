@@ -391,9 +391,9 @@ static int cmd_bt(char* args) {
 	int i = 0;
 	uint32_t ebp = cpu.ebp;
 	while(ebp != 0) {
-		printf("*%d\t %x", i++, ebp);
+		printf("*stack %d\t %x\n", i++, ebp);
 		ebp = swaddr_read(ebp, 4);
 	}
-	printf("*%d\t %x\n", i++, ebp);
+	printf("*stack %d\t %x\n", i++, ebp);
 	return 0;
 }
