@@ -393,6 +393,6 @@ static int cmd_bt(char* args) {
 		printf("*%d\t %d", i++, cpu.ebp);
 		cpu.ebp = swaddr_read(cpu.ebp, 4);
 	}
-	printf("*%d\t %d", i++, cpu.ebp);
+	printf("*%d\t %d\n", i++, cpu.ebp);
 	return 0;
 }
