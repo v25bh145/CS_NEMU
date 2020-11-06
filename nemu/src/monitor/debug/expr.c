@@ -321,12 +321,14 @@ long long int eval(int p, int q, bool *success)
 	if (p > q)
 	{
 		*success = false;
+		Log("p > q %d %d",p, q);
 		return 0;
 	}
 	else if (p == q)
 	{
 		if (tokens[p].type != NUM)
 		{
+			Log("!= num %d", tokens[p].type);
 			*success = false;
 			return 0;
 		}

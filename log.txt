@@ -1,1 +1,2 @@
+[nemu/src/monitor/debug/expr.c,228,make_token] reg: 852657939
 [nemu/src/monitor/debug/ui.c,320,cmd_p] error: please input right expr!
