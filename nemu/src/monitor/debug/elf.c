@@ -92,7 +92,7 @@ long long get_var_by_name(char* var_name, bool*success) {
 		Log("meet type %d", (int)symtab[i].st_info);
 		if(((int)symtab[i].st_info & 0xf) == STT_OBJECT) {
 			Log("meet var %d %d", symtab[i].st_value, symtab[i].st_name);
-			Log("find name %s", strtab);
+			Log("find name %s", strtab + symtab[i].st_name);
 		}
 	}
 	return 0;
