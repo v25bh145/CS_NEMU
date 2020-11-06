@@ -96,6 +96,13 @@ long long get_var_by_name(char* var_name, bool*success) {
 }
 
 char* get_function_by_addr(uint32_t ebp, bool* success) {
-	Log("awa %x", ebp);
-	return "awa";
+	int i = 0;
+	for(i = 0; i < nr_symtab_entry; i++) {
+		if(((int)symtab[i].st_info & 0xf) == STT_FUNC) {
+			Log("get function");
+			return "qwq";
+		}
+	}
+	success = false;
+	return NULL;
 }
