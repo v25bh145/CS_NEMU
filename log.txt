@@ -1,3 +1,4 @@
-[nemu/src/monitor/debug/expr.c,228,make_token] reg: 1740405137
-[nemu/src/monitor/debug/expr.c,333,eval] != num 0
-[nemu/src/monitor/debug/ui.c,320,cmd_p] error: please input right expr!
+[nemu/src/monitor/debug/ui.c,325,cmd_p] 1
+[nemu/src/monitor/debug/ui.c,325,cmd_p] 2
+[nemu/src/monitor/debug/ui.c,325,cmd_p] 23
+[nemu/src/monitor/debug/ui.c,325,cmd_p] 23456
