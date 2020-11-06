@@ -5,4 +5,5 @@
   10002d:   89 e5                                 movl %esp,%ebp
   10002f:   83 ec 18                              subl $0x18,%esp
 [nemu/src/monitor/cpu-exec.c,84,cpu_exec] Get the WP 1:
-[nemu/src/monitor/debug/ui.c,391,cmd_bt] if fail, please check if you DO run this program. 10000e
+[nemu/src/monitor/debug/ui.c,391,cmd_bt] if fail, please check if you DO run this program.
+[nemu/src/monitor/debug/ui.c,399,cmd_bt] fail to get the func name in addr: 7ffffe8
