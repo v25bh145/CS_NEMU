@@ -18,8 +18,7 @@ enum
 	AND,
 	OR,
 	NEG, //negative
-	DRF,	//dereference
-	VAR	//variable
+	DRF	//dereference
 };
 int theLastRule = DRF;
 
@@ -47,8 +46,8 @@ static struct rule
 	{"-", '-'},
 	{"\\*", '*'},
 	{"/", '/'},
-	{"(\\$[A-Z]+)|(\\$[a-z]+)", VAR},
-	{"[A-Za-z]([(A-Za-z0-9_)]+)", VAR},
+	{"(\\$[A-Z]+)|(\\$[a-z]+)", NUM},
+	{"[A-Za-z]([(A-Za-z0-9_)]+)", NUM},
 	{"0x[0-z]+", NUM},
 	{"[0-9]+", NUM}
 };

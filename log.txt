@@ -1,2 +1,0 @@
-[nemu/src/monitor/debug/expr.c,404,expr_cmd] nr_token: 1
-[nemu/src/monitor/debug/ui.c,325,cmd_p] 5
