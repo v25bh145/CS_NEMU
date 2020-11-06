@@ -1,0 +1,21 @@
+[nemu/src/monitor/debug/expr.c,223,make_token] reg: 1819361689
+[nemu/src/monitor/debug/expr.c,398,expr_cmd] nr_token: 1
+[nemu/src/monitor/debug/ui.c,325,cmd_p] 1819361689
+[nemu/src/monitor/debug/expr.c,223,make_token] reg: 1819361689
+[nemu/src/monitor/debug/expr.c,398,expr_cmd] nr_token: 1
+[nemu/src/monitor/debug/ui.c,325,cmd_p] 1819361689
+[nemu/src/monitor/debug/expr.c,223,make_token] reg: 1819361689
+[nemu/src/monitor/debug/expr.c,398,expr_cmd] nr_token: 1
+[nemu/src/monitor/debug/ui.c,325,cmd_p] 1819361689
+[nemu/src/monitor/debug/expr.c,223,make_token] reg: 725852326
+[nemu/src/monitor/debug/expr.c,398,expr_cmd] nr_token: 1
+[nemu/src/monitor/debug/ui.c,325,cmd_p] 725852326
+[nemu/src/monitor/debug/expr.c,231,make_token] meet vars: eca
+[nemu/src/monitor/debug/expr.c,398,expr_cmd] nr_token: 1
+[nemu/src/monitor/debug/ui.c,325,cmd_p] 725852326
+[nemu/src/monitor/debug/expr.c,231,make_token] meet vars: qwq
+[nemu/src/monitor/debug/expr.c,398,expr_cmd] nr_token: 1
+[nemu/src/monitor/debug/ui.c,325,cmd_p] 725852326
+[nemu/src/monitor/debug/expr.c,231,make_token] meet vars: awa
+[nemu/src/monitor/debug/expr.c,398,expr_cmd] nr_token: 1
+[nemu/src/monitor/debug/ui.c,325,cmd_p] 725852326

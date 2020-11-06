@@ -317,14 +317,12 @@ long long int eval(int p, int q, bool *success)
 	if (p > q)
 	{
 		*success = false;
-		Log("p > q %d %d",p, q);
 		return 0;
 	}
 	else if (p == q)
 	{
 		if (tokens[p].type != NUM)
 		{
-			Log("!= num %d", tokens[p].type);
 			*success = false;
 			return 0;
 		}
@@ -335,12 +333,10 @@ long long int eval(int p, int q, bool *success)
 	}
 	else if (check_parentheses(p, q, success))
 	{
-		Log("qwq?");
 		return eval(p + 1, q - 1, success);
 	}
 	else if (tokens[p].type == DRF || tokens[p].type == '!' || tokens[p].type == NEG)
 	{
-		Log("qwq??");
 		if (tokens[p].type == NEG)
 			return -eval(p + 1, q, success);
 		else if (tokens[p].type == '!')
@@ -352,9 +348,7 @@ long long int eval(int p, int q, bool *success)
 	}
 	else
 	{
-		Log("1");
 		int op = find_domintant(p, q, success);
-		Log("2 op: %d", op);
 		long long int val1 = eval(p, op - 1, success);
 		long long int val2 = eval(op + 1, q, success);
 		if (!success)
@@ -395,6 +389,5 @@ long long int expr_cmd(char *e, bool *success)
 
 	/* TODO: Insert codes to evaluate the expression. */
 	*success = true;
-	Log("nr_token: %d", nr_token);
 	return eval(0, nr_token - 1, success);
 }
