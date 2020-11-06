@@ -82,17 +82,16 @@ void load_elf_tables(int argc, char *argv[]) {
 }
 
 long long get_var_by_name(char* var_name, bool*success) {
-	Log("into function %s", var_name);
 	if(nr_symtab_entry <= 0) {
 		success = false;
 		return 0;
 	}
 	int i = 0;
 	for(i = 0; i < nr_symtab_entry; i++) {
-		Log("meet type %d", (int)symtab[i].st_info);
-		if(((int)symtab[i].st_info & 0xf) == STT_OBJECT) {
-			Log("meet var %d %d", symtab[i].st_value, symtab[i].st_name);
-			Log("find name %s", strtab + symtab[i].st_name);
+		if(((int)symtab[i].st_info & 0xf) == STT_OBJECT && !strcmp(strtab + symtab[i].st_name, var_name)) {
+			return symtab[i].st_value;
+			// Log("meet var %d %d", symtab[i].st_value, symtab[i].st_name);
+			// Log("find name %s", strtab + symtab[i].st_name);
 		}
 	}
 	return 0;
