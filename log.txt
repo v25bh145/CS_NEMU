@@ -1,3 +1,5 @@
-[nemu/src/monitor/debug/expr.c,232,make_token] meet vars: y_y
-[nemu/src/monitor/debug/elf.c,85,get_var_by_name] into function y_y
+[nemu/src/monitor/debug/ui.c,383,cmd_nemu] successfully load elf in file ./obj/testcase/add
+[nemu/src/monitor/debug/expr.c,232,make_token] meet vars: awa
+[nemu/src/monitor/debug/elf.c,85,get_var_by_name] into function awa
+[nemu/src/monitor/debug/elf.c,86,get_var_by_name] symtab: 10
 [nemu/src/monitor/debug/ui.c,325,cmd_p] 0
