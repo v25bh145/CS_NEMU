@@ -58,6 +58,8 @@ static regex_t re[NR_REGEX];
 
 uint32_t swaddr_read(swaddr_t, size_t);
 
+long long get_var_by_name(char* var_name);
+
 int *weight;
 
 /* Rules are used for many times.
@@ -220,7 +222,6 @@ static bool make_token(char *e)
 								break;
 							}
 						}
-						Log("reg: %lld", tokens[nr_token].num);
 						if(!flag) {
 							Log("wrong regs! %s", subReg);
 							return false;
@@ -229,6 +230,7 @@ static bool make_token(char *e)
 					else {
 						//VARS
 						Log("meet vars: %s", substr_start);
+						tokens[nr_token].num = get_var_by_name(substr_start);
 					}
 					nr_token++;
 				}
