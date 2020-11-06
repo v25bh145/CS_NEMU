@@ -1,2 +1,0 @@
-[nemu/src/monitor/debug/ui.c,391,cmd_bt] if fail, please check if you run this program.
-[nemu/src/monitor/debug/elf.c,102,get_function_by_addr] get function
