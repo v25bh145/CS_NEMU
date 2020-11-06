@@ -263,7 +263,7 @@ inline bool check_parentheses(int p, int q, bool *success)
 		return false;
 	for (i = p; i <= q; i++)
 	{
-		//cnt == 0 && encountered an operator
+		//cnt == 0 && encounter an operator
 		if (tokens[i].type == '(')
 			cnt++;
 		else if (tokens[i].type == ')')
@@ -339,10 +339,12 @@ long long int eval(int p, int q, bool *success)
 	}
 	else if (check_parentheses(p, q, success))
 	{
+		Log("qwq?");
 		return eval(p + 1, q - 1, success);
 	}
 	else if (tokens[p].type == DRF || tokens[p].type == '!' || tokens[p].type == NEG)
 	{
+		Log("qwq??");
 		if (tokens[p].type == NEG)
 			return -eval(p + 1, q, success);
 		else if (tokens[p].type == '!')
