@@ -5,4 +5,4 @@
   10002d:   89 e5                                 movl %esp,%ebp
   10002f:   83 ec 18                              subl $0x18,%esp
 [nemu/src/monitor/cpu-exec.c,84,cpu_exec] Get the WP 1:
-[nemu/src/monitor/debug/ui.c,391,cmd_bt] if fail, please check if you DO run this program. 0
+[nemu/src/monitor/debug/ui.c,391,cmd_bt] if fail, please check if you DO run this program. 10000e

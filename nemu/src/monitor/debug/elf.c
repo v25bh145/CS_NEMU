@@ -8,6 +8,8 @@ static char *strtab = NULL;
 static Elf32_Sym *symtab = NULL;
 static int nr_symtab_entry;
 
+uint32_t swaddr_read(swaddr_t addr, size_t len);
+
 void load_elf_tables(int argc, char *argv[]) {
 	int ret;
 	Assert(argc == 2, "run NEMU with format 'nemu [program]'");
@@ -97,9 +99,10 @@ long long get_var_by_name(char* var_name, bool*success) {
 
 char* get_function_by_addr(uint32_t ebp, bool* success) {
 	int i = 0;
+	uint32_t instr_addr = swaddr_read(ebp + 4, 4);
 	for(i = 0; i < nr_symtab_entry; i++) {
-		if(((int)symtab[i].st_info & 0xf) == STT_FUNC/* && symtab[i].st_value <= */) {
-			// Log("get function size %x value %x", symtab[i].st_size, symtab[i].st_value);
+		if(((int)symtab[i].st_info & 0xf) == STT_FUNC && symtab[i].st_value <= instr_addr && instr_addr <= symtab[i].st_value + symtab[i].st_size) {
+			Log("get function size %x value %x name %s", symtab[i].st_size, symtab[i].st_value, strtab + symtab[i].st_name);
 			return "qwq";
 		}
 	}
