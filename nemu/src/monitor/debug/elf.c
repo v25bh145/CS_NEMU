@@ -98,9 +98,9 @@ long long get_var_by_name(char* var_name, bool*success) {
 char* get_function_by_addr(uint32_t ebp, bool* success) {
 	int i = 0;
 	for(i = 0; i < nr_symtab_entry; i++) {
-		if(((int)symtab[i].st_info & 0xf) == STT_FUNC) {
-			Log("get function size %x value %x", symtab[i].st_size, symtab[i].st_value);
-			// return "qwq";
+		if(((int)symtab[i].st_info & 0xf) == STT_FUNC/* && symtab[i].st_value <= */) {
+			// Log("get function size %x value %x", symtab[i].st_size, symtab[i].st_value);
+			return "qwq";
 		}
 	}
 	*success = false;
