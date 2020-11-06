@@ -57,7 +57,7 @@ static int cmd_d(char *args);
 
 static int cmd_nemu(char *args);
 
-// static int cmd_bt(char* args);
+static int cmd_bt(char* args);
 
 //external
 WP *get_wp_head();
@@ -86,7 +86,8 @@ static struct
 	{"d", "Del a watchpoint", cmd_d},
 	{"p", "Calculate an expr", cmd_p},
 	{"x", "Scan the memory", cmd_x},
-	{"nemu", "run program", cmd_nemu}
+	{"nemu", "run program", cmd_nemu},
+	{"bt", "print stack call", cmd_bt}
 
 };
 
@@ -381,5 +382,16 @@ static int cmd_nemu(char *args) {
    }
 	load_elf_tables(argc, argv);
 	Log("successfully load elf in file %s", argv[1]);
+	return 0;
+}
+#undef maxArgc
+
+static int cmd_bt(char* args) {
+	int i = 0;
+	while(cpu.ebp != 0) {
+		Log("*%d\t %d", i++, cpu.ebp);
+		cpu.ebp = swaddr_read(cpu.ebp, 4);
+	}
+	Log("*%d\t %d", i++, cpu.ebp);
 	return 0;
 }

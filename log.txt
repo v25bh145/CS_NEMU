@@ -1,9 +1,0 @@
-[nemu/src/monitor/debug/ui.c,383,cmd_nemu] successfully load elf in file ./obj/testcase/add
-[nemu/src/monitor/debug/expr.c,232,make_token] meet vars: ans
-[nemu/src/monitor/debug/ui.c,325,cmd_p] 1048800
-[nemu/src/monitor/debug/expr.c,232,make_token] meet vars: ans
-[nemu/src/monitor/debug/ui.c,325,cmd_p] 0
-[nemu/src/monitor/debug/expr.c,232,make_token] meet vars: ans + 1)
-[nemu/src/monitor/debug/ui.c,325,cmd_p] 21384261
-[nemu/src/monitor/debug/expr.c,232,make_token] meet vars: ans + 2)
-[nemu/src/monitor/debug/ui.c,325,cmd_p] 16860748
