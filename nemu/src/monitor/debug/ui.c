@@ -389,10 +389,11 @@ static int cmd_nemu(char *args) {
 static int cmd_bt(char* args) {
 	Log("if fail, please check if you run this program.");
 	int i = 0;
-	while(cpu.ebp != 0) {
-		printf("*%d\t %d", i++, cpu.ebp);
-		cpu.ebp = swaddr_read(cpu.ebp, 4);
+	uint32_t ebp = cpu.ebp;
+	while(ebp != 0) {
+		printf("*%d\t %x", i++, ebp);
+		ebp = swaddr_read(ebp, 4);
 	}
-	printf("*%d\t %d\n", i++, cpu.ebp);
+	printf("*%d\t %x\n", i++, ebp);
 	return 0;
 }
