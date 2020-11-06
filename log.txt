@@ -1,8 +1,5 @@
   100000:   bd 00 00 00 00                        movl $0x0,%ebp
   100005:   bc f0 ff ff 07                        movl $0x7fffff0,%esp
   10000a:   e8 1d 00 00 00                        calll $0x1d
-  10002c:   55                                    pushl %ebp
-  10002d:   89 e5                                 movl %esp,%ebp
-  10002f:   83 ec 18                              subl $0x18,%esp
 [nemu/src/monitor/cpu-exec.c,84,cpu_exec] Get the WP 1:
-[nemu/src/monitor/debug/ui.c,391,cmd_bt] if fail, please check if you DO run this program. 134217704
+[nemu/src/monitor/debug/ui.c,391,cmd_bt] if fail, please check if you DO run this program. 0
