@@ -1,10 +1,2 @@
-[nemu/src/monitor/debug/expr.c,228,make_token] reg: 682907902
 [nemu/src/monitor/debug/expr.c,404,expr_cmd] nr_token: 1
-[nemu/src/monitor/debug/expr.c,333,eval] != num 0
-[nemu/src/monitor/debug/ui.c,320,cmd_p] error: please input right expr!
-[nemu/src/monitor/debug/expr.c,404,expr_cmd] nr_token: 1
-[nemu/src/monitor/debug/ui.c,325,cmd_p] 1
-[nemu/src/monitor/debug/expr.c,404,expr_cmd] nr_token: 1
-[nemu/src/monitor/debug/ui.c,325,cmd_p] 0
-[nemu/src/monitor/debug/expr.c,404,expr_cmd] nr_token: 1
-[nemu/src/monitor/debug/ui.c,325,cmd_p] 0
+[nemu/src/monitor/debug/ui.c,325,cmd_p] 5

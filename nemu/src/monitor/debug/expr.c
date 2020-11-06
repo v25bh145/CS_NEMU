@@ -200,13 +200,9 @@ static bool make_token(char *e)
 						sscanf(sub0x, "%x", &tmp);
 						tokens[nr_token].num = (long long int)tmp;
 					}
-					else
+					else if ((int)substr_start[0] >= 48 && (int)substr_start[0] <= 58)
 						tokens[nr_token].num = atoi(substr_start);
-					nr_token++;
-				}
-				else if(rules[i].token_type == VAR) {
-					
-					if (substr_start[0] == '$')
+					else if (substr_start[0] == '$')
 					{
 						//regs
 						char* regStr[] = {"eax", "ebx", "ecx", "edx", "esp", "ebp", "esi", "edi", "eip"};
@@ -235,7 +231,6 @@ static bool make_token(char *e)
 						//VARS
 						Log("meet vars: %s", substr_start);
 					}
-					rules[i].token_type = NUM;
 					nr_token++;
 				}
 				else if (rules[i].token_type != NOTYPE)
