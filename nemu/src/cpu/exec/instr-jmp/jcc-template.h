@@ -5,7 +5,6 @@
 static void do_execute() {
     enum {JO, JNO, JB, JNB, JZ, JNZ, JBE, JNBE, JS, JNS, JP, JNP, JL, JNL, JLE, JNLE};
     DATA_TYPE_S rel = op_src->val;
-    Log("spj %d", op_src->abstract_instr_enum);
     if(!strcmp(str(SUFFIX), "b")) {
         
         switch (op_src->abstract_instr_enum - 0x70) {
@@ -94,6 +93,8 @@ static void do_execute() {
                 cpu.eip += rel;
                 break;
                 // panic("JMP");
+            case -0x70:
+                panic("JMP 0xFF");
             default:
                 panic("UNKNOWN ERROR %d", op_src->abstract_instr_enum);
         }
@@ -183,6 +184,8 @@ static void do_execute() {
                 //jmp
                 cpu.eip += rel;
                 break;
+            case -0x70:
+                panic("JMP 0xFF");
             default:
                 panic("UNKNOWN ERROR %d", op_src->abstract_instr_enum);
         }   
