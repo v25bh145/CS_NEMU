@@ -34,8 +34,6 @@
   10076a:   8b 4d 10                              movl 0x10(%ebp),%ecx
   10076d:   8b 5d 08                              movl 0x8(%ebp),%ebx
   100770:   8d 04 11                              leal 0x8(%ebp),(%ecx,%edx,1)
-[nemu/src/cpu/exec/logic/cmp-template.h,9,do_cmp_l] cmp res -651263 dest 4096 pos 0 src 655359 pos 655359 with eip: 100773
-[nemu/src/cpu/exec/logic/cmp-template.h,10,do_cmp_l] spj: 0
   100773:   3d ff ff 09 00                        cmpl $0x9ffff,%eax
   100778:   76 06                                 jccb $0x6
   100780:   89 4d 10                              movl %ecx,0x10(%ebp)
@@ -60,9 +58,16 @@
   101352:   5e                                    popl %esi
   101353:   5f                                    popl %edi
   101354:   c3                                    retl %edi
-[nemu/src/cpu/exec/logic/cmp-template.h,9,do_cmp_l] cmp res 983467169 dest 1179403647 pos 134213564 src 195936478 pos 195936478 with eip: 1007c7
-[nemu/src/cpu/exec/logic/cmp-template.h,10,do_cmp_l] spj: 1179403647
-  1007c7:   81 bd f8 ef ff ff de c0 ad 0b         cmpl $0xbadc0de,-0x1008(%ebp)
+  1007c7:   81 bd f8 ef ff ff 7f 45 4c 46         cmpl $0x464c457f,-0x1008(%ebp)
   1007d1:   74 06                                 jccb $0x6
-  1007d3:   b8 01 00 00 00                        movl $0x1,%eax
-  1007d8:   d6                                    nemu trap (eax = 1)
+  1007d9:   c7 44 24 0c c2 14 10 00               movl $0x1014c2,0xc(%esp)
+  1007e1:   c7 44 24 08 28 00 00 00               movl $0x28,0x8(%esp)
+  1007e9:   c7 44 24 04 ad 14 10 00               movl $0x1014ad,0x4(%esp)
+  1007f1:   c7 04 24 58 14 10 00                  movl $0x101458,(%esp)
+  1007f8:   e8 73 06 00 00                        calll $0x673
+  100e70:   55                                    pushl %ebp
+  100e71:   89 e5                                 movl %esp,%ebp
+  100e73:   5d                                    popl %ebp
+  100e74:   c3                                    retl %ebp
+  1007fd:   b8 01 00 00 00                        movl $0x1,%eax
+  100802:   d6                                    nemu trap (eax = 1)
