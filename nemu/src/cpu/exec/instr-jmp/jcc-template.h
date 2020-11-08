@@ -95,9 +95,10 @@ static void do_execute() {
                 // panic("JMP");
             case -0x70:
                 cpu.eip = rel;
-                // panic("JMP 0xFF");
+                break;
+                // panic("JMP 0xFF"); 
             default:
-                panic("UNKNOWN ERROR %d", op_src->abstract_instr_enum - 0x80);
+                panic("UNKNOWN ERROR %d", op_src->abstract_instr_enum);
         }
     } else {
         switch (op_src->abstract_instr_enum - 0x80) {
@@ -187,9 +188,10 @@ static void do_execute() {
                 break;
             case -0x80:
                 cpu.eip = rel;
+                break;
                 // panic("JMP 0xFF %x", op_src->val);
             default:
-                panic("UNKNOWN ERROR %d", op_src->abstract_instr_enum - 0x80);
+                panic("UNKNOWN ERROR %d", op_src->abstract_instr_enum);
         }   
     }
     op_src->abstract_instr_enum = 0;
