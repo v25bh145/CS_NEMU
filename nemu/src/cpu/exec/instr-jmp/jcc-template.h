@@ -94,7 +94,7 @@ static void do_execute() {
                 break;
                 // panic("JMP");
             case -0x70:
-                cpu.eip = rel;
+                cpu.eip = rel - 1;
                 break;
                 // panic("JMP 0xFF"); 
             default:
@@ -187,7 +187,7 @@ static void do_execute() {
                 cpu.eip += rel;
                 break;
             case -0x80:
-                cpu.eip = rel;
+                cpu.eip = rel - 1;
                 break;
                 // panic("JMP 0xFF %x", op_src->val);
             default:

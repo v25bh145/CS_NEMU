@@ -5,3 +5,4 @@
   100ee1:   b8 20 0f 10 00                        movl $0x100f20,%eax
   100ee6:   89 e5                                 movl %esp,%ebp
   100ee8:   83 ec 18                              subl $0x18,%esp
+  100eeb:   ff e0                                 jccl %eax
