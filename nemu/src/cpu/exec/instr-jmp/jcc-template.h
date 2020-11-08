@@ -185,7 +185,7 @@ static void do_execute() {
                 cpu.eip += rel;
                 break;
             case -0x80:
-                panic("JMP 0xFF %d", op_src->val);
+                panic("JMP 0xFF %x", op_src->val);
             default:
                 panic("UNKNOWN ERROR %d", op_src->abstract_instr_enum);
         }   
