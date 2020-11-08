@@ -187,6 +187,7 @@ static void do_execute() {
                 panic("UNKNOWN ERROR %d", op_src->abstract_instr_enum);
         }   
     }
+    op_src->abstract_instr_enum = 0;
     print_asm_template1();
 }
 
