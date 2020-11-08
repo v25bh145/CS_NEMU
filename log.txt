@@ -7,4 +7,5 @@
 [nemu/src/monitor/cpu-exec.c,84,cpu_exec] Get the WP 1:
 [nemu/src/monitor/debug/ui.c,391,cmd_bt] if fail, please check if you DO run this program.
 [nemu/src/monitor/debug/elf.c,103,get_function_by_addr] instr 10000e
-[nemu/src/monitor/debug/ui.c,399,cmd_bt] fail to get the func name in addr: 7ffffe8
+[nemu/src/monitor/debug/elf.c,106,get_function_by_addr] 1: 100015, 2: 10000e, 3: 10002c
+[nemu/src/monitor/debug/elf.c,107,get_function_by_addr] get function size 17 value 100015 name add

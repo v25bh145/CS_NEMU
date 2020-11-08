@@ -98,6 +98,8 @@ long long get_var_by_name(char* var_name, bool*success) {
 }
 
 char* get_function_by_addr(uint32_t ebp, bool* success) {
+	//how to get the instr_addr? just by ebp
+	//ebp + 4 can get the instr_addr in the last layer of stack...
 	int i = 0;
 	uint32_t instr_addr = swaddr_read(ebp + 4, 4);
 	Log("instr %x", instr_addr);
