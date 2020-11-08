@@ -34,6 +34,7 @@
   10076a:   8b 4d 10                              movl 0x10(%ebp),%ecx
   10076d:   8b 5d 08                              movl 0x8(%ebp),%ebx
   100770:   8d 04 11                              leal 0x8(%ebp),(%ecx,%edx,1)
+[nemu/src/cpu/exec/logic/cmp-template.h,9,do_cmp_l] cmp res -651263 dest 4096 pos 0 src 655359 pos 655359 with eip: 100773
   100773:   3d ff ff 09 00                        cmpl $0x9ffff,%eax
   100778:   76 06                                 jccb $0x6
   100780:   89 4d 10                              movl %ecx,0x10(%ebp)
@@ -58,6 +59,7 @@
   101352:   5e                                    popl %esi
   101353:   5f                                    popl %edi
   101354:   c3                                    retl %edi
+[nemu/src/cpu/exec/logic/cmp-template.h,9,do_cmp_l] cmp res 983467169 dest 1179403647 pos 134213564 src 195936478 pos 195936478 with eip: 1007c7
   1007c7:   81 bd f8 ef ff ff de c0 ad 0b         cmpl $0xbadc0de,-0x1008(%ebp)
   1007d1:   74 06                                 jccb $0x6
   1007d3:   b8 01 00 00 00                        movl $0x1,%eax
