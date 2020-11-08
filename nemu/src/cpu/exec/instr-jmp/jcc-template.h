@@ -5,8 +5,9 @@
 static void do_execute() {
     enum {JO, JNO, JB, JNB, JZ, JNZ, JBE, JNBE, JS, JNS, JP, JNP, JL, JNL, JLE, JNLE};
     DATA_TYPE_S rel = op_src->val;
+    Log("spj %d", op_src->abstract_instr_enum);
     if(!strcmp(str(SUFFIX), "b")) {
-        Log("spj %d", op_src->abstract_instr_enum);
+        
         switch (op_src->abstract_instr_enum - 0x70) {
             case JO:
                 if(cpu.psw->OF) 
