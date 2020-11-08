@@ -189,7 +189,7 @@ static void do_execute() {
 }
 
 make_instr_helper(i_condition);
-
+make_instr_helper(rm);
 
 
 #include "cpu/exec/template-end.h"

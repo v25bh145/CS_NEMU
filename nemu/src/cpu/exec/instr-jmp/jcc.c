@@ -13,3 +13,4 @@
 #undef DATA_BYTE
 
 make_helper_v(jcc_i_condition);
+make_helper_v(jcc_rm);
