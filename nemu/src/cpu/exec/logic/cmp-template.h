@@ -6,7 +6,7 @@ static void do_execute() {
     //op_dest val has been swap to val...
     //val2: op_src->val val1: op_dest->val
     DATA_TYPE result = op_dest->val - op_src->val;
-    // Log("cmp res %d dest %d pos %d src %d pos %d with eip: %x", result, op_dest->val, op_dest->reg, op_src->val, op_src->reg, cpu.eip);
+    Log("cmp res %d dest %d pos %d src %d pos %d with eip: %x", result, op_dest->val, op_dest->reg, op_src->val, op_src->reg, cpu.eip);
     cpu.psw->ZF = !result;
     cpu.psw->CF = op_dest -> val < op_src -> val;
     cpu.psw->SF = result >> ((DATA_BYTE << 3) - 1);
