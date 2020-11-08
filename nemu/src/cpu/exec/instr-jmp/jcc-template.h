@@ -184,7 +184,7 @@ static void do_execute() {
                 //jmp
                 cpu.eip += rel;
                 break;
-            case -0x70:
+            case -0x80:
                 panic("JMP 0xFF");
             default:
                 panic("UNKNOWN ERROR %d", op_src->abstract_instr_enum);

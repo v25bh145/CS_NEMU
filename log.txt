@@ -1,9 +1,7 @@
   100000:   bd 00 00 00 00                        movl $0x0,%ebp
   100005:   bc 00 00 00 08                        movl $0x8000000,%esp
-[nemu/src/cpu/exec/instr-jmp/jcc-template.h,8,do_jcc_l] spj 233
   10000a:   e9 d1 0e 00 00                        jccl $0xed1
   100ee0:   55                                    pushl %ebp
   100ee1:   b8 20 0f 10 00                        movl $0x100f20,%eax
   100ee6:   89 e5                                 movl %esp,%ebp
   100ee8:   83 ec 18                              subl $0x18,%esp
-[nemu/src/cpu/exec/instr-jmp/jcc-template.h,8,do_jcc_l] spj 0
