@@ -3335,7 +3335,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050686 10083e
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050687 10083e
 [nemu/src/cpu/decode/decode-template.h,224,decode_rmw2r_l] start: 10083f
-[nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050687 10083e
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050688 10083e
+[nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050689 10083e
 [nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 2
-[nemu/src/memory/memory.c,27,swaddr_read] awa len: -533128209 10083e
+[nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213588 10083e
