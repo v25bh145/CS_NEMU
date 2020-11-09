@@ -3,6 +3,7 @@
 #define instr movzx
 
 static void do_execute() {
+    Log("awa? %d", cpu.eip);
     #if DATA_BYTE == 4
     DATA_TYPE ret = (uint32_t)(op_src->val & 0xffff);
     #endif
