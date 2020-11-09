@@ -1,4 +1,5 @@
 #include "common.h"
+#include "cpu/helper.h"
 
 uint32_t dram_read(hwaddr_t, size_t);
 void dram_write(hwaddr_t, size_t, uint32_t);
@@ -22,8 +23,8 @@ void lnaddr_write(lnaddr_t addr, size_t len, uint32_t data) {
 }
 
 uint32_t swaddr_read(swaddr_t addr, size_t len) {
+	Log("awa len: %d %d", (int)len, cpu.eip);
 #ifdef DEBUG
-	Log("awa len: %d", (int)len);
 	assert(len == 1 || len == 2 || len == 4);
 #endif
 	return lnaddr_read(addr, len);
