@@ -157,3 +157,7 @@
   1013d4:   c3                                    retl %edi
 [nemu/src/monitor/cpu-exec.c,84,cpu_exec] Get the WP 1:
 [nemu/src/monitor/debug/ui.c,327,cmd_p] 742897423
+[nemu/src/monitor/debug/ui.c,327,cmd_p] 959203255
+[nemu/src/monitor/debug/ui.c,327,cmd_p] 959203255
+[nemu/src/monitor/debug/ui.c,327,cmd_p] 959203255
+[nemu/src/monitor/debug/ui.c,327,cmd_p] 959203255
