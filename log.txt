@@ -73,6 +73,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052535 100f76
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052536 100f76
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052537 100f76
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134217688 100f76
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052538 100f76
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052534 100f7e
@@ -88,6 +89,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052543 100f7e
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052544 100f7e
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052545 100f7e
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134217684 100f7e
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052546 100f7e
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052542 100f86
@@ -103,6 +105,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052551 100f86
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052552 100f86
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052553 100f86
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134217680 100f86
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052554 100f86
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052550 100f8e
@@ -117,6 +120,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052558 100f8e
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052559 100f8e
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052560 100f8e
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134217676 100f8e
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052561 100f8e
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1052558 100f95
@@ -204,6 +208,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050547 1007b2
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050548 1007b2
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050549 1007b2
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213524 1007b2
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050550 1007b2
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050546 1007ba
@@ -219,6 +224,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050555 1007ba
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050556 1007ba
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050557 1007ba
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213520 1007ba
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050558 1007ba
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050554 1007c2
@@ -233,6 +239,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050562 1007c2
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050563 1007c2
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050564 1007c2
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213516 1007c2
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050562 1007c5
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050563 1007c5
@@ -269,6 +276,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050471 100767
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050472 100767
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050473 100767
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213520 100767
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050471 10076a
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050472 10076a
@@ -277,6 +285,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050474 10076a
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050475 10076a
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050476 10076a
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213524 10076a
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050474 10076d
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050475 10076d
@@ -285,6 +294,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050477 10076d
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050478 10076d
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050479 10076d
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213516 10076d
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050477 100770
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050478 100770
@@ -314,6 +324,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050496 100780
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050497 100780
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050498 100780
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213524 100780
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050496 100783
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050497 100783
@@ -322,6 +333,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050499 100783
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050500 100783
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050501 100783
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213520 100783
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050499 100786
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050500 100786
@@ -330,6 +342,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050502 100786
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050503 100786
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050504 100786
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213516 100786
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050502 100789
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050503 100789
@@ -373,6 +386,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053573 101384
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053574 101384
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053575 101384
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213524 101384
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053572 101388
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053573 101388
@@ -383,6 +397,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053577 101388
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053578 101388
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053579 101388
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213516 101388
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053576 10138c
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053577 10138c
@@ -393,6 +408,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053581 10138c
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053582 10138c
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053583 10138c
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213520 10138c
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053580 101390
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053581 101390
@@ -2511,6 +2527,7 @@
 [nemu/src/cpu/exec/exec.c,29,group1_v] awa? eip: 1050570 opcode: 7
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050571 1007ca
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050572 1007ca
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213544 1007ca
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050576 1007ca
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050570 1007d4
@@ -2536,6 +2553,7 @@
 [nemu/src/cpu/exec/exec.c,34,group1_sx_v] awa? eip: 1050589 opcode: 7
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050590 1007dc
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050591 1007dc
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 2
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213588 1007dc
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050592 1007dc
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050588 1007e1
@@ -2547,6 +2565,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050593 1007e1
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050594 1007e1
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050595 1007e1
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213572 1007e1
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050593 1007e4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050594 1007e4
@@ -2580,6 +2599,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050620 1007fb
 [nemu/src/cpu/exec/exec.c,34,group1_sx_v] awa? eip: 1050619 opcode: 7
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050620 1007fb
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213596 1007fb
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050621 1007fb
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050619 1007fe
@@ -2595,6 +2615,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050624 100800
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050625 100800
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050626 100800
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213612 100800
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050624 100803
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050625 100803
@@ -2613,6 +2634,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050631 100806
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050632 100806
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050633 100806
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213524 100806
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050630 10080a
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050631 10080a
@@ -2622,6 +2644,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050634 10080a
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050635 10080a
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050636 10080a
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213600 10080a
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050634 10080d
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050635 10080d
@@ -2631,6 +2654,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050638 10080d
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050639 10080d
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050640 10080d
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213520 10080d
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050637 100811
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050638 100811
@@ -2640,6 +2664,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050641 100811
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050642 100811
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050643 100811
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213604 100811
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050641 100814
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050642 100814
@@ -2648,6 +2673,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050644 100814
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050645 100814
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050646 100814
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213516 100814
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050644 100817
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050645 100817
@@ -2684,6 +2710,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050471 100767
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050472 100767
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050473 100767
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213520 100767
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050471 10076a
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050472 10076a
@@ -2692,6 +2719,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050474 10076a
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050475 10076a
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050476 10076a
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213524 10076a
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050474 10076d
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050475 10076d
@@ -2700,6 +2728,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050477 10076d
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050478 10076d
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050479 10076d
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213516 10076d
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050477 100770
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050478 100770
@@ -2729,6 +2758,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050496 100780
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050497 100780
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050498 100780
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213524 100780
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050496 100783
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050497 100783
@@ -2737,6 +2767,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050499 100783
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050500 100783
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050501 100783
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213520 100783
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050499 100786
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050500 100786
@@ -2745,6 +2776,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050502 100786
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050503 100786
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050504 100786
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213516 100786
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050502 100789
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050503 100789
@@ -2788,6 +2820,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053573 101384
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053574 101384
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053575 101384
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213524 101384
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053572 101388
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053573 101388
@@ -2798,6 +2831,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053577 101388
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053578 101388
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053579 101388
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213516 101388
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053576 10138c
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053577 10138c
@@ -2808,6 +2842,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053581 10138c
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053582 10138c
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053583 10138c
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213520 10138c
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053580 101390
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053581 101390
@@ -3116,6 +3151,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050652 10081c
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050653 10081c
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050654 10081c
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213612 10081c
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050652 10081f
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050653 10081f
@@ -3124,6 +3160,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050655 10081f
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050656 10081f
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050657 10081f
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213616 10081f
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050655 100822
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050656 100822
@@ -3133,6 +3170,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050659 100822
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050660 100822
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050661 100822
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213520 100822
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050662 100822
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050658 10082a
@@ -3153,6 +3191,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050669 10082c
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050670 10082c
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050671 10082c
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213524 10082c
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050668 100830
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050669 100830
@@ -3162,6 +3201,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050672 100830
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050673 100830
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050674 100830
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213604 100830
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050672 100833
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050673 100833
@@ -3179,6 +3219,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050678 100836
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050679 100836
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050680 100836
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213516 100836
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050678 100839
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050679 100839
@@ -3202,6 +3243,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053608 1013a7
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053609 1013a7
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053610 1013a7
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213516 1013a7
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053607 1013ab
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053608 1013ab
@@ -3212,6 +3254,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053612 1013ab
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053613 1013ab
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053614 1013ab
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213524 1013ab
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053611 1013af
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053612 1013af
@@ -3222,6 +3265,7 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053616 1013af
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053617 1013af
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053618 1013af
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213520 1013af
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053615 1013b3
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053616 1013b3
@@ -3293,4 +3337,5 @@
 [nemu/src/cpu/decode/decode-template.h,224,decode_rmw2r_l] start: 10083f
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050687 10083e
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050688 10083e
+[nemu/src/cpu/decode/modrm.c,112,read_ModR_M] spj rm->size 2
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: -533128209 10083e
