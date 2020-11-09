@@ -299,7 +299,6 @@
   100770:   8d 04 11                              leal 0x8(%ebp),(%ecx,%edx,1)
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050483 100773
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050484 100773
-[nemu/src/cpu/exec/logic/cmp-template.h,6,do_cmp_l] awawawa? 1050483
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050483 100778
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050484 100778
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050485 100778
@@ -2514,7 +2513,6 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050572 1007ca
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213544 1007ca
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050576 1007ca
-[nemu/src/cpu/exec/logic/cmp-template.h,6,do_cmp_l] awawawa? 1050570
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050570 1007d4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050571 1007d4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050572 1007d4
@@ -2540,7 +2538,6 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050591 1007dc
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213588 1007dc
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050592 1007dc
-[nemu/src/cpu/exec/logic/cmp-template.h,6,do_cmp_w] awawawa? 1050588
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050588 1007e1
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050589 1007e1
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050590 1007e1
@@ -2585,7 +2582,6 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050620 1007fb
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213596 1007fb
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050621 1007fb
-[nemu/src/cpu/exec/logic/cmp-template.h,6,do_cmp_l] awawawa? 1050619
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050619 1007fe
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050620 1007fe
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050621 1007fe
@@ -2718,7 +2714,6 @@
   100770:   8d 04 11                              leal 0x8(%ebp),(%ecx,%edx,1)
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050483 100773
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050484 100773
-[nemu/src/cpu/exec/logic/cmp-template.h,6,do_cmp_l] awawawa? 1050483
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050483 100778
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050484 100778
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050485 100778
@@ -3291,11 +3286,11 @@
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053652 1013d4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053652 1013d4
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 134213512 1013d4
-[nemu/src/cpu/exec/instr-jmp/ret-template.h,28,do_ret_l] spj eip: 1050685
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1053652 10083e
   1013d4:   c3                                    retl %edi
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050686 10083e
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050687 10083e
+[nemu/src/cpu/decode/decode-template.h,224,decode_rmw2r_l] start: 10083f
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050687 10083e
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: 1050688 10083e
 [nemu/src/memory/memory.c,27,swaddr_read] awa len: -533128209 10083e
