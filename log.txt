@@ -136,4 +136,4 @@
   1013d3:   5f                                    popl %edi
 [nemu/src/cpu/exec/instr-jmp/ret-template.h,28,do_ret_l] spj eip: 1050685
   1013d4:   c3                                    retl %edi
-[nemu/src/memory/memory.c,27,swaddr_read] awa len: 0 1050686 f
+[nemu/src/memory/memory.c,27,swaddr_read] awa len: 0 1050686 0
