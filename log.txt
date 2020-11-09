@@ -133,6 +133,8 @@
   10082a:   29 d0                                 subl %edx,%eax
   10082c:   89 44 24 08                           movl %eax,0x8(%esp)
   100830:   03 56 08                              addl 0x8(%esi),%edx
+[nemu/src/monitor/cpu-exec.c,84,cpu_exec] Get the WP 1:
+[nemu/src/monitor/debug/watchpoint.c,31,printAllPool] count1: in addr 0x100830 
 [nemu/src/cpu/exec/exec.c,34,group1_sx_v] awa? eip: 1050675 opcode: 0
   100833:   83 c6 20                              addl $0x20,%esi
   100836:   89 14 24                              movl %edx,(%esp)
