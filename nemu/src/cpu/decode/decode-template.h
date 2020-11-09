@@ -219,9 +219,7 @@ make_helper(concat(decode_rmb2r_,SUFFIX)) {
 	return len_addr;
 }
 make_helper(concat(decode_rmw2r_,SUFFIX)) {
-	// panic("len: %x", eip - 1);
 	op_src->size = 2;
-	// Log("start: %x", eip - 1);
 	int len_addr = read_ModR_M(eip, op_src, op_dest);
 	// panic("len: %d", len_addr);
 	//op_src
