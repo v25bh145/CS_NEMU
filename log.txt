@@ -134,4 +134,3 @@
   1013d0:   89 d0                                 movl %edx,%eax
   1013d2:   5b                                    popl %ebx
   1013d3:   5f                                    popl %edi
-  1013d4:   c3                                    retl %edi
