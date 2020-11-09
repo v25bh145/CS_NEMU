@@ -5,7 +5,6 @@
 static void do_execute() {
     enum {SETO, SETNO, SETB, SETNB, SETZ, SETNZ, SETBE, SETNBE, 
                 SETS, SETNS, SETP, SETNP, SETL, SETNL, SETLE, SETNLE };
-    // Log("set %d %x", op_src->abstract_instr_enum, op_src->val);
     REG(op_src->reg) = 0;
     switch (op_src->abstract_instr_enum - 0x90) {
         case SETO:
