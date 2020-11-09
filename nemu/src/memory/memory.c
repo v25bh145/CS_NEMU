@@ -23,8 +23,8 @@ void lnaddr_write(lnaddr_t addr, size_t len, uint32_t data) {
 }
 
 uint32_t swaddr_read(swaddr_t addr, size_t len) {
-	if(cpu.eip == 1050686)
-		Log("awa len: %d %d %x", (int)len, cpu.eip, swaddr_read(cpu.eip, 1));
+	if(cpu.eip == 1050686 && len == 0)
+		Log("awa len: %d %d %x", (int)len, cpu.eip, instr_fetch(cpu.eip, 1));
 #ifdef DEBUG
 	assert(len == 1 || len == 2 || len == 4);
 #endif
