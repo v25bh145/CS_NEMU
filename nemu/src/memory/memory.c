@@ -24,7 +24,7 @@ void lnaddr_write(lnaddr_t addr, size_t len, uint32_t data) {
 
 uint32_t swaddr_read(swaddr_t addr, size_t len) {
 	// if(cpu.eip == 1050686 && len == 0)
-		Log("awa len: %d %x", (unsigned int)addr, cpu.eip);
+		// Log("awa len: %d %x", (unsigned int)addr, cpu.eip);
 #ifdef DEBUG
 	assert(len == 1 || len == 2 || len == 4);
 #endif
