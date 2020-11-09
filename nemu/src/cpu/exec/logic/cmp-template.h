@@ -3,7 +3,6 @@
 #define instr cmp
 
 static void do_execute() {
-    Log("awawawa? %d", cpu.eip);
     //op_dest val has been swap to val...
     //val2: op_src->val val1: op_dest->val
     DATA_TYPE result = op_dest->val - op_src->val;

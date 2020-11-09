@@ -3,10 +3,6 @@
 #define instr ret
 
 static void do_execute() {
-    int flag = 0;
-    if(cpu.eip == 0x1013d4)
-    flag = 1;
-    
     int plus = 0;
     if(instr_fetch(cpu.eip, 1) == 0xc2)
         plus = op_src->imm;
@@ -24,8 +20,7 @@ static void do_execute() {
     }
     cpu.esp += plus;
     cpu.eip = cpu.eip + ( plus ? -2 : 0);
-    if(flag)
-        Log("spj eip: %d", cpu.eip);
+
     print_asm_template1();
 }
 
