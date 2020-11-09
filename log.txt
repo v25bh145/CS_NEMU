@@ -42,6 +42,7 @@
   10076a:   8b 4d 10                              movl 0x10(%ebp),%ecx
   10076d:   8b 5d 08                              movl 0x8(%ebp),%ebx
   100770:   8d 04 11                              leal 0x8(%ebp),(%ecx,%edx,1)
+[nemu/src/cpu/exec/logic/cmp-template.h,6,do_cmp_l] awawawa? 1050483
   100773:   3d ff ff 09 00                        cmpl $0x9ffff,%eax
   100778:   76 06                                 jccb $0x6
   100780:   89 4d 10                              movl %ecx,0x10(%ebp)
@@ -70,9 +71,11 @@
   1013a3:   5f                                    popl %edi
   1013a4:   c3                                    retl %edi
 [nemu/src/cpu/exec/exec.c,29,group1_v] awa? eip: 1050570 opcode: 7
+[nemu/src/cpu/exec/logic/cmp-template.h,6,do_cmp_l] awawawa? 1050570
   1007ca:   81 bd e4 ef ff ff 7f 45 4c 46         cmpl $0x464c457f,-0x101c(%ebp)
   1007d4:   74 06                                 jccb $0x6
 [nemu/src/cpu/exec/exec.c,34,group1_sx_v] awa? eip: 1050589 opcode: 7
+[nemu/src/cpu/exec/logic/cmp-template.h,6,do_cmp_w] awawawa? 1050588
   1007dc:   66 83 7f 2c 00                        cmpw $0x0,0x2c(%edi)
   1007e1:   8b 77 1c                              movl 0x1c(%edi),%esi
   1007e4:   74 62                                 jccb $0x62
@@ -80,6 +83,7 @@
   1007e9:   31 db                                 xorl %ebx,%ebx
   1007eb:   eb 0e                                 jccb $0xe
 [nemu/src/cpu/exec/exec.c,34,group1_sx_v] awa? eip: 1050619 opcode: 7
+[nemu/src/cpu/exec/logic/cmp-template.h,6,do_cmp_l] awawawa? 1050619
   1007fb:   83 3e 01                              cmpl $0x1,(%esi)
   1007fe:   75 f0                                 jccb $0xf0
   100800:   8b 46 10                              movl 0x10(%esi),%eax
@@ -100,6 +104,7 @@
   10076a:   8b 4d 10                              movl 0x10(%ebp),%ecx
   10076d:   8b 5d 08                              movl 0x8(%ebp),%ebx
   100770:   8d 04 11                              leal 0x8(%ebp),(%ecx,%edx,1)
+[nemu/src/cpu/exec/logic/cmp-template.h,6,do_cmp_l] awawawa? 1050483
   100773:   3d ff ff 09 00                        cmpl $0x9ffff,%eax
   100778:   76 06                                 jccb $0x6
   100780:   89 4d 10                              movl %ecx,0x10(%ebp)
@@ -155,9 +160,4 @@
   1013d3:   5f                                    popl %edi
 [nemu/src/cpu/exec/instr-jmp/ret-template.h,28,do_ret_l] spj eip: 1050685
   1013d4:   c3                                    retl %edi
-[nemu/src/monitor/cpu-exec.c,84,cpu_exec] Get the WP 1:
-[nemu/src/monitor/debug/ui.c,327,cmd_p] 742897423
-[nemu/src/monitor/debug/ui.c,327,cmd_p] 959203255
-[nemu/src/monitor/debug/ui.c,327,cmd_p] 959203255
-[nemu/src/monitor/debug/ui.c,327,cmd_p] 959203255
-[nemu/src/monitor/debug/ui.c,327,cmd_p] 959203255
+[nemu/src/memory/memory.c,27,swaddr_read] awa len: -533128209 10083e b7

@@ -13,3 +13,5 @@
 #undef DATA_BYTE
 
 make_helper_v(movzx_rmb2r);
+
+make_helper_v(movzx_rmw2r);
