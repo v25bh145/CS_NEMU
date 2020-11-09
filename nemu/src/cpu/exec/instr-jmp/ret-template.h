@@ -3,6 +3,8 @@
 #define instr ret
 
 static void do_execute() {
+    if(cpu.eip == 0x1013d4)
+    Log("spj eip: %d", cpu.eip);
     int plus = 0;
     if(instr_fetch(cpu.eip, 1) == 0xc2)
         plus = op_src->imm;
