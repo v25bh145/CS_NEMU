@@ -405,6 +405,7 @@ static int cmd_bt(char* args) {
 	uint32_t ebp = cpu.ebp;
 	while(ebp != 0) {
 		uint32_t addr = swaddr_read(ebp, 4);
+		Log("addr: %x", addr);
 		func_name = get_function_by_addr(addr, &success);
 		if(!success) {
 			// Log("fail to get the func name in addr: %x", ebp);
