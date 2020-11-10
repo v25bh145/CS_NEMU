@@ -394,9 +394,9 @@ static int cmd_bt(char* args) {
 	bool success = true;
 
 	//first - now
-	func_name = get_function_by_addr(cpu.eip, &success);
+	func_name = get_function_by_addr(cpu.ebp + 4, &success);
 	if(success) {
-		printf("#stack(%d):\t %x <%s>\n", i++, cpu.eip, func_name);
+		printf("#stack(%d):\t %x <%s>\n", i++, cpu.ebp + 4, func_name);
 	} else {
 		Log("please check if you DO run this program or DO reach the <main>");
 		return 2;
