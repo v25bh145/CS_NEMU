@@ -30,6 +30,10 @@
 [nemu/src/monitor/debug/elf.c,105,get_function_by_addr] instr 100071
 [nemu/src/monitor/debug/elf.c,108,get_function_by_addr] 1: 100015, 2: 100071, 3: 10002c
 [nemu/src/monitor/debug/elf.c,109,get_function_by_addr] get function size 17 value 100015 name add
+[nemu/src/monitor/debug/elf.c,108,get_function_by_addr] 1: 10002c, 2: 100071, 3: 1000be
+[nemu/src/monitor/debug/elf.c,109,get_function_by_addr] get function size 92 value 10002c name main
 [nemu/src/monitor/debug/elf.c,105,get_function_by_addr] instr 10000e
 [nemu/src/monitor/debug/elf.c,108,get_function_by_addr] 1: 100015, 2: 10000e, 3: 10002c
 [nemu/src/monitor/debug/elf.c,109,get_function_by_addr] get function size 17 value 100015 name add
+[nemu/src/monitor/debug/elf.c,108,get_function_by_addr] 1: 10002c, 2: 10000e, 3: 1000be
+[nemu/src/monitor/debug/elf.c,109,get_function_by_addr] get function size 92 value 10002c name main
