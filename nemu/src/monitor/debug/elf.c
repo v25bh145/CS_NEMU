@@ -97,12 +97,13 @@ long long get_var_by_name(char* var_name, bool*success) {
 	return 0;
 }
 
-char* get_function_by_addr(uint32_t ebp, bool* success) {
+char* get_function_by_addr(uint32_t eip, uint32_t ebp, bool* success) {
 	//how to get the instr_addr? just by ebp
 	//ebp + 4 can get the instr_addr in the last layer of stack...
 	int i = 0;
+	uint32_t now_addr = swaddr_read(eip, 4);
 	uint32_t instr_addr = swaddr_read(ebp + 4, 4);
-	Log("instr %x", instr_addr);
+	Log("instr %x now %x", instr_addr, now_addr);
 	for(i = 0; i < nr_symtab_entry; i++) {
 		if(((int)symtab[i].st_info & 0xf) == STT_FUNC/* && symtab[i].st_value <= instr_addr && instr_addr <= symtab[i].st_value + symtab[i].st_size*/) {
 			Log("1: %x, 2: %x, 3: %x", symtab[i].st_value, instr_addr, symtab[i].st_value + symtab[i].st_size);
