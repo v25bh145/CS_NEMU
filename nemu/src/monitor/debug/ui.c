@@ -404,15 +404,17 @@ static int cmd_bt(char* args) {
 
 	//stack
 	uint32_t ebp = cpu.ebp;
+	uint32_t addr = 0;
 	while(ebp != 0) {
-		uint32_t addr = swaddr_read(ebp + 4, 4);
+		addr = swaddr_read(ebp + 4, 4);
 		func_name = get_function_by_addr(addr, &success);
 		if(!success) {
+			addr = 0;
 			break;
 		}
 		printf("#stack(%d):\t %x <%s>\n", i++, addr, func_name);
 		ebp = swaddr_read(ebp, 4);
 	}
-	printf("#stack(%d)\t %x\n", i++, ebp);
+	printf("#stack(%d)\t %x\n", i++, addr);
 	return 0;
 }

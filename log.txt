@@ -2,4 +2,26 @@
   100005:   bc f0 ff ff 07                        movl $0x7fffff0,%esp
   10000a:   e8 1d 00 00 00                        calll $0x1d
   10002c:   55                                    pushl %ebp
+  10002d:   89 e5                                 movl %esp,%ebp
+  10002f:   83 ec 18                              subl $0x18,%esp
+  100032:   c7 45 f8 00 00 00 00                  movl $0x0,-0x8(%ebp)
+  100039:   c7 45 fc 00 00 00 00                  movl $0x0,-0x4(%ebp)
+  100040:   c7 45 f0 00 00 00 00                  movl $0x0,-0x10(%ebp)
+  100047:   eb 5a                                 jccb $0x5a
+  1000a3:   8b 45 f0                              movl -0x10(%ebp),%eax
+  1000a6:   83 f8 07                              cmpl $0x7,%eax
+  1000a9:   76 9e                                 jccb $0x9e
+  100049:   c7 45 f4 00 00 00 00                  movl $0x0,-0xc(%ebp)
+  100050:   eb 45                                 jccb $0x45
+  100097:   8b 45 f4                              movl -0xc(%ebp),%eax
+  10009a:   83 f8 07                              cmpl $0x7,%eax
+  10009d:   76 b3                                 jccb $0xb3
+  100052:   8b 45 f4                              movl -0xc(%ebp),%eax
+  100055:   8b 14 85 c0 00 10 00                  movl 0x1000c0(,%eax,4),%edx
+  10005c:   8b 45 f0                              movl -0x10(%ebp),%eax
+  10005f:   8b 04 85 c0 00 10 00                  movl 0x1000c0(,%eax,4),%eax
+  100066:   89 54 24 04                           movl %edx,0x4(%esp)
+  10006a:   89 04 24                              movl %eax,(%esp)
+  10006d:   e8 a3 ff ff ff                        calll $0xffffffa3
+  100015:   55                                    pushl %ebp
 [nemu/src/monitor/cpu-exec.c,84,cpu_exec] Get the WP 1:
