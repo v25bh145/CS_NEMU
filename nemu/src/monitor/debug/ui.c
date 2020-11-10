@@ -399,6 +399,7 @@ static int cmd_bt(char* args) {
 		printf("#stack(%d):\t %x <%s>\n", i++, cpu.eip, func_name);
 	} else {
 		Log("please check if you DO run this program or DO reach the <main>");
+		return 2;
 	}
 
 	//stack
