@@ -388,7 +388,7 @@ static int cmd_nemu(char *args) {
 #undef maxArgc
 
 static int cmd_bt(char* args) {
-	Log("if fail, please check if you DO run this program.");
+	// Log("if fail, please check if you DO run this program.");
 	int i = 0;
 	char* func_name;
 	bool success = true;
