@@ -107,9 +107,10 @@ char* get_function_by_addr(uint32_t ebp, bool* success) {
 		if(((int)symtab[i].st_info & 0xf) == STT_FUNC/* && symtab[i].st_value <= instr_addr && instr_addr <= symtab[i].st_value + symtab[i].st_size*/) {
 			Log("1: %x, 2: %x, 3: %x", symtab[i].st_value, instr_addr, symtab[i].st_value + symtab[i].st_size);
 			Log("get function size %x value %x name %s", symtab[i].st_size, symtab[i].st_value, strtab + symtab[i].st_name);
-			return "qwq";
+			// return "qwq";
 		}
 	}
+	return "qwq";
 	*success = false;
 	return NULL;
 }
