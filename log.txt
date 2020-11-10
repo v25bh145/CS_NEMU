@@ -27,7 +27,4 @@
   100016:   89 e5                                 movl %esp,%ebp
 [nemu/src/monitor/cpu-exec.c,84,cpu_exec] Get the WP 1:
 [nemu/src/monitor/debug/ui.c,391,cmd_bt] if fail, please check if you DO run this program.
-[nemu/src/monitor/debug/elf.c,104,get_function_by_addr] instr 100018
-[nemu/src/monitor/debug/elf.c,107,get_function_by_addr] 1: 100015, 2: 100018, 3: 10002c
-[nemu/src/monitor/debug/elf.c,108,get_function_by_addr] get function size 17 value 100015 name add
-[nemu/src/monitor/debug/elf.c,104,get_function_by_addr] instr 7ffffe8
+[nemu/src/monitor/debug/ui.c,408,cmd_bt] addr: 7ffffe8

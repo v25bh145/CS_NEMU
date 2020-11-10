@@ -404,7 +404,7 @@ static int cmd_bt(char* args) {
 	//stack
 	uint32_t ebp = cpu.ebp;
 	while(ebp != 0) {
-		uint32_t addr = swaddr_read(ebp, 4);
+		uint32_t addr = swaddr_read(ebp + 4, 4);
 		Log("addr: %x", addr);
 		func_name = get_function_by_addr(addr, &success);
 		if(!success) {
