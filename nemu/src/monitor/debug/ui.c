@@ -415,6 +415,6 @@ static int cmd_bt(char* args) {
 		printf("#stack(%d):\t %x <%s>\n", i++, addr, func_name);
 		ebp = swaddr_read(ebp, 4);
 	}
-	printf("#stack(%d)\t %x\n", i++, ebp);
+	// printf("#stack(%d)\t %x\n", i++, ebp);
 	return 0;
 }
