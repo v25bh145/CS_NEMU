@@ -1,4 +1,3 @@
-[nemu/src/monitor/debug/ui.c,401,cmd_bt] please check if you DO run this program or DO reach the <main>
   100000:   bd 00 00 00 00                        movl $0x0,%ebp
   100005:   bc f0 ff ff 07                        movl $0x7fffff0,%esp
   10000a:   e8 1d 00 00 00                        calll $0x1d

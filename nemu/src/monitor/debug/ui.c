@@ -408,13 +408,11 @@ static int cmd_bt(char* args) {
 		uint32_t addr = swaddr_read(ebp + 4, 4);
 		func_name = get_function_by_addr(addr, &success);
 		if(!success) {
-			// Log("fail to get the func name in addr: %x", ebp);
-			// return 2;
-			return 0;
+			break;
 		}
 		printf("#stack(%d):\t %x <%s>\n", i++, addr, func_name);
 		ebp = swaddr_read(ebp, 4);
 	}
-	// printf("#stack(%d)\t %x\n", i++, ebp);
+	printf("#stack(%d)\t %x\n", i++, ebp);
 	return 0;
 }
