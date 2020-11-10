@@ -392,15 +392,20 @@ static int cmd_bt(char* args) {
 	int i = 0;
 	char* func_name;
 	bool success = true;
+
+	//first - now
 	func_name = get_function_by_addr(cpu.eip, &success);
 	if(success) {
 		printf("#stack(%d):\t %x <%s>\n", i++, cpu.eip, func_name);
 	} else {
 		Log("please check if you DO run this program or DO reach the <main>");
 	}
+
+	//stack
 	uint32_t ebp = cpu.ebp;
 	while(ebp != 0) {
-		func_name = get_function_by_addr(ebp, &success);
+		uint32_t addr = swaddr_read(ebp, 4);
+		func_name = get_function_by_addr(addr, &success);
 		if(!success) {
 			// Log("fail to get the func name in addr: %x", ebp);
 			// return 2;

@@ -97,15 +97,14 @@ long long get_var_by_name(char* var_name, bool*success) {
 	return 0;
 }
 
-char* get_function_by_addr(uint32_t ebp, bool* success) {
-	//how to get the instr_addr? just by ebp
-	//ebp + 4 can get the instr_addr in the last layer of stack...
+char* get_function_by_addr(uint32_t addr, bool* success) {
+	//how to get the addr? just by ebp
+	//ebp + 4 can get the addr in the last layer of stack...
 	int i = 0;
-	uint32_t instr_addr = swaddr_read(ebp + 4, 4);
-	Log("instr %x", instr_addr);
+	Log("instr %x", addr);
 	for(i = 0; i < nr_symtab_entry; i++) {
-		if(((int)symtab[i].st_info & 0xf) == STT_FUNC && symtab[i].st_value <= instr_addr && instr_addr <= symtab[i].st_value + symtab[i].st_size) {
-			Log("1: %x, 2: %x, 3: %x", symtab[i].st_value, instr_addr, symtab[i].st_value + symtab[i].st_size);
+		if(((int)symtab[i].st_info & 0xf) == STT_FUNC && symtab[i].st_value <= addr && addr <= symtab[i].st_value + symtab[i].st_size) {
+			Log("1: %x, 2: %x, 3: %x", symtab[i].st_value, addr, symtab[i].st_value + symtab[i].st_size);
 			Log("get function size %x value %x name %s", symtab[i].st_size, symtab[i].st_value, strtab + symtab[i].st_name);
 			return strtab + symtab[i].st_name;
 		}
