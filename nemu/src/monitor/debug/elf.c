@@ -101,7 +101,6 @@ char* get_function_by_addr(uint32_t addr, bool* success) {
 	//how to get the addr? just by ebp
 	//ebp + 4 can get the addr in the last layer of stack...
 	int i = 0;
-	Log("addr: %x", addr);
 	for(i = 0; i < nr_symtab_entry; i++) {
 		if(((int)symtab[i].st_info & 0xf) == STT_FUNC && symtab[i].st_value <= addr && addr <= symtab[i].st_value + symtab[i].st_size) {
 			return strtab + symtab[i].st_name;

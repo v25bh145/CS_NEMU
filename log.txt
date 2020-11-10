@@ -25,5 +25,5 @@
   10006d:   e8 a3 ff ff ff                        calll $0xffffffa3
   100015:   55                                    pushl %ebp
 [nemu/src/monitor/cpu-exec.c,84,cpu_exec] Get the WP 1:
+[nemu/src/monitor/debug/elf.c,104,get_function_by_addr] addr: 100016
 [nemu/src/monitor/debug/elf.c,104,get_function_by_addr] addr: 10000e
-[nemu/src/monitor/debug/ui.c,402,cmd_bt] please check if you DO run this program or DO reach the <main>
